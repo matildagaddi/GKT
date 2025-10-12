@@ -7,11 +7,13 @@ import re
 import random
 import time
 from tqdm import tqdm
-from utils_data import Gsm8k_dataset,CSQA_dataset,CNNDM_dataset,AQuA_dataset
+from utils_data import Gsm8k_dataset,CSQA_dataset,AQuA_dataset
 from torch.utils.data import DataLoader
 from transformers import AutoModelForCausalLM, AutoTokenizer,AutoModelForSeq2SeqLM
 from thop import profile
 from peft import PeftModel
+import logging
+logging.basicConfig(level=logging.INFO)
 
 def generate(
     model,
@@ -64,12 +66,19 @@ if __name__ == "__main__":
     folder_name = os.path.join(args_out_path,model_temp,args.dataset)
 
     if not os.path.exists(folder_name):
-        os.makedirs(folder_name)
-        print(f"folder '{folder_name}' created")
+    os.makedirs(folder_name)
+    print(f"folder '{folder_name}' created")
 
-    out_path=os.path.join(folder_name,str(args.max_gen_len)+"_output_stage1.jsonlines")
-    if os.path.isfile(out_path):
-        assert False
+    base_name = str(args.max_gen_len) + "_output_stage1"
+    out_path = os.path.join(folder_name, base_name + ".jsonlines")
+    
+    # Find next available filename
+    counter = 1
+    while os.path.isfile(out_path):
+        out_path = os.path.join(folder_name, f"{base_name}_{counter}.jsonlines")
+        counter += 1
+    
+    print(f"Output will be saved to: {out_path}")
 
     tokenizer = AutoTokenizer.from_pretrained(args.model_name, padding_side="left")
     if "t5" in args.model_name:

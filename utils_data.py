@@ -12,7 +12,7 @@ class Gsm8k_dataset(Dataset):
         
         self.args=args
         data_path=os.path.join(self.args.data_path,self.args.dataset,split+".jsonl")
-        self.data = self.load_json(data_path)
+        self.data = self.load_json(data_path)[:len(self.data) // 10] #use less data while setting up
         self.tokenizer=tokenizer
         self.stage2=stage2
         self.big_output_pre=[]
@@ -70,7 +70,7 @@ class Gsm8k_dataset(Dataset):
 
         inputs = tokenizer(input_text, 
                            return_tensors="pt",            
-                           pad_to_max_length=True,max_length=1024)
+                           padding='max_length',max_length=1024)
         #inputs["answer"]=test_dict["answer"]
         #print(len(inputs["input_ids"][0]))
         return inputs
@@ -203,7 +203,9 @@ class CSQA_dataset(Dataset):
 
         inputs = tokenizer(input_text, 
                            return_tensors="pt",            
-                           pad_to_max_length=True,max_length=1024)
+                           padding='max_length',
+                           max_length=1024
+                          )
         #inputs["answer"]=test_dict["answer"]
         #print(len(inputs["input_ids"][0]))
         return inputs
@@ -343,7 +345,7 @@ class AQuA_dataset(Dataset):
 
         inputs = tokenizer(input_text, 
                            return_tensors="pt",            
-                           pad_to_max_length=True,max_length=1024)
+                           padding='max_length',max_length=1024)
         #inputs["answer"]=test_dict["answer"]
         #print(len(inputs["input_ids"][0]))
         return inputs
