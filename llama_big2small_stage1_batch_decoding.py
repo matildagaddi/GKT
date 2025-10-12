@@ -23,7 +23,7 @@ def generate(
     max_gen_len = args.max_gen_len
     for i in input_data:
         input_data[i]=input_data[i].squeeze(1)
-    output_sequences = model.generate(**input_data, max_new_tokens=max_gen_len, temperature = 0.8,top_p = top_p)
+    output_sequences = model.generate(**input_data, max_new_tokens=max_gen_len, temperature = 0.2,top_p = top_p) # temp was 0.8, changed to handle "Assertion `probability tensor contains either `inf`, `nan` or element < 0` failed."
     results=tokenizer.batch_decode(output_sequences, skip_special_tokens=True)
     return results
 
@@ -66,9 +66,9 @@ if __name__ == "__main__":
     folder_name = os.path.join(args_out_path,model_temp,args.dataset)
 
     if not os.path.exists(folder_name):
-    os.makedirs(folder_name)
-    print(f"folder '{folder_name}' created")
-
+        os.makedirs(folder_name)
+        print(f"folder '{folder_name}' created")
+    
     base_name = str(args.max_gen_len) + "_output_stage1"
     out_path = os.path.join(folder_name, base_name + ".jsonlines")
     
@@ -86,7 +86,7 @@ if __name__ == "__main__":
     elif "70b" in args.model_name:
         model = AutoModelForCausalLM.from_pretrained(args.model_name,load_in_8bit=True, torch_dtype="auto", device_map="auto",cache_dir="./cache")
     else:
-        model = AutoModelForCausalLM.from_pretrained(args.model_name, torch_dtype=torch.float16, device_map="auto")
+        model = AutoModelForCausalLM.from_pretrained(args.model_name, load_in_8bit=True, device_map="auto") # was torch_dtype=torch.float16, changed for lower GPU memory
         original_named_parameters = dict(model.named_parameters())
     tokenizer.pad_token_id = (
         0  # unk. we want this to be different from the eos token
