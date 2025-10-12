@@ -5,7 +5,7 @@ import jsonlines
 import json
 import re
 import random
-from utils_data import Gsm8k_dataset,CSQA_dataset,CNNDM_dataset,AQuA_dataset
+from utils_data import Gsm8k_dataset,CSQA_dataset,AQuA_dataset
 from torch.utils.data import DataLoader
 from transformers import AutoModelForCausalLM, AutoTokenizer,AutoModelForSeq2SeqLM
 import time
