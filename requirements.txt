@@ -8,3 +8,4 @@ peft
 bitsandbytes==0.48.1 
 transformers==4.35.0 
 huggingface-hub==0.35.3 
+evaluate

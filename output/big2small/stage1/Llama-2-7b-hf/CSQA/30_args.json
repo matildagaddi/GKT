@@ -1,0 +1,15 @@
+{
+    "model_name": "meta-llama/Llama-2-7b-hf",
+    "max_seq_len": 1024,
+    "max_batch_size": 4,
+    "dataset": "CSQA",
+    "if_concise_prompt": false,
+    "data_path": "./data/",
+    "out_path": "output/big2small/",
+    "max_gen_len": 30,
+    "batch_size": 50,
+    "few_shot": 1,
+    "time": 365.2372028827667,
+    "FLOPs:(G)": 6710.8864,
+    "Number of parameters:(M)": 131.072
+}

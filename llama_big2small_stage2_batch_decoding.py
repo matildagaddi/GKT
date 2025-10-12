@@ -219,7 +219,7 @@ if __name__ == "__main__":
     args_dict["total"]=total
     if args.dataset in ["GSM8K","CSQA","AQuA"]:
         args_dict["acc"]=right/total
-        print("!!! right",right)
+        print("!!! right: ",right, "   total: ", total, "   accuracy: ", right/total)
 
     args_dict["FLOPs:(G)"]=flops / 1e9
     args_dict["Number of parameters:(M)"]=params / 1e6
