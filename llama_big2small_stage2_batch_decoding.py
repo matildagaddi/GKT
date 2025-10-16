@@ -1,3 +1,4 @@
+#stage 2
 import argparse
 import torch
 import os
@@ -114,7 +115,7 @@ if __name__ == "__main__":
     parser.add_argument('--dataset', choices=['GSM8K', 'CSQA',"AQuA"])
     parser.add_argument('--out_path', type=str, default="output/big2small/")
     parser.add_argument('--max_gen_len', type=int, default=180)
-    parser.add_argument('--batch_size', type=int, default=1)
+    parser.add_argument('--batch_size', type=int, default=2) #1
     parser.add_argument('--big_output_path', type=str, default="")
     parser.add_argument('--different_model', type=bool, default=False)
     parser.add_argument('--few_shot', type=int,help="GSM8K:8 CSQA:7")
@@ -141,11 +142,19 @@ if __name__ == "__main__":
         stage1_len=args.big_output_path.split("/")[-1].split("_")[0]
     else:
         stage1_len=args.big_output_path.split("/")[-2]
-        
+
+    base_name = str(args.max_gen_len) + "_output_stage1"
     out_path=os.path.join(folder_name,str(stage1_len)+"_"+str(args.max_gen_len)+"_output_stage2.jsonlines")
+    # Find next available filename
+    counter = 1
+    while os.path.isfile(out_path):
+        out_path = os.path.join(folder_name, f"{base_name}_{counter}.jsonlines")
+        counter += 1
     
-    if os.path.isfile(out_path):
-        assert False
+    print(f"Output will be saved to: {out_path}")
+    
+    # if os.path.isfile(out_path):
+    #     assert False
 
     tokenizer = AutoTokenizer.from_pretrained(args.model_name, padding_side="left")
     if "t5" in args.model_name:

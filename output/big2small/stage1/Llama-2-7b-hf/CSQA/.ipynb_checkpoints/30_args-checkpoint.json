@@ -9,7 +9,7 @@
     "max_gen_len": 30,
     "batch_size": 50,
     "few_shot": 1,
-    "time": 291.50304770469666,
+    "time": 365.2372028827667,
     "FLOPs:(G)": 6710.8864,
     "Number of parameters:(M)": 131.072
 }
