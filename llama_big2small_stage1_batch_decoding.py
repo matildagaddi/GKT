@@ -138,7 +138,7 @@ if __name__ == "__main__":
     args_dict["Execution time"]=execution_time
     args_dict["FLOPs:(G)"]=flops / 1e9
     args_dict["Number of parameters:(M)"]=params / 1e6
-    args_dict["timestamp"] = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    args_dict["timestamp"] = datetime.now(ZoneInfo("America/Los_Angeles")).strftime("%Y-%m-%d_%H-%M-%S")
     
     #json_path = os.path.join(folder_name,str(args.max_gen_len)+"_args.json")
     basej_name = str(args.max_gen_len)+"_args"

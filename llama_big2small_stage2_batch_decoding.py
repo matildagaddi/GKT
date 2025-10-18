@@ -74,7 +74,7 @@ def generate(
     max_gen_len = args.max_gen_len
     for i in input_data:
         input_data[i]=input_data[i].squeeze(1)
-    output_sequences = model.generate(**input_data, max_new_tokens=max_gen_len,temperature = 0.8,top_p = top_p) #do_sample=True)#, top_p=top_p)
+    output_sequences = model.generate(**input_data, max_new_tokens=max_gen_len,temperature = 0.4,top_p = top_p) #do_sample=True)#, top_p=top_p) #temp was 0.8
     results=tokenizer.batch_decode(output_sequences, skip_special_tokens=True)
     return results
 
@@ -145,10 +145,16 @@ if __name__ == "__main__":
     else:
         stage1_len=args.big_output_path.split("/")[-2]
         
-    out_path=os.path.join(folder_name,str(stage1_len)+"_"+str(args.max_gen_len)+"_output_stage2.jsonlines")
     
-    if os.path.isfile(out_path):
-        assert False
+    base_name = str(args.max_gen_len) + "_output_stage1"
+    out_path=os.path.join(folder_name,str(stage1_len)+"_"+str(args.max_gen_len)+"_output_stage2.jsonlines")
+    # Find next available filename
+    counter = 1
+    while os.path.isfile(out_path):
+        out_path = os.path.join(folder_name, f"{base_name}_{counter}.jsonlines")
+        counter += 1
+    
+    print(f"Output will be saved to: {out_path}")
 
 
     
@@ -223,7 +229,7 @@ if __name__ == "__main__":
     args_dict["Execution time"]=execution_time
     args_dict["right"]=right
     args_dict["total"]=total
-    args_dict["timestamp"] = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    args_dict["timestamp"] = datetime.now(ZoneInfo("America/Los_Angeles")).strftime("%Y-%m-%d_%H-%M-%S")
     #add input path i.e. stage1_4
     
     if args.dataset in ["GSM8K","CSQA","AQuA"]:

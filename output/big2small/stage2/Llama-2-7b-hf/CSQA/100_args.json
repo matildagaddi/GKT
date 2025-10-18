@@ -1,0 +1,19 @@
+{
+    "model_name": "meta-llama/Llama-2-7b-hf",
+    "max_seq_len": 1024,
+    "data_path": "./data/",
+    "dataset": "CSQA",
+    "out_path": "output/big2small",
+    "max_gen_len": 100,
+    "batch_size": 2,
+    "big_output_path": "output/big2small/stage1/Llama-2-13b-hf/CSQA/30_output_stage1.jsonlines",
+    "different_model": false,
+    "few_shot": 3,
+    "Execution time": 1826.0098958015442,
+    "right": 783,
+    "total": 1221,
+    "timestamp": "2025-10-18_21-24-44",
+    "acc": 0.6412776412776413,
+    "FLOPs:(G)": 13531.294466048,
+    "Number of parameters:(M)": 6607.077376
+}
