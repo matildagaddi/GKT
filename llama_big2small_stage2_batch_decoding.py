@@ -13,6 +13,7 @@ import time
 from tqdm import tqdm
 from thop import profile
 import evaluate
+from datetime import datetime
 
 
 def answer_cleansing_gsm8k(pred,few_shot):
@@ -116,11 +117,12 @@ if __name__ == "__main__":
     parser.add_argument('--out_path', type=str, default="output/big2small/")
     parser.add_argument('--max_gen_len', type=int, default=180)
     parser.add_argument('--batch_size', type=int, default=2) #1
-    parser.add_argument('--big_output_path', type=str, default="")
+    parser.add_argument('--big_output_path', type=str, default="") #stage1 path for input
     parser.add_argument('--different_model', type=bool, default=False)
     parser.add_argument('--few_shot', type=int,help="GSM8K:8 CSQA:7")
     args = parser.parse_args()
 
+    #file saving
     if args.different_model:
         different_model="diff"
     else:
@@ -142,19 +144,14 @@ if __name__ == "__main__":
         stage1_len=args.big_output_path.split("/")[-1].split("_")[0]
     else:
         stage1_len=args.big_output_path.split("/")[-2]
-
-    base_name = str(args.max_gen_len) + "_output_stage1"
+        
     out_path=os.path.join(folder_name,str(stage1_len)+"_"+str(args.max_gen_len)+"_output_stage2.jsonlines")
-    # Find next available filename
-    counter = 1
-    while os.path.isfile(out_path):
-        out_path = os.path.join(folder_name, f"{base_name}_{counter}.jsonlines")
-        counter += 1
     
-    print(f"Output will be saved to: {out_path}")
+    if os.path.isfile(out_path):
+        assert False
+
+
     
-    # if os.path.isfile(out_path):
-    #     assert False
 
     tokenizer = AutoTokenizer.from_pretrained(args.model_name, padding_side="left")
     if "t5" in args.model_name:
@@ -223,16 +220,31 @@ if __name__ == "__main__":
 
     ####save args
     args_dict = vars(args)
-    args_dict["time"]=execution_time
+    args_dict["Execution time"]=execution_time
     args_dict["right"]=right
     args_dict["total"]=total
+    args_dict["timestamp"] = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    #add input path i.e. stage1_4
+    
     if args.dataset in ["GSM8K","CSQA","AQuA"]:
         args_dict["acc"]=right/total
         print("!!! right: ",right, "   total: ", total, "   accuracy: ", right/total)
 
     args_dict["FLOPs:(G)"]=flops / 1e9
     args_dict["Number of parameters:(M)"]=params / 1e6
+
+    #json_path = os.path.join(folder_name,str(args.max_gen_len)+"_args.json")
+    basej_name = str(args.max_gen_len)+"_args"
+    json_path=os.path.join(folder_name,f"{basej_name}.json")
+    # if os.path.isfile(out_path):
+    #     assert False
+    counter = 1
+    # Find next available filename
+    while os.path.isfile(json_path):
+        json_path = os.path.join(folder_name, f"{basej_name}_{counter}.json")
+        counter += 1
     
-    json_filename = os.path.join(folder_name,str(stage1_len)+"_"+str(args.max_gen_len)+"_args.json")
-    with open(json_filename, "w") as json_file:
+    print(f"Args will be saved to: {json_path}")
+    
+    with open(json_path, "w") as json_file:
         json.dump(args_dict, json_file, indent=4)

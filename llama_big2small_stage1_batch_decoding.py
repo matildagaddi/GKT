@@ -14,6 +14,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer,AutoModelForSeq2Seq
 from thop import profile
 from peft import PeftModel
 import logging
+from datetime import datetime
 logging.basicConfig(level=logging.INFO)
 
 def generate(
@@ -57,7 +58,9 @@ if __name__ == "__main__":
     parser.add_argument('--few_shot', type=int,help="GSM8K:8 CSQA:7 CNNDM:0")
     args = parser.parse_args()
 
-    
+
+
+    #file saving
     if args.if_concise_prompt:
         args_out_path=os.path.join(args.out_path,"stage1_concised")
     else:
@@ -69,17 +72,21 @@ if __name__ == "__main__":
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
         print(f"folder '{folder_name}' created")
-    
-    base_name = str(args.max_gen_len) + "_output_stage1"
-    out_path = os.path.join(folder_name, base_name + ".jsonlines")
-    
-    # Find next available filename
+
+    base_name = str(args.max_gen_len)+"_output_stage1"
+    out_path=os.path.join(folder_name,f"{base_name}.jsonlines")
+    # if os.path.isfile(out_path):
+    #     assert False
     counter = 1
+    # Find next available filename
     while os.path.isfile(out_path):
         out_path = os.path.join(folder_name, f"{base_name}_{counter}.jsonlines")
         counter += 1
     
     print(f"Output will be saved to: {out_path}")
+
+
+    
 
     tokenizer = AutoTokenizer.from_pretrained(args.model_name, padding_side="left")
     if "t5" in args.model_name:
@@ -128,9 +135,23 @@ if __name__ == "__main__":
 
     ####save args
     args_dict = vars(args)
-    args_dict["time"]=execution_time
+    args_dict["Execution time"]=execution_time
     args_dict["FLOPs:(G)"]=flops / 1e9
     args_dict["Number of parameters:(M)"]=params / 1e6
-    json_filename = os.path.join(folder_name,str(args.max_gen_len)+"_args.json")
-    with open(json_filename, "w") as json_file:
+    args_dict["timestamp"] = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    
+    #json_path = os.path.join(folder_name,str(args.max_gen_len)+"_args.json")
+    basej_name = str(args.max_gen_len)+"_args"
+    json_path=os.path.join(folder_name,f"{basej_name}.json")
+    # if os.path.isfile(out_path):
+    #     assert False
+    counter = 1
+    # Find next available filename
+    while os.path.isfile(json_path):
+        json_path = os.path.join(folder_name, f"{basej_name}_{counter}.json")
+        counter += 1
+    
+    print(f"Args will be saved to: {json_path}")
+    
+    with open(json_path, "w") as json_file:
         json.dump(args_dict, json_file, indent=4)
