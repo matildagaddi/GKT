@@ -1,0 +1,19 @@
+{
+    "model_name": "meta-llama/Llama-2-7b-hf",
+    "max_seq_len": 1024,
+    "data_path": "./data/",
+    "dataset": "SecQA",
+    "out_path": "output/big2small",
+    "max_gen_len": 100,
+    "batch_size": 2,
+    "big_output_path": "output/big2small/stage1/Llama-2-13b-hf/SecQA/30_output_stage1_1.jsonlines",
+    "different_model": false,
+    "few_shot": 3,
+    "Execution time": 164.4903860092163,
+    "right": 72,
+    "total": 110,
+    "timestamp": "2025-10-29_01-34-56",
+    "acc": 0.6545454545454545,
+    "FLOPs:(G)": 13531.294466048,
+    "Number of parameters:(M)": 6607.077376
+}

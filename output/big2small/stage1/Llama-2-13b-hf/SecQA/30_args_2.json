@@ -1,0 +1,16 @@
+{
+    "model_name": "meta-llama/Llama-2-13b-hf",
+    "max_seq_len": 1024,
+    "max_batch_size": 12,
+    "dataset": "SecQA",
+    "if_concise_prompt": false,
+    "data_path": "./data/",
+    "out_path": "output/big2small/",
+    "max_gen_len": 30,
+    "batch_size": 50,
+    "few_shot": 5,
+    "Execution time": 42.10934257507324,
+    "FLOPs:(G)": 8388.608,
+    "Number of parameters:(M)": 163.84,
+    "timestamp": "2025-10-29_01-48-22"
+}

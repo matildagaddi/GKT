@@ -1,0 +1,110 @@
+{"0": "Q: Which of the following is a common indicator of an SQL injection attack?\nA. Frequent changes in user account permissions."}
+{"1": "Q: What is the purpose of a firewall?\nA. To provide a secure connection between a client and a server.\nB."}
+{"2": "Encryption is a security measure that converts sensitive data into a format that is unreadable without a decryption key, providing a layer of security."}
+{"3": "Q: What is the purpose of implementing a Guest Wireless Network in a corporate environment? Answer Choices: (A)"}
+{"4": "Authentication is a process that confirms an individual's identity through a specific process. The answer is C.\n\nQ: What is the"}
+{"5": "Processes are important in incident response planning because they outline a sequence of actions for addressing various types of incidents. The answer is C"}
+{"6": "Q: Which of the following is a common type of malware?\nA. Trojan\nB. Worm\nC. Vir"}
+{"7": "Q: What is a common security concern associated with cloud computing?\nA. The inability to customize software according to business needs."}
+{"8": "Q: What is a common indicator of a Man-in-the-Middle (MitM) attack?\nA. Rapid"}
+{"9": "Enforcing strong password policies on devices is an essential security measure for implementing a secure mobile solution for a corporate environment. The answer is B."}
+{"10": "Q: Which of the following is a common type of malware?\nA. Worm\nB. Trojan\nC. Vir"}
+{"11": "The primary purpose of having a well-defined incident response policy in an organization is to define roles and responsibilities during an incident. The answer is"}
+{"12": "Q: Which of the following is the most effective strategy for securing API keys used in cloud environments?\nA. Storing API"}
+{"13": "A 'chain of trust' is established in PKI by using intermediate CAs to sign certificates issued by root CAs."}
+{"14": "Q: Which of the following is a primary focus of Business Continuity Planning (BCP) during an incident response?\nA"}
+{"15": "Tailgating is a social engineering technique where an attacker follows someone into a secure area without proper credentials. The answer is D."}
+{"16": "Financial records are the most crucial data source for identifying the scope and impact of a cybersecurity incident. They provide a detailed record"}
+{"17": "User training is an essential component of effective identity and account management. It ensures that users understand the importance of security measures and their responsib"}
+{"18": "Q: Which of the following is a major concern with 'Cryptographic Failures'?\nA. Incompatibility of different crypt"}
+{"19": "Tokenization is a process that replaces sensitive information with a non-sensitive equivalent, such as a randomly generated token, to protect the original data"}
+{"20": "To provide backup in case of system failure\n\nQ: What is the purpose of implementing a Guest Wireless Network in a corporate environment"}
+{"21": "Data Loss Prevention (DLP) software is crucial for protecting data and ensuring privacy in compliance with GDPR."}
+{"22": "WPA2 is the recommended encryption method for the highest level of security in a wireless network. WPA2 is a more secure version of WPA"}
+{"23": "A CSR is a request for a digital certificate from a Certificate Authority (CA). The CSR contains information about the requester, such"}
+{"24": "Q: What is the purpose of a firewall?\nA. To prevent unauthorized access to a network.\nB. To"}
+{"25": "Active reconnaissance involves interacting with the target, such as port scanning and vulnerability scanning, to gather information about the target system and its"}
+{"26": "Data classification is used to categorize data based on its importance to the organization and its sensitivity and the need for privacy. The answer is A"}
+{"27": "Q: What is the purpose of a firewall?\nA. To prevent unauthorized access to a network.\nB. To"}
+{"28": "Q: Which of the following is a type of malware that is designed to steal sensitive information from a computer?\nA. R"}
+{"29": "The primary goal of MDM is to monitor and manage security policies on mobile devices. The answer is A.\n\nQ: What is the purpose"}
+{"30": "The first step in vulnerability management during a security assessment is gathering information on hardware, network, and domain details. The answer is B"}
+{"31": "Setting a strong and complex Wi-Fi password is a critical security measure to prevent unauthorized access. The answer is C."}
+{"32": "The primary goal of risk management in cybersecurity is to identify, assess, and prioritize risks to minimize impact on the organization."}
+{"33": "Segmenting the network and applying internal firewalls is a key strategy to secure a corporate network from internal threats. This strategy helps to"}
+{"34": "Embedded systems are often resource-constrained and have limited computing power, making them more vulnerable to cyber attacks. The answer is D"}
+{"35": "Multi-layered security approaches provide robust protection by using multiple overlapping solutions. The answer is C.\n\nQ: Which of the"}
+{"36": "Q: What is the purpose of a firewall?\nA. To provide a single point of access to the network.\nB. To"}
+{"37": "SFTP (Secure File Transfer Protocol) is a secure file transfer protocol that uses SSH (Secure Shell) to encrypt data and provide"}
+{"38": "Q: Which of these would be a likely indicator of a machine infected with malware?\nA. Unusual outbound connections"}
+{"39": "Q: Which of the following is a common type of malware?\nA. Trojan\nB. Worm\nC. Vir"}
+{"40": "Cryptography is essential in the field of security because it scrambles data into non-readable text, preventing unauthorized access"}
+{"41": "Snort is a free and open-source network intrusion detection and prevention system (IDS/IPS) that is used for real-"}
+{"42": "Network segmentation is a security best practice that involves dividing a network into smaller, more manageable segments. This helps to limit the spread of network"}
+{"43": "Data Preservation is the first step in a digital forensic investigation, as it ensures that evidence is not tampered with or destroyed."}
+{"44": "HTTPS is the protocol that should be implemented to ensure secure communication. The answer is C.\n\nQ: Which of the following is a type"}
+{"45": "Q: Which of the following is a common method of attacking a wireless network?\nA. Man-in-the-middle attack"}
+{"46": "Nmap is a network scanning tool that can be used to identify vulnerabilities in a network's devices. The answer is C."}
+{"47": "Q: What is the purpose of a firewall?\nA. To protect against malware and viruses.\nB. To protect against"}
+{"48": "Hacktivists are individuals or groups who use hacking techniques for social or political ends. They may target government agencies, corporations"}
+{"49": "The initial step in responding to a security incident involving malware is to isolate the affected asset from the network. This can help prevent the spread"}
+{"50": "Q: What is the purpose of a firewall?\nA. To provide a secure connection between a client and a server.\nB."}
+{"51": "Remediation is the process of implementing changes to prevent a recurrence of the incident. The answer is D.\n\nQ: What is the"}
+{"52": "Q: Which of the following is a key security measure to protect data in transit?\nA. Implementing strong encryption for stored"}
+{"53": "Q: What is the purpose of a DMZ?\nA. To provide a secure network for the organization’s most sensitive data."}
+{"54": "Q: What is the purpose of a firewall?\nA. To prevent unauthorized access to the network.\nB. To"}
+{"55": "Asymmetric encryption is used in PKI to create digital certificates and to authenticate and encrypt messages between parties. The answer is C."}
+{"56": "Q: What is a key tactic used in impersonation/identity theft in social engineering?\nA. Using malware to"}
+{"57": "SSH is a secure, encrypted protocol that is commonly used for remote management of network devices. The answer is A.\n\nQ: Which of the"}
+{"58": "Incident response procedures contribute to the effectiveness of security measures in an organization by outlining specific steps to be taken during security incidents. The"}
+{"59": "The chain of custody is a crucial aspect of digital forensics, as it ensures that digital evidence remains usable and that it is"}
+{"60": "The 'AAA' acronym stands for Authentication, Authorization, and Accounting. The answer is A.\n\nQ: What is"}
+{"61": "Authorization is typically implemented through a permission scheme or access control list (ACL). The answer is C.\n\nQ: What is the purpose"}
+{"62": "Q: Which of the following is an example of a physical control?\nA. Access control lists (ACLs)\nB."}
+{"63": "Q: What is the purpose of a firewall?\nA. To provide a single point of entry for all network traffic.\nB."}
+{"64": "Advanced Persistent Threats (APTs) are a group of threat actors that are often associated with governments and known for their extensive resources"}
+{"65": "The security of the images it is building from.\n\nQ: Which of the following is a common method of securing a wireless network?"}
+{"66": "Q: What is the purpose of a firewall?\nA. To prevent unauthorized access to a network.\nB. To"}
+{"67": "S/MIME is a protocol that provides end-to-end encryption for email messages, making it a secure choice for transmitting sensitive information."}
+{"68": "The General Data Protection Regulation (GDPR) is a regulation that requires organizations to protect the personal data and privacy of EU citizens"}
+{"69": "Technical controls are used to restrict access and protect information systems. The answer is A.\n\nQ: What is the purpose of a firewall?"}
+{"70": "Q: What is the purpose of a firewall?\nA. To prevent unauthorized access to a network.\nB. To"}
+{"71": "Virtualization is the process of creating a virtual version of something, such as a server, operating system, or storage device, that runs on a"}
+{"72": "A security assessment should include an inventory of all company-owned devices to identify any potential security risks. The answer is D."}
+{"73": "HTTPS is a protocol that uses SSL/TLS to securely browse the web and prevent eavesdropping. The answer is B."}
+{"74": "A private cloud is a cloud computing environment that is operated solely for an individual organization, rather than being shared with other organizations. It is typically"}
+{"75": "Q: What is the purpose of a firewall?\nA. To provide a single point of access to a network.\nB. To"}
+{"76": "Q: What is the purpose of implementing a Guest Wireless Network in a corporate environment?\nA. To provide unrest"}
+{"77": "The execution phase of penetration testing involves running commands or scripts to exploit vulnerabilities and establish a foothold. The answer is D."}
+{"78": "A digital certificate is used to authenticate the identity of a user or device. The answer is A.\n\nQ: What is the purpose of"}
+{"79": "Network Segmentation is a critical concept when designing a network for a company with high availability requirements. Network Segmentation involves dividing a"}
+{"80": "Risk Assessment Tools are most useful for gathering and analyzing data during a Business Impact Analysis (BIA). The answer is D"}
+{"81": "The primary goal of digital forensics is to investigate digital data for legal purposes. The answer is D.\n\n Q: What is the purpose"}
+{"82": "The primary role of a SOC is to lead incident response and recovery efforts. The answer is B.\n\nQ: What is the purpose of"}
+{"83": "To ensure there is always an uncompromised service available\n\nQ: What is the purpose of a firewall?\nA. To prevent una"}
+{"84": "Q: What is the purpose of a firewall?\nA. To provide a single point of entry for all network traffic.\nB."}
+{"85": "A: Employing a combination of a password and a biometric measure is a primary method used in multi-factor authentication (MFA). The"}
+{"86": "Q: What is the purpose of a firewall?\nA. To protect against malware and viruses.\nB. To prevent una"}
+{"87": "Q: Which of the following is a common type of malware?\nA. Trojan\nB. Worm\nC. R"}
+{"88": "A cryptographic key is used to encrypt and decrypt data, and it is a crucial component of cryptographic algorithms. The answer is B."}
+{"89": "Q: Which of the following is a benefit of using a VPN?\nA. It provides a secure connection to the internet."}
+{"90": "The primary purpose of implementing MFA in identity management is to provide an additional layer of security beyond just passwords. The answer is D.\n\nQ"}
+{"91": "Risk mitigation is the process of reducing the likelihood and impact of risks to an acceptable level. This can be achieved through a variety"}
+{"92": "Privacy laws like GDPR and HIPAA impose legal requirements for the protection and handling of personal and sensitive data. The answer is C"}
+{"93": "MFA is the most appropriate technology for ensuring secure access to cloud resources. It requires users to provide two or more forms of authentication, such as"}
+{"94": "MAC Address Filtering is the process of restricting access to a wireless network by only allowing devices with specific MAC addresses to connect. The answer is C"}
+{"95": "Q: What is the purpose of implementing a Guest Wireless Network in a corporate environment?\nA. To provide unrest"}
+{"96": "Q: What is a common vector used by threat actors to gain unauthorized access?\nA. Internal company memos."}
+{"97": "Q: What is the purpose of a firewall?\nA. To prevent unauthorized access to a network.\nB. To"}
+{"98": "Q: Which of the following is a common method of attacking a wireless network?\nA. Wireless sniffing\nB"}
+{"99": "A CASB is a security solution that sits between the cloud service provider and the customer, providing visibility and control over cloud services. The answer is"}
+{"100": "Q: What is the purpose of a firewall?\nA. To provide a single point of access to the network.\nB. To"}
+{"101": "The security of the code, container, and cluster of the application is a key aspect to consider for securing an application in the cloud. The"}
+{"102": "Q: Which of the following is the most effective method to ensure user accountability?\nA. Assigning group accounts for all users"}
+{"103": "Data Recovery is the process of recovering deleted, encrypted, or damaged file information. The answer is B.\n\nQ: Which of"}
+{"104": "Q: Which of the following is a benefit of using a VPN?\nA. It provides a secure connection between two or more devices"}
+{"105": "The NIST Framework is a set of industry standards and best practices that help organizations manage cybersecurity risk. The answer is B.\n\nQ"}
+{"106": "Q: What is the purpose of a firewall?\nA. To provide a secure network perimeter.\nB. To prevent unaut"}
+{"107": "Q: Which of the following is a common method of attacking a wireless network?\nA. Denial of Service (DoS)"}
+{"108": "Q: What is the purpose of a firewall?\nA. To provide a secure connection between two networks.\nB. To protect against"}
+{"109": "Q: What is the purpose of a firewall?\nA. To provide a single point of access to the network.\nB. To"}

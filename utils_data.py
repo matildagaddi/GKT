@@ -5,7 +5,134 @@ import os
 import random
 from datasets import load_dataset
 
+class SecQA_dataset(Dataset):
+    def __init__(self, tokenizer, args, stage2=False, split="test", sample_idx=-1):
+        self.args = args
+        self.tokenizer = tokenizer
+        self.stage2 = stage2
+        self.sample_idx = sample_idx
 
+        # Load directly from Hugging Face
+        if split == "train":
+            split_name = "val"  # the dataset only has dev/val/test
+        elif split == "validation":
+            split_name = "val"
+        else:
+            split_name = split
+
+        print(f"Loading SecQA split: {split_name}")
+        dataset = load_dataset("zefang-liu/secqa", "secqa_v1", split=split_name)
+        self.data = self.format_data(dataset)
+
+        # Optionally truncate for debugging
+        if hasattr(args, "debug_subset") and args.debug_subset:
+            self.data = self.data[:len(self.data) // 10]
+
+        # Handle precomputed big model outputs if stage2
+        self.big_output_pre = []
+        if sample_idx >= 0:
+            model_temp = f"{args.big_model_name.split('/')[-1]}2{args.small_model_name.split('/')[-1]}"
+            folder_name = os.path.join(args.out_path, args.dataset, model_temp)
+            big_out_path = os.path.join(folder_name, f"{split}_big.jsonlines")
+            with jsonlines.open(big_out_path, "r") as big_file:
+                for i in big_file:
+                    self.big_output_pre.append(list(i.values())[0][sample_idx])
+        elif self.stage2:
+            with jsonlines.open(args.big_output_path, "r") as big_file:
+                for i in big_file:
+                    self.big_output_pre.append(list(i.values())[0])
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        ins = self.data[idx]
+        if self.stage2:
+            big_output_pre = self.big_output_pre[idx]
+            tokenized_full_data = self.tokenize(ins, big_output_pre, self.tokenizer)
+        else:
+            tokenized_full_data = self.tokenize(ins, None, self.tokenizer)
+        return tokenized_full_data
+
+    def format_data(self, dataset):
+        """
+        Convert HF SecQA entries into a common schema used by other datasets.
+        """
+        formatted = []
+        for item in dataset:
+            # Build a multiple-choice question string
+            choices = f"Answer Choices: (A) {item['A']} (B) {item['B']} (C) {item['C']} (D) {item['D']}"
+            formatted.append({
+                "question": item["Question"].strip() + " " + choices,
+                "answer": item["Answer"],  # e.g. "D"
+                "explanation": item["Explanation"]
+            })
+        return formatted
+
+    def tokenize(self, test_dict, big_output_pre, tokenizer):
+        examplar = self.create_demo_text()
+
+        if "if_concise_prompt" in self.args and self.args.if_concise_prompt:
+            system_prompt=self.args.if_concise_prompt
+        else:
+            system_prompt=""
+
+        if self.stage2:
+            instruction = system_prompt + examplar + " Q: " + test_dict["question"] + "\nA: " + big_output_pre
+        else:
+            instruction = system_prompt + examplar + " Q: " + test_dict["question"] + "\nA: "
+
+        inputs = tokenizer(
+            instruction,
+            return_tensors="pt",
+            padding='max_length',
+            max_length=1024
+        )
+        return inputs
+
+    def create_demo_text(self):
+        direct_answer_trigger_for_fewshot = "The answer is"
+        x, z, y = [], [], []
+    
+        # Example 1
+        x.append("What is a security concern associated with Software as a Service (SaaS)?\nA. High costs associated with software licensing.\nB. Consolidation of information with a single provider leading to potential data leaks.\nC. The inability to customize software according to business needs.\nD. The need for constant hardware upgrades.")
+        z.append("A security concern with SaaS is the consolidation of information with a single provider. If the server running the SaaS is compromised, sensitive information, such as the Personally Identifiable Information (PII) of many users, may be at risk of being leaked.")
+        y.append("B")
+    
+        # Example 2
+        x.append("What is the purpose of implementing a Guest Wireless Network in a corporate environment?\nA. To provide unrestricted access to company resources.\nB. To replace the primary corporate wireless network.\nC. To bypass network security protocols.\nD. To offer a separate, secure network for visitors.")
+        z.append("A Guest Wireless Network provides visitors with internet access while segregating them from the main corporate network, enhancing security by preventing unauthorized access to sensitive company resources.")
+        y.append("D")
+    
+        # Example 3
+        x.append("What is a typical indicator that an Intrusion Detection System (IDS) or Intrusion Prevention System (IPS) might identify as a network attack?\nA. Anomalies or strange behaviors in network traffic.\nB. Unauthorized software installation.\nC. Frequent system reboots.\nD. Regular updates to firewall rules.")
+        z.append("IDS/IPS systems monitor network traffic and can identify network attacks by detecting anomalies, strange behaviors, or known exploit signatures in the traffic.")
+        y.append("A")
+    
+        # Example 4
+        x.append("What is the role of physical controls in a comprehensive security plan?\nA. To solely manage digital threats such as viruses and malware.\nB. To provide aesthetic enhancements to the security infrastructure.\nC. To act as the primary defense against internal threats only.\nD. To protect against physical access and breaches, complementing technical and administrative controls.")
+        z.append("Physical controls, such as door locks and cameras, play a crucial role in protecting against physical access and breaches, and they complement technical and administrative controls to enhance overall security.")
+        y.append("D")
+    
+        # Example 5
+        x.append("Which feature should be enabled to hide the name of a wireless network, making it less visible to unauthorized users?\nA. SSID Broadcast\nB. Enabling Firewall\nC. MAC Address Filtering\nD. Disabling DHCP")
+        z.append("Disabling SSID Broadcast hides the network name from being openly broadcasted, which can help reduce the visibility of the network to unauthorized individuals.")
+        y.append("A")
+    
+        # Select number of few-shot examples
+        index_list = list(range(self.args.few_shot))
+        
+        demo_text = ""
+        for i in index_list:
+            demo_text += (
+                "Q: " + x[i] + "\n"
+                + "A: " + z[i] + " "
+                + direct_answer_trigger_for_fewshot + " " + y[i] + ".\n\n"
+            )
+    
+        return demo_text
+
+        
 
 class Gsm8k_dataset(Dataset):
     def __init__(self, tokenizer,args,stage2=False,split="test",sample_idx=-1):

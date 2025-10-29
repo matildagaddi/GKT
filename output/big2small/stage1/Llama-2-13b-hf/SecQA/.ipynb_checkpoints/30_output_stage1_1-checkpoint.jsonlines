@@ -1,0 +1,110 @@
+{"0": "Q: Which of the following is a common indicator of an SQL injection attack?\n\nA. Frequent changes in user account permissions."}
+{"1": "Q: What is the purpose of a firewall?\nA. To protect a network from unauthorized access.\nB. To"}
+{"2": "Q: What is the purpose of a Security Operations Center (SOC)?\nA. To monitor and respond to security incidents."}
+{"3": "Q: What is a key security concern with 'Insecure Design'? Answer Choices: (A) Reduced system performance due"}
+{"4": "Authentication is the process of confirming an individual's identity. The answer is C.\n\n Q: What is the purpose of a security policy"}
+{"5": "Incident response plans outline a sequence of actions for addressing various types of incidents. The answer is C.\n\n Q: What is the"}
+{"6": "To secure data transmission from mobile devices, VPN connections should be implemented. The answer is D.\n\nQ: Which of the following is a"}
+{"7": "Q: What is the purpose of a Security Operations Center (SOC)?\nA. To monitor and respond to security incidents."}
+{"8": "A common indicator of a MitM attack is the presence of data discrepancies between sent and received messages. The answer is"}
+{"9": "(B) Enforcing strong password policies on devices.\n\n Q: What is a common security concern associated with using a public Wi-Fi"}
+{"10": "Q: Which of the following is a common security concern associated with cloud computing?\nA. The inability to customize software according to"}
+{"11": "A well-defined incident response policy provides a step-by-step technical recovery plan that can be followed in the event of an incident. The answer"}
+{"12": "(B) Using a secure vault service for storing and managing API keys is the most effective strategy for securing API keys used in cloud"}
+{"13": "Q: What is the purpose of a 'chain of trust' in PKI?\nA. To establish a secure connection between a client"}
+{"14": "Q: Which of the following is a primary focus of Business Continuity Planning (BCP) during an incident response?\nA"}
+{"15": "Tailgating is a social engineering technique where an attacker follows someone into a secure area without proper credentials. The answer is D."}
+{"16": "Q: Which of the following is a common method used by hackers to gain access to a system?\nA. Social engineering\nB"}
+{"17": "Q: What is the purpose of a Security Operations Center (SOC)?\nA. To monitor and respond to security incidents."}
+{"18": "Q: What is the purpose of a 'Network Access Control' system?\nA. To prevent unauthorized access to a network"}
+{"19": "Tokenization is the process of replacing sensitive information with a non-sensitive equivalent, such as a token. This is done to protect sensitive information,"}
+{"20": "The primary purpose of implementing redundancy in network design is to provide backup in case of system failure. The answer is B.\n\n Q: What"}
+{"21": "(D) Data Loss Prevention software\n\n Q: Which of the following is a common security concern associated with cloud computing? Answer Choices"}
+{"22": "WPA2 is the recommended encryption method for the highest level of security. The answer is A.\n\nQ: What is a common security concern"}
+{"23": "A Certificate Signing Request (CSR) is a block of data that is used to apply for a digital certificate. The CSR contains information"}
+{"24": "(A) Inadequate encryption protocols.\nB:  (B) Insufficient user training on security practices.\nC:"}
+{"25": "During penetration testing, active reconnaissance usually involves interacting with the target, such as port scanning and vulnerability scanning. The answer"}
+{"26": "The primary purpose of data classification in terms of privacy and sensitive data is to differentiate data based on its sensitivity and the need for privacy"}
+{"27": "A MitM attack involves an attacker intercepting and modifying traffic between two parties, such as a user and a website. Un"}
+{"28": "To understand the average volume of attacks for resource allocation. The answer is B.\n\n Q: What is a common reason for a security breach"}
+{"29": "Q: What is a common security concern associated with cloud computing?\nA. Lack of control over data.\nB. Lack"}
+{"30": "The first step in vulnerability management during a security assessment is gathering information on hardware, network, and domain details. This information is necessary to"}
+{"31": "C. Setting a strong and complex Wi-Fi password\n\n Q: What is the purpose of a firewall? Answer Choices: (A)"}
+{"32": "The primary goal of risk management in cybersecurity is to identify, assess, and prioritize risks to minimize their impact on the organization"}
+{"33": "To secure a corporate network from internal threats, a key strategy is to segment the network and apply internal firewalls. This will prevent una"}
+{"34": "Embedded systems are often resource-constrained and have limited computing power, making them vulnerable to cyber attacks. The answer is D."}
+{"35": "A multi-layered security approach is considered beneficial in cybersecurity resilience because it provides robust protection by using multiple overlapping solutions"}
+{"36": "Q: What is a common method used to gain access to a system?\nA. Social engineering.\nB. Brute force attack"}
+{"37": "Q: Which of the following is a security concern associated with Software as a Service (SaaS)?\nA. High costs associated with"}
+{"38": "(A) Unusual outbound connections to certain IP"}
+{"39": "For a company that needs high availability and fault tolerance, a multiple server configuration with failover capabilities is most appropriate. The answer is B."}
+{"40": "Cryptography is essential in the field of security because it can be used to scramble data into non-readable text, preventing una"}
+{"41": "Q: What is the purpose of a firewall?\nA. To prevent unauthorized access to a network.\nB. To"}
+{"42": "Network segmentation limits the spread of network-based attacks within the system by isolating sensitive systems and data from the rest of the network. The answer"}
+{"43": "Q: Which of the following is a security concern associated with Software as a Service (SaaS)?\nA. High costs associated with"}
+{"44": "Q: What is the purpose of a Security Information and Event Management (SIEM) system?\nA. To monitor network traffic for anom"}
+{"45": "The most effective control for ensuring that former employees cannot access company systems is immediate deactivation of user accounts upon termination. The answer is A"}
+{"46": "Q: Which of the following is a common security concern associated with Software as a Service (SaaS)?\nA. High costs associated"}
+{"47": "3rd party programs are used to monitor specific endpoints and detect vulnerabilities. The answer is B.\n\nQ: What is a common security"}
+{"48": "Hacktivists are groups attacking for social or political ends. The answer is B.\n\n Q: What is the purpose of a"}
+{"49": "The initial step in responding to a security incident involving malware is to isolate the affected asset from the network. This will prevent the malware"}
+{"50": "Q: What is a typical indicator of web-based attacks exploiting the trust of web technologies? Answer Choices: (A)"}
+{"51": "Q: What is a key aspect of remediation in incident response?\nA. Focusing solely on financial compensation"}
+{"52": "Q: Which of the following is a key security measure to protect data in transit in a cloud computing environment?\nA. Implement"}
+{"53": "Q: What is the purpose of a DMZ?\nA. To provide a secure environment for sensitive data transfers.\nB."}
+{"54": "Security policies are crucial in an organization's cybersecurity strategy because they provide a framework for legal compliance and ethical conduct, focusing"}
+{"55": "Asymmetric encryption is used to create digital certificates, which are used to authenticate and encrypt messages between parties. The answer is C."}
+{"56": "(C) Stealing credentials and pretending to be someone else.\n\n Q: What is a key tactic used in impersonation/"}
+{"57": "Q: What is the purpose of a firewall?\nA. To prevent unauthorized access to a network.\nB. To"}
+{"58": "Q: What is the purpose of a Security Operations Center (SOC)?\nA. To monitor and respond to security incidents."}
+{"59": "The chain of custody is a critical aspect of digital forensics that ensures the integrity and reliability of digital evidence. It is"}
+{"60": "Authentication, Authorization, and Accounting (AAA) is a security design concept that involves the use of three related security services: authentication, authorization"}
+{"61": "(C) Through a permission scheme or access control list (ACL).\n\n Q: What is the purpose of a Security Information and Event Management"}
+{"62": "Q: Which of the following is a common method of gaining unauthorized access to a network?\nA. Social engineering."}
+{"63": "Q: What is the purpose of a firewall?\nA. To prevent unauthorized access to a network.\nB. To"}
+{"64": "APTs are often associated with governments and known for their extensive resources and constant threat presence. The answer is A.\n\n Q: Which"}
+{"65": "The Docker build system relies on the security of the images it is building from. The answer is C.\n\n Q: What is the purpose"}
+{"66": "An attacker attempting defense evasion may disable malware scanners and clear logs to hide their presence. The answer is D.\n\n Q"}
+{"67": "Q: Which of the following is a common security concern associated with the use of mobile devices in the workplace?\nA. The in"}
+{"68": "The General Data Protection Regulation (GDPR) is a regulation in EU law on data protection and privacy for all individuals within the"}
+{"69": "The primary purpose of technical controls in a computer security environment is to utilize technology to restrict access and protect information systems. The answer is A."}
+{"70": "The primary objective of phishing in social engineering attacks is to trick individuals into providing sensitive information through fraudulent communication. The answer is C."}
+{"71": "(B) Using virtual computing resources instead of actual hardware.\n\n Q: What is the purpose of a Security Operations Center (SOC)?"}
+{"72": "Q: What is the purpose of a security awareness program?\nA. To provide employees with the knowledge and skills to identify and"}
+{"73": "HTTPS is a secure version of HTTP that encrypts data sent between the client and the server, preventing eavesdropping. The answer is"}
+{"74": "A private cloud is a cloud infrastructure that is exclusively managed by an organization's internal IT department. The answer is C.\n\n Q"}
+{"75": "(C) Unauthorized command execution on a server or database.\n\n Q: What is the main security risk associated with 'Injection'"}
+{"76": "A key security feature to implement in a BYOD policy is requiring devices to comply with corporate security standards. This ensures that devices meet minimum"}
+{"77": "The execution phase of a penetration test is when the tester runs commands or scripts to exploit vulnerabilities and establish a foothold."}
+{"78": "A digital certificate is a digital file that contains a public key and a digital signature. It is used to authenticate the identity of a user or device"}
+{"79": "Q: What is the purpose of a Network Access Control (NAC) system?\nA. To prevent unauthorized access to"}
+{"80": "Risk Assessment Tools are most useful for gathering and analyzing data during a BIA. The answer is D.\n\n Q:"}
+{"81": "The primary goal of digital forensics is to investigate digital data for legal purposes. The answer is D.\n\n Q: What is the primary"}
+{"82": "A SOC is responsible for managing incident response and recovery efforts, including coordinating with other departments and external organizations to ensure that incidents are"}
+{"83": "The main purpose of implementing redundant services is to ensure there is always an uncompromised service available. This can be achieved by having multiple servers running"}
+{"84": "(B) Overwhelming system with requests, rendering it non-functional.\n\n Q: Which of the following is a common method"}
+{"85": "Q: Which of the following is a primary method used in multi-factor authentication (MFA)?\nA. Employing a combination"}
+{"86": "Q: What is a common characteristic of 'script kiddies' as threat actors? Answer Choices: (A) They use autom"}
+{"87": "Q: What is the purpose of a Security Operations Center (SOC)?\nA. To monitor and respond to security incidents."}
+{"88": "A cryptographic key is used to change plaintext into ciphertext using a cryptographic algorithm. The answer is B.\n\nQ: What"}
+{"89": "By defining how to identify, assess, and mitigate risks to the organization's assets and data.\n\n Q: What is the"}
+{"90": "MFA provides an additional layer of security beyond just passwords, which can be easily guessed or stolen. The answer is D.\n\n Q"}
+{"91": "Risk mitigation is the process of reducing the likelihood and impact of risks to an acceptable level. The answer is D."}
+{"92": "Privacy laws like GDPR and HIPAA impose legal requirements for the protection and handling of personal and sensitive data. The answer is C"}
+{"93": "(B) Employing multi-factor authentication (MFA) is the most appropriate technology for ensuring secure access to cloud resources. MFA"}
+{"94": "Q: What is a common security concern associated with the use of mobile devices in the workplace?\nA. Theft of sensitive data"}
+{"95": "Q: What is the purpose of a Security Operations Center (SOC)?\nA. To provide a centralized location for security monitoring"}
+{"96": "Q: Which of the following is a common vector used by threat actors to gain unauthorized access?\nA. Internal company"}
+{"97": "Security policies provide the framework for incident response within an organization. They outline the procedures and responsibilities for responding to security incidents, as well"}
+{"98": "Remote wipe capabilities are crucial for protecting corporate data on mobile devices if they are lost or stolen. This technology allows an administrator"}
+{"99": "A CASB is a cloud-based security solution that manages and enforces security policies across multiple cloud services. The answer is C."}
+{"100": "Q: What is the purpose of a Security Information and Event Management (SIEM) system?\nA. To monitor and analyze security events"}
+{"101": "The security of the code, container, and cluster of the application is a key aspect to consider for securing an application in the cloud. The"}
+{"102": "The most effective method to ensure user accountability is to implement unique user accounts for each individual. This ensures that each user is responsible for their own"}
+{"103": "Q: What is the purpose of a Security Operations Center (SOC)?\nA. To monitor and respond to security incidents."}
+{"104": "(C) Their specialized nature can require unique security approaches.\n\n Q: What is a common security concern associated with the use of mobile devices"}
+{"105": "The NIST Framework is a set of industry standards and best practices to help organizations manage cybersecurity risk. The answer is B.\n\n Q"}
+{"106": "Q: Which of the following is a critical aspect of secure application deployment?\nA. Prioritizing aesthetic aspects of the"}
+{"107": "Q: Which of the following is a common security concern associated with cloud computing?\nA. Lack of control over the physical location of"}
+{"108": "Q: What is a key consideration when designing a network for a large organization with different departments?\nA. Avoiding the"}
+{"109": "Q: Which of the following is a security concern associated with Software as a Service (SaaS)?\nA. High costs associated with"}
