@@ -64,7 +64,7 @@ class SecQA_dataset(Dataset):
             choices = f"Answer Choices: (A) {item['A']} (B) {item['B']} (C) {item['C']} (D) {item['D']}"
             formatted.append({
                 "question": item["Question"].strip() + " " + choices,
-                "answer": item["Answer"],  # e.g. "D"
+                "answer": item["Answer"],
                 "explanation": item["Explanation"]
             })
         return formatted
@@ -93,29 +93,29 @@ class SecQA_dataset(Dataset):
     def create_demo_text(self):
         direct_answer_trigger_for_fewshot = "The answer is"
         x, z, y = [], [], []
-    
+        
         # Example 1
-        x.append("What is a security concern associated with Software as a Service (SaaS)?\nA. High costs associated with software licensing.\nB. Consolidation of information with a single provider leading to potential data leaks.\nC. The inability to customize software according to business needs.\nD. The need for constant hardware upgrades.")
+        x.append("What is a security concern associated with Software as a Service (SaaS)? Answer choices: (A) High costs associated with software licensing, (B) Consolidation of information with a single provider leading to potential data leaks, (C) The inability to customize software according to business needs, (D) The need for constant hardware upgrades.")
         z.append("A security concern with SaaS is the consolidation of information with a single provider. If the server running the SaaS is compromised, sensitive information, such as the Personally Identifiable Information (PII) of many users, may be at risk of being leaked.")
         y.append("B")
     
         # Example 2
-        x.append("What is the purpose of implementing a Guest Wireless Network in a corporate environment?\nA. To provide unrestricted access to company resources.\nB. To replace the primary corporate wireless network.\nC. To bypass network security protocols.\nD. To offer a separate, secure network for visitors.")
+        x.append("What is the purpose of implementing a Guest Wireless Network in a corporate environment? Answer choices: (A) To provide unrestricted access to company resources, (B) To replace the primary corporate wireless network, (C) To bypass network security protocols, (D) To offer a separate, secure network for visitors.")
         z.append("A Guest Wireless Network provides visitors with internet access while segregating them from the main corporate network, enhancing security by preventing unauthorized access to sensitive company resources.")
         y.append("D")
     
         # Example 3
-        x.append("What is a typical indicator that an Intrusion Detection System (IDS) or Intrusion Prevention System (IPS) might identify as a network attack?\nA. Anomalies or strange behaviors in network traffic.\nB. Unauthorized software installation.\nC. Frequent system reboots.\nD. Regular updates to firewall rules.")
+        x.append("What is a typical indicator that an Intrusion Detection System (IDS) or Intrusion Prevention System (IPS) might identify as a network attack? Answer choices: (A) Anomalies or strange behaviors in network traffic, (B) Unauthorized software installation, (C) Frequent system reboots, (D) Regular updates to firewall rules.")
         z.append("IDS/IPS systems monitor network traffic and can identify network attacks by detecting anomalies, strange behaviors, or known exploit signatures in the traffic.")
         y.append("A")
     
         # Example 4
-        x.append("What is the role of physical controls in a comprehensive security plan?\nA. To solely manage digital threats such as viruses and malware.\nB. To provide aesthetic enhancements to the security infrastructure.\nC. To act as the primary defense against internal threats only.\nD. To protect against physical access and breaches, complementing technical and administrative controls.")
+        x.append("What is the role of physical controls in a comprehensive security plan? Answer choices: (A) To solely manage digital threats such as viruses and malware, (B) To provide aesthetic enhancements to the security infrastructure, (C) To act as the primary defense against internal threats only, (D) To protect against physical access and breaches, complementing technical and administrative controls.")
         z.append("Physical controls, such as door locks and cameras, play a crucial role in protecting against physical access and breaches, and they complement technical and administrative controls to enhance overall security.")
         y.append("D")
     
         # Example 5
-        x.append("Which feature should be enabled to hide the name of a wireless network, making it less visible to unauthorized users?\nA. SSID Broadcast\nB. Enabling Firewall\nC. MAC Address Filtering\nD. Disabling DHCP")
+        x.append("Which feature should be enabled to hide the name of a wireless network, making it less visible to unauthorized users? Answer choices: (A) SSID Broadcast, (B) Enabling Firewall, (C) MAC Address Filtering, (D) Disabling DHCP")
         z.append("Disabling SSID Broadcast hides the network name from being openly broadcasted, which can help reduce the visibility of the network to unauthorized individuals.")
         y.append("A")
     

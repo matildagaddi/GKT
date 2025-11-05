@@ -177,7 +177,8 @@ if __name__ == "__main__":
     elif "70b" in args.model_name:
         model = AutoModelForCausalLM.from_pretrained(args.model_name,load_in_8bit=True, torch_dtype="auto", device_map="auto",cache_dir="./cache")
     else:
-        model = AutoModelForCausalLM.from_pretrained(args.model_name, torch_dtype=torch.float16, device_map="auto")
+        model = AutoModelForCausalLM.from_pretrained(args.model_name, torch_dtype=torch.float16, device_map="auto",
+                                                    low_cpu_mem_usage=True, trust_remote_code=True)
     #dataloader = DataLoader(valid_data, batch_size=32, shuffle=False, collate_fn=collote_fn)
     
     # Define PAD Token = EOS Token
@@ -244,7 +245,7 @@ if __name__ == "__main__":
     args_dict["right"]=right
     args_dict["total"]=total
     args_dict["timestamp"] = datetime.now(ZoneInfo("America/Los_Angeles")).strftime("%Y-%m-%d_%H-%M-%S")
-    #add input path i.e. stage1_4
+    args_dict["text path"] = out_path
     
     if args.dataset in ["GSM8K","CSQA","AQuA","SecQA"]:
         args_dict["acc"]=right/total

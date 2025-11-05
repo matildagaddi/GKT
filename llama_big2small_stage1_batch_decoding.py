@@ -95,8 +95,8 @@ if __name__ == "__main__":
     elif "70b" in args.model_name:
         model = AutoModelForCausalLM.from_pretrained(args.model_name,load_in_8bit=True, torch_dtype="auto", device_map="auto",cache_dir="./cache") 
     else:
-        model = AutoModelForCausalLM.from_pretrained(args.model_name, load_in_8bit=True, device_map="auto",
-                                                     low_cpu_mem_usage=True, trust_remote_code=True) #load checkpoint shards much faster
+        model = AutoModelForCausalLM.from_pretrained(args.model_name, load_in_8bit=True, device_map="sequential", #auto
+                                                     low_cpu_mem_usage=True, trust_remote_code=True)
         # was torch_dtype=torch.float16, changed for lower GPU memory
         original_named_parameters = dict(model.named_parameters())
     tokenizer.pad_token_id = (
@@ -144,6 +144,7 @@ if __name__ == "__main__":
     args_dict["FLOPs:(G)"]=flops / 1e9
     args_dict["Number of parameters:(M)"]=params / 1e6
     args_dict["timestamp"] = datetime.now(ZoneInfo("America/Los_Angeles")).strftime("%Y-%m-%d_%H-%M-%S")
+    args_dict["text path"] = out_path
     
     #json_path = os.path.join(folder_name,str(args.max_gen_len)+"_args.json")
     basej_name = str(args.max_gen_len)+"_args"

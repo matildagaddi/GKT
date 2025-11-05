@@ -1,0 +1,110 @@
+{"0": "SQL injection attacks are often indicated by a sudden uptick in SQL queries, far beyond the usual baseline for the application. The answer is D"}
+{"1": "Plaintext is data that is in clear form, or unencrypted information. The answer is A.\n\nQ: What is the purpose"}
+{"2": "Encryption is a security measure that converts sensitive data into a format that is unreadable without a decryption key, providing a layer of security."}
+{"3": "Insecure Design is a security concern that refers to the design of a system or network that is not secure by default. This can lead to vulnerabilities"}
+{"4": "The primary purpose of authentication is to confirm an individual's identity through a specific process. The answer is C.\n\n Q: What is the"}
+{"5": "Incident response plans outline a sequence of actions for addressing various types of incidents, including processes that outline a sequence of actions for addressing various"}
+{"6": "Q: Which of the following is a common method of attacking a wireless network? Answer Choices: (A) Denial of Service"}
+{"7": "Physical controls, such as door locks and surveillance cameras, play a crucial role in protecting against physical access and breaches"}
+{"8": "Q: What is the purpose of a Network Access Control (NAC) system? Answer choices: (A) To provide a centralized"}
+{"9": "Encouraging the use of public Wi-Fi for business transactions can lead to security breaches, as public Wi-Fi networks are often un"}
+{"10": "Q: Which of the following is a common security concern with cloud computing? Answer choices: (A) The inability to customize software"}
+{"11": "Incident response policies define roles and responsibilities during an incident, including who is responsible for what and when. The answer is D."}
+{"12": "Storing API keys in plaintext within application code is the least effective strategy for securing API keys used in cloud environments. This practice leaves API"}
+{"13": "A chain of trust is established in PKI by using intermediate CAs to sign certificates issued by root CAs. This ensures that each certificate"}
+{"14": "The primary focus of BCP during an incident response is to prioritize and recover critical business processes. The answer is D.\n\nQ:"}
+{"15": "Tailgating is a social engineering technique in which an attacker follows someone into a secure area without proper credentials. The answer is D."}
+{"16": "Financial records are the most crucial data source for identifying the scope and impact of a cybersecurity incident. They provide a detailed over"}
+{"17": "Training is an important component of effective identity and account management, as it ensures that users understand the importance of security measures and their responsibilities."}
+{"18": "Q: Which of the following is a major concern with 'Cryptographic Failures'? Answer Choices: (A) Incompat"}
+{"19": "Tokenization is a security technique that replaces sensitive information with a non-sensitive equivalent, such as a token or a random string of characters,"}
+{"20": "Redundancy is a key component of network design, as it provides backup in case of system failure and ensures that data transmissions are not dis"}
+{"21": "Data Loss Prevention (DLP) software is crucial for protecting data and ensuring privacy in compliance with GDPR."}
+{"22": "WPA2 is the recommended encryption method for the highest level of security in a wireless network in an office environment. WPA2 is a more secure"}
+{"23": "A CSR is used to request a digital certificate from a Certificate Authority (CA). The answer is D.\n\nQ: What is"}
+{"24": "False positives can be a challenge in detecting network attacks using security solutions. False positives occur when a security solution incorrectly identifies a legitimate"}
+{"25": "During penetration testing, active reconnaissance involves interacting with the target, such as port scanning and vulnerability scanning, to identify potential"}
+{"26": "Data classification is used to categorize data based on its sensitivity and the need for privacy. The answer is B.\n\nQ: What"}
+{"27": "Unusual ARP packet transmission patterns could indicate a MitM attack, as ARP packets are used to establish a connection between a device and a"}
+{"28": "Establishing a baseline of attack volume is important in a SOC to understand the average volume of attacks and to allocate resources accordingly. The"}
+{"29": "MDM is a security solution that helps organizations monitor and manage security policies on mobile devices. The answer is A.\n\nQ: Which of the"}
+{"30": "The first step in vulnerability management during a security assessment is gathering information on hardware, network, and domain details. This information is used to"}
+{"31": "A strong and complex Wi-Fi password is a critical security measure to prevent unauthorized access to a wireless network. The answer is C."}
+{"32": "The primary goal of risk management in cybersecurity is to identify, assess, and prioritize risks to minimize impact on the organization."}
+{"33": "Segmenting the network and applying internal firewalls is a key strategy to secure a corporate network from internal threats. This approach helps to"}
+{"34": "Embedded systems are often resource-constrained and have limited computing power, making them more vulnerable to cyber attacks. The answer is D"}
+{"35": "A multi-layered security approach provides robust protection by using multiple overlapping solutions, which can help to prevent, detect, and respond to cy"}
+{"36": "Patterns of recon in web server logs or transient port scans are likely indicators of reconnaissance activity in a cyber attack. The answer"}
+{"37": "SFTP is a secure file transfer protocol that uses SSH to encrypt data in transit, providing a more secure alternative to FTP. The answer is"}
+{"38": "Q: Which of the following is a common method for attackers to gain access to a network? Answer choices: (A) Phishing"}
+{"39": "Multiple servers in a load-balanced configuration with failover capabilities. The answer is B.\n\nQ: Which of the following is a common"}
+{"40": "Cryptography is essential in the field of security because it scrambles data into non-readable text, preventing unauthorized access"}
+{"41": "Snort is a network intrusion detection and prevention system that can be used to analyze and alert on potential threats in network traffic in real-"}
+{"42": "Network segmentation limits the spread of network-based attacks within the system, reducing the risk of a single attack affecting the entire network. The answer"}
+{"43": "Data Preservation is the critical step in the initial stage of a digital forensic investigation. It involves the collection and preservation of evidence in a"}
+{"44": "HTTPS is a protocol that ensures secure communication by encrypting data transmitted over the internet. The answer is C.\n\nQ: Which"}
+{"45": "Q: Which of the following is a common type of malware? Answer choices: (A) Trojan, (B) Virus"}
+{"46": "Nessus is a vulnerability scanner that can identify vulnerabilities in a network's devices. The answer is D.\n\nQ:"}
+{"47": "Scripts and third-party programs are used for monitoring by automatically updating software and systems, detecting vulnerabilities, and managing user access and permissions"}
+{"48": "Hacktivists are individuals or groups that use hacking techniques for social or political ends. They may target critical infrastructure or engage in"}
+{"49": "The initial step in responding to a security incident involving malware is to isolate the affected asset from the network. This helps to prevent the spread"}
+{"50": "Q: What is the purpose of a firewall? Answer choices: (A) To provide a secure connection between a client and a server,"}
+{"51": "Remediation is a key aspect of incident response, and it involves implementing changes to prevent a recurrence of the incident. The answer is D."}
+{"52": "Encryption is a key security measure to protect data at rest in a cloud computing environment. The answer is A.\n\nQ: What is the"}
+{"53": "Q: Which of the following is a common type of malware? Answer choices: (A) Trojan, (B) Virus"}
+{"54": "Security policies are crucial in an organization's cybersecurity strategy because they provide a framework for legal compliance and ethical conduct, as well"}
+{"55": "Asymmetric encryption is used in PKI to create digital certificates and authenticate and encrypt messages between parties. The answer is B."}
+{"56": "Q: What is the purpose of a VPN? Answer choices: (A) To provide secure remote access to corporate resources, ("}
+{"57": "SSH is a secure, encrypted protocol that is commonly used for remote management of network devices. The answer is A.\n\n Q: Which of the"}
+{"58": "Incident response procedures outline specific steps to be taken during security incidents, which can help ensure that security measures are effective in an organization. The answer"}
+{"59": "The chain of custody is a critical component of digital forensics, as it ensures that digital evidence remains usable and that it has not"}
+{"60": "The 'AAA' acronym stands for Authentication, Authorization, and Accounting. The answer is A.\n\nQ: What is"}
+{"61": "Authorization is typically implemented through a permission scheme or access control list (ACL). The answer is C.\n\nQ: What is a typical"}
+{"62": "Q: Which of the following is a common type of malware? Answer choices: (A) Trojan, (B) Worm"}
+{"63": "Q: What is a common method used by attackers to gain unauthorized access to a network? Answer choices: (A)"}
+{"64": "Advanced Persistent Threats (APTs) are a group of threat actors known for their extensive resources and constant threat presence. APTs"}
+{"65": "The security of the images it is building from. The answer is C.\n\n Q: What is the purpose of a VPN? Answer Cho"}
+{"66": "An increase in database read/write operations could be an indicator of an attacker attempting defense evasion. The attacker may be attempting to avoid detection"}
+{"67": "S/MIME is a secure email transmission protocol that uses encryption to protect the contents of the email. The answer is A.\n\nQ:"}
+{"68": "The General Data Protection Regulation (GDPR) is a regulation that requires organizations to protect the personal data and privacy of EU citizens"}
+{"69": "Technical controls are used to restrict access and protect information systems. The answer is A.\n\nQ: What is the primary purpose of administrative controls"}
+{"70": "Phishing is a type of social engineering attack that involves tricking individuals into providing sensitive information through fraudulent communication. The answer is C."}
+{"71": "Virtualization is the use of virtual computing resources instead of actual hardware. The answer is B.\n\nQ: What is the purpose of a firewall"}
+{"72": "A security assessment should include an inventory of all company-owned devices to determine which devices are vulnerable to security threats. The answer is"}
+{"73": "HTTPS is a secure version of HTTP that uses SSL/TLS encryption to prevent eavesdropping and ensure the integrity of data transmitted over"}
+{"74": "A private cloud is a cloud computing environment that is dedicated to a single organization. It is managed and hosted internally, and it uses the organization's"}
+{"75": "Injection vulnerabilities can allow unauthorized access to user accounts, which can lead to data breaches and other security incidents. The answer"}
+{"76": "Requiring devices to comply with corporate security standards is a key security feature to implement in a BYOD policy. This ensures that devices"}
+{"77": "The execution phase involves running commands or scripts to exploit vulnerabilities and establish a foothold. The answer is D.\n\nQ: What"}
+{"78": "A digital certificate is used to authenticate the identity of a user or device in a PKI. The answer is A.\n\nQ: What"}
+{"79": "Network Segmentation is a critical concept in designing a network for high availability requirements. By segmenting the network into smaller, isolated segments,"}
+{"80": "Risk assessment tools are used to identify and analyze potential risks to an organization's operations, including threats, vulnerabilities, and impact"}
+{"81": "The primary goal of digital forensics is to investigate digital data for legal purposes. The answer is D.\n\nQ: What is the purpose"}
+{"82": "The primary role of a SOC is to lead incident response and recovery efforts. The answer is B.\n\nQ: Which of the following is"}
+{"83": "Redundant services are implemented to ensure that there is always an uncompromised service available in the event of an incident. This can help to"}
+{"84": "A DoS or DDoS attack is characterized by overwhelming a system with requests, rendering it non-functional. The answer"}
+{"85": "MFA is a security measure that requires multiple forms of authentication to gain access to a system or resource. This can include a combination of a password and"}
+{"86": "Script kiddies are typically young and inexperienced hackers who use automated tools to launch attacks. They may not fully understand the"}
+{"87": "Q: What is the purpose of a firewall? Answer choices: (A) To protect against malware, (B) To protect against"}
+{"88": "A cryptographic key is used to encrypt and decrypt data using a cryptographic algorithm. The answer is B.\n\nQ: What is a"}
+{"89": "By defining how to identify, assess, and mitigate risks to the organization's assets and data, security policies contribute to an organization'"}
+{"90": "MFA is a security measure that requires users to provide two or more forms of authentication to access a system or resource. This provides an additional layer of"}
+{"91": "Risk mitigation is the process of reducing the likelihood and impact of risks to an acceptable level. This can be achieved through a variety"}
+{"92": "Privacy laws like GDPR and HIPAA impose legal requirements for the protection and handling of personal and sensitive data. The answer is C"}
+{"93": "MFA is a security measure that requires users to provide multiple forms of authentication, such as a password and a one-time code sent to their phone"}
+{"94": "MAC Address Filtering is a security feature that allows an administrator to control which devices can connect to a wireless network by filtering out devices that do not have"}
+{"95": "The hybrid cloud model allows organizations to keep sensitive data on-premises while leveraging public cloud for less critical data. This approach provides a"}
+{"96": "Phishing sites and messages are a common vector used by threat actors to gain unauthorized access. The answer is B.\n\n Q:"}
+{"97": "Q: What is the purpose of a firewall? Answer choices: (A) To provide a secure connection between two networks, (B)"}
+{"98": "Remote wipe capabilities allow organizations to remotely delete corporate data from a lost or stolen device, ensuring that sensitive information is not"}
+{"99": "A CASB is used to manage and enforce security policies across multiple cloud services. The answer is C.\n\nQ: Which of the following"}
+{"100": "Security misconfiguration is a significant vulnerability because it can lead to unauthorized access and data breaches. This vulnerability occurs when system settings"}
+{"101": "The security of the code, container, and cluster of the application is a key aspect to consider for securing an application in the cloud. The"}
+{"102": "Q: Which of the following is a common method for an attacker to gain access to a network? Answer Choices: (A)"}
+{"103": "Data recovery is a type of digital forensic analysis that focuses on recovering deleted, encrypted, or damaged file information. The answer is"}
+{"104": "Q: What is the purpose of a firewall? Answer Choices: (A) To prevent unauthorized access to the network,"}
+{"105": "The NIST Framework provides a set of industry standards and best practices to help organizations manage cybersecurity risk. The answer is B.\n\nQ"}
+{"106": "Q: What is the purpose of a firewall? Answer Choices: (A) To provide a secure connection between a client and a server"}
+{"107": "File integrity monitoring systems are effective for identifying unauthorized changes to system files and configurations during an incident. These systems monitor file changes and alert"}
+{"108": "RBAC is a security best practice that can be used to enhance security by limiting access to specific resources based on the user's role"}
+{"109": "Q: What is the purpose of a firewall? Answer choices: (A) To protect against malicious software, (B) To protect"}

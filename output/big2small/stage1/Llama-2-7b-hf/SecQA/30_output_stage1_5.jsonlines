@@ -1,0 +1,110 @@
+{"0": "A sudden uptick in SQL queries, far beyond the usual baseline for the application, is a common indicator of an SQL injection"}
+{"1": "Q: Which of the following is a security concern associated with Software as a Service (SaaS)?\nA. High costs associated with"}
+{"2": "Q: What is the significance of encryption in protecting sensitive data? Answer Choices: (A) It is only used for data in"}
+{"3": "A key security concern with 'Insecure Design' is the system being susceptible to a wide range of attacks. The answer is"}
+{"4": "Authentication is the process of confirming the identity of a user. It is the first step in the security design process. The answer is C."}
+{"5": "Processes are important in incident response planning because they outline a sequence of actions for addressing various types of incidents. The answer is C."}
+{"6": "The correct answer is D. VPN connections are used to secure data transmission from mobile devices.\n\n Q: Which of the following"}
+{"7": "Physical controls contribute to an organization's security by impacting the overall security through measures like door locks and surveillance"}
+{"8": "A common indicator of a MitM attack is frequent password reset requests from users. The answer is C.\n\n Q: What"}
+{"9": "Installing games and social media apps on business devices is not an essential security measure. The answer is B.\n\n Q: Which"}
+{"10": "A high availability of server resources would likely indicate an intrusion attempt on a network application. The answer is D."}
+{"11": "The primary purpose of having a well-defined incident response policy in an organization is to define roles and responsibilities during an incident. The answer is"}
+{"12": "The most effective strategy for securing API keys used in cloud environments is to use a secure vault service for storing and managing API keys."}
+{"13": "A chain of trust is established in PKI by using intermediate CAs signing certificates issued by root CAs. The answer is"}
+{"14": "A primary focus of Business Continuity Planning (BCP) during an incident response is to prioritize and recover critical business"}
+{"15": "D. Following someone into a secure area without proper credentials.\n\n Q: Which of the following is a type of malware? Answer Choices"}
+{"16": "Financial records are the most crucial data source for identifying the scope and impact of a cybersecurity incident. The answer is A"}
+{"17": "Training is an important part of identity and account management. It ensures that users understand the importance of security measures and their responsibilities. The answer"}
+{"18": "Q: Which of the following is a major concern with 'Cryptographic Failures'? Answer Choices: (A) Incompat"}
+{"19": "Tokenization is used to replace sensitive information with a non-sensitive equivalent. The answer is A.\n\n Q: Which of the following is"}
+{"20": "To provide backup in case of system failure\n\n Q: Which of the following is a characteristic of a cloud computing environment? Answer Choices: ("}
+{"21": "Data Loss Prevention (DLP) software is crucial for protecting data and ensuring privacy. DLP software helps organizations identify and"}
+{"22": "WPA2 is the recommended encryption method for the highest level of security. WPA2 is the most secure encryption method available for wireless networks. The"}
+{"23": "A CSR is used to request a digital certificate from a Certificate Authority (CA). The answer is D.\n\n Q: What is"}
+{"24": "The high rate of false positives can be a challenge in detecting network attacks using security solutions. False positives occur when a"}
+{"25": "Q: Which of the following is a common method of attacking a wireless network?\nA. Using a wireless sniffer to capture data"}
+{"26": "To categorize data based on its importance to the organization.\n\n Q: Which of the following is a key component of a data classification policy?"}
+{"27": "Q: What is a security concern associated with Software as a Service (SaaS)?\nA. High costs associated with software licens"}
+{"28": "To understand the average volume of attacks for resource allocation. The answer is B.\n\n Q: Which of the following is a"}
+{"29": "The primary goal of MDM is to monitor and manage security policies on mobile devices. The answer is A.\n\n Q: What is a benefit"}
+{"30": "The first step in vulnerability management during a security assessment is gathering information on hardware, network, and domain details. The answer is B."}
+{"31": "Using an easy-to-guess password for convenience is a critical security measure to prevent unauthorized access. The answer"}
+{"32": "The primary goal of risk management in cybersecurity is to identify, assess, and prioritize risks to minimize impact on the organization."}
+{"33": "Allowing unrestricted access within the network is not a key strategy to secure a corporate network from internal threats. The"}
+{"34": "Embedded systems are often limited in resources and computing power, making them vulnerable to cyber attacks. The answer is D.\n\n Q"}
+{"35": "A multi-layered security approach is considered beneficial in cybersecurity resilience because it provides robust protection by using multiple"}
+{"36": "A likely indicator of a reconnaissance activity in a cyber attack is an increase in system resource usage. The answer is B."}
+{"37": "SFTP (Secure File Transfer Protocol) is the best protocol for securing file transfers. It is a secure"}
+{"38": "Unusual outbound connections to certain IP addresses would be a likely indicator of a machine infected with malware. The answer"}
+{"39": "A single server with a strong firewall is the most appropriate network design for a"}
+{"40": "Cryptography is essential in the field of security because it makes data storage more efficient. The answer is B.\n\n Q: Which of"}
+{"41": "Snort is a tool that is used for real-time analysis and alerting of potential threats in network traffic. Snort is"}
+{"42": "Network segmentation is a security technique that divides a network into smaller segments, each with its own security policy. This helps to limit the spread"}
+{"43": "Data Preservation is the critical step in the initial stage of a digital forensic investigation. The answer is A.\n\n Q: Which of"}
+{"44": "HTTPS is the protocol that should be implemented to ensure secure communication. The answer is C.\n\n Q: Which of the following is a"}
+{"45": "Immediate deactivation of user accounts upon termination is the most effective control for ensuring that former employees cannot access company systems. The answer"}
+{"46": "Nessus is a tool that is used to identify vulnerabilities in a network's devices. The answer is D.\n\n Q: Which"}
+{"47": "Scripts or third-party programs are used for monitoring to automatically update software and systems. The answer is D.\n\n Q: Which"}
+{"48": "Hacktivists are groups of individuals using advanced hacking techniques for social or political ends. The answer is B.\n\n Q:"}
+{"49": "The initial step in responding to a security incident involving malware is to isolate the affected asset from the network. The answer is D."}
+{"50": "The answer is B. Implicit trust in scripts, commands, and cookies received by web pages is a typical indicator of web-"}
+{"51": "A key aspect of remediation in incident response is conducting a detailed risk assessment. The answer is B.\n\n Q"}
+{"52": "Implementing strong encryption for stored data is a key security measure to protect data at rest. The answer is A.\n\n Q"}
+{"53": "The most effective way to ensure data confidentiality and integrity is to use a VPN to encrypt data in transit. The answer is D."}
+{"54": "Security policies are crucial in an organization's cybersecurity strategy because they provide a framework for legal compliance and ethical conduct. The"}
+{"55": "Asymmetric encryption is used to create digital certificates. The answer is B.\n\n Q: Which of the following is a"}
+{"56": "Using malware to infect a victim's computer is a key tactic used in impersonation/identity theft in social"}
+{"57": "SSH (Secure Shell) is a protocol that provides a secure, encrypted connection for remote management of a network device. SSH is a"}
+{"58": "Incident response procedures contribute to the effectiveness of security measures in an organization by outlining specific steps to be taken during security incidents. The"}
+{"59": "The chain of custody is important in digital forensics because it ensures that digital evidence remains usable. The answer is B."}
+{"60": "The 'AAA' acronym stands for Authentication, Authorization, and Accounting. The answer is A.\n\n Q: What is"}
+{"61": "Q: Which of the following is a common security concern with cloud computing?\nA. The inability to customize software according to business"}
+{"62": "Known exploit signatures, such as SQL injection patterns, are often identified by Intrusion Detection Systems (IDS"}
+{"63": "Privilege escalation is the process of gaining access to a higher level of privileges than what is normally allowed. This"}
+{"64": "Advanced Persistent Threats (APTs) are a group of threat actors that are often associated with governments and known for their"}
+{"65": "The security of the images it is building from.\n\n Q: Which of the following is a benefit of using a containerized application?"}
+{"66": "Q: Which of the following is a common method of attacking a web application?\nA. SQL injection\nB. Cross-site"}
+{"67": "S/MIME is a protocol that allows for the secure transmission of email. It is a good choice for secure email transmission."}
+{"68": "The General Data Protection Regulation (GDPR) is a regulation in EU law on data protection and privacy for all individuals within the"}
+{"69": "The primary purpose of technical controls in a computer security environment is to utilize technology to restrict access and protect information systems. The answer is A."}
+{"70": "The primary objective of phishing in social engineering attacks is to trick individuals into providing sensitive information through fraudulent communication. The answer is C"}
+{"71": "Virtualization is the use of software to create a virtual version of a computing resource, such as a server, storage device, or network. The"}
+{"72": "A CVSS (Common Vulnerability Scoring System) score is an important tool used in the evaluation phase of a security assess"}
+{"73": "HTTPS is the protocol that should be used for securely browsing the web and preventing eavesdropping. The answer is B."}
+{"74": "The defining feature of a private cloud is that it is exclusively managed by third-party cloud service providers. The answer is D."}
+{"75": "The main security risk associated with injection vulnerabilities is unauthorized command execution on a server or database. The answer is C"}
+{"76": "A key security feature to implement in a BYOD policy is requiring devices to comply with corporate security standards. The answer is C"}
+{"77": "The execution phase is the phase where the actual penetration testing is performed. The answer is D.\n\n Q: What is the purpose of"}
+{"78": "A digital certificate is used to authenticate the identity of a user or device. The answer is A.\n\n Q: Which"}
+{"79": "Intrusion Detection System (IDS) is a critical component in a high availability network. IDS is a system"}
+{"80": "Risk assessment tools are most useful for gathering and analyzing data.\n\n Q: Which of the following is a benefit of using a"}
+{"81": "The primary goal of digital forensics is to investigate digital data for legal purposes. The answer is D.\n\n Q: What is the primary"}
+{"82": "The primary role of a SOC is to lead incident response and recovery efforts. The answer is B.\n\n Q: Which of the following is"}
+{"83": "To ensure there is always an uncompromised service available. The answer is C.\n\n Q: What is the purpose"}
+{"84": "The correct answer is B. A DoS or DDoS attack is an attempt to overwhelm a server with requests,"}
+{"85": "A primary method used in multi-factor authentication (MFA) is employing a combination of a password and a biometric measure."}
+{"86": "Script kiddies are typically young hackers who use automated tools to launch attacks. They may not fully understand the tools they"}
+{"87": "A typical technique used during the reconnaissance phase of penetration testing is collecting information about the target, like vulnerability sc"}
+{"88": "A cryptographic key is used to change plaintext into ciphertext using a cryptographic algorithm. The answer is B."}
+{"89": "By defining how to identify, assess, and mitigate risks to the organization's assets and data.\n\n Q: Which of the"}
+{"90": "The primary purpose of implementing multi-factor authentication (MFA) in identity management is to provide an additional layer of security beyond just passwords. The"}
+{"91": "Risk mitigation is the process of reducing the likelihood and impact of risks to an acceptable level. The answer is D."}
+{"92": "Q: Which of the following is a benefit of using Software as a Service (SaaS)?\nA. The ability to customize"}
+{"93": "MFA is the most appropriate technology for ensuring secure access to cloud resources. MFA requires users to provide two or more pieces of evidence to verify"}
+{"94": "MAC Address Filtering\n\n Q: Which of the following is a benefit of using a wireless network?\nA. Wireless networks are more"}
+{"95": "A hybrid cloud model allows organizations to keep sensitive data on-premises while leveraging public cloud for less critical data. The answer is"}
+{"96": "A common vector used by threat actors to gain unauthorized access is phishing sites and messages. The answer is B."}
+{"97": "Q: Which of the following is a security concern associated with Software as a Service (SaaS)?\nA. High costs associated with"}
+{"98": "Unrestricted app installations.\n\n Q: Which of the following is a benefit of using a cloud-based service?"}
+{"99": "The primary purpose of using a CASB in a cloud environment is to manage and enforce security policies across multiple cloud services. The answer"}
+{"100": "Security Misconfiguration is a significant vulnerability because it can lead to unauthorized access and data breaches. The answer is D."}
+{"101": "The key aspect to consider for securing an application in the cloud is the security of the code, container, and cluster of the application. The"}
+{"102": "Q: Which of the following is a benefit of using a cloud-based service?\nA. The service provider is responsible for all security"}
+{"103": "Data Recovery\n\n Q: What is the process of recovering deleted, encrypted, or damaged file information? Answer Choices: (A"}
+{"104": "Specialized systems are considered challenging in terms of security because their specialized nature can require unique security approaches. The answer is C."}
+{"105": "The primary purpose of the NIST Framework is to provide a set of industry standards and best practices to help organizations manage cybersecurity risk. The answer"}
+{"106": "Q: Which of the following is a critical aspect of secure application deployment? Answer Choices: (A) Prioritizing aesth"}
+{"107": "Q: Which of the following is a type of malware?\nA. Trojan\nB. Rootkit\nC. Worm"}
+{"108": "Avoiding the use of wireless networks entirely.\n\n Q: Which of the following is a benefit of using a virtual private"}
+{"109": "Implementing RAID storage systems is not the most appropriate solution for a company looking to maintain operations during a major incident, such as"}
