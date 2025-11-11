@@ -1,0 +1,110 @@
+{"0": "SQL injection attacks are often identified by a sudden uptick in SQL queries, far beyond the usual baseline for the application. The answer is D"}
+{"1": "Plaintext is unencrypted information. The answer is A.\n\n Q: What is the purpose of a firewall? Answer Choices:"}
+{"2": "Encryption is a security enhancement that converts sensitive data into a format that is unreadable without a decryption key. The answer is D."}
+{"3": "Q: What is a key security concern with 'Insecure Design'? Answer Choices: (A) Reduced system performance due"}
+{"4": "The primary purpose of authentication is to confirm an individual's identity through a specific process. The answer is C.\n\n Q: What is the"}
+{"5": "Incident response plans are based on a sequence of actions for addressing various types of incidents. The answer is C.\n\n Q: What"}
+{"6": "VPN connections should be used to secure data transmission from mobile devices. The answer is D.\n\n Q: Which of the following is a common"}
+{"7": "Physical controls are a type of security measure that focuses on the physical environment of an organization. They include measures such as door locks, surve"}
+{"8": "A MitM attack is a type of cyberattack where an attacker intercepts and relays messages between two parties, typically to steal"}
+{"9": "Encouraging the use of public Wi-Fi for business transactions is a security risk. The answer is B.\n\nQ: What is"}
+{"10": "Regular updates to application software would likely indicate an intrusion attempt on a network application. The answer is D.\n\nQ: What is the"}
+{"11": "Incident response policies are designed to provide a step-by-step technical recovery plan in the event of an incident. The answer is B."}
+{"12": "Storing API keys in plaintext within application code is the least effective strategy for securing API keys. The answer is B.\n\nQ"}
+{"13": "A 'chain of trust' is established in PKI by using intermediate CAs to sign certificates issued by root CAs. The answer is B"}
+{"14": "BCP is a process that focuses on restoring business operations as quickly as possible after an incident. The answer is C.\n\n Q:"}
+{"15": "Tailgating is a social engineering technique in which an attacker follows someone into a secure area without proper credentials. The answer is D."}
+{"16": "Financial records are the most crucial data source for identifying the scope and impact of a cybersecurity incident. The answer is A."}
+{"17": "Training is an important part of effective identity and account management. It ensures that users understand the importance of security measures and their responsibilities. The"}
+{"18": "Cryptographic Failures is a major concern with cryptography. Cryptography is the process of transforming data into an unreadable format."}
+{"19": "Tokenization is the process of replacing sensitive information with a non-sensitive equivalent. The answer is A.\n\nQ: What is the purpose"}
+{"20": "The primary purpose of implementing redundancy in network design is to provide backup in case of system failure. The answer is B.\n\nQ: What"}
+{"21": "Data Loss Prevention (DLP) software is crucial for protecting data and ensuring privacy. DLP software can identify sensitive data"}
+{"22": "WPA2 is the most secure encryption method for wireless networks. WEP is the least secure. The answer is A.\n\nQ: What"}
+{"23": "A CSR is used to request a digital certificate from a Certificate Authority (CA). The answer is D.\n\nQ: What is"}
+{"24": "Q: What is a common method used to detect network attacks? Answer choices: (A) Intrusion Detection System (ID"}
+{"25": "Active reconnaissance involves interacting with the target, such as port scanning and vulnerability scanning. The answer is C.\n\nQ:"}
+{"26": "Data classification is used to categorize data based on its sensitivity and the need for privacy. The answer is B.\n\nQ: What"}
+{"27": "Q: What is the purpose of a firewall? Answer choices: (A) To prevent unauthorized access to a network, ("}
+{"28": "Establishing a baseline of attack volume is important in a SOC to understand the average volume of attacks for resource allocation. The answer is"}
+{"29": "MDM is a security solution that allows organizations to monitor and manage security policies on mobile devices. The answer is A.\n\nQ: What is"}
+{"30": "The first step in vulnerability management is to gather information on hardware, network, and domain details. This information is used to identify potential vulnerabilities and"}
+{"31": "Setting a strong and complex Wi-Fi password is a critical security measure to prevent unauthorized access. The answer is C.\n\nQ"}
+{"32": "The primary goal of risk management in cybersecurity is to identify, assess, and prioritize risks to minimize impact on the organization."}
+{"33": "Segmenting the network and applying internal firewalls is a key strategy to secure a corporate network from internal threats. The answer is B"}
+{"34": "Embedded systems are often resource-constrained and have limited computing power, making them more susceptible to cyber attacks. The answer is"}
+{"35": "A multi-layered security approach is considered beneficial in cybersecurity resilience because it provides robust protection by using multiple overlapping solutions"}
+{"36": "Patterns of recon in web server logs or transient port scans.\n\n Q: What is the purpose of a honeypot?"}
+{"37": "SFTP (Secure File Transfer Protocol) is a secure file transfer protocol that uses SSH (Secure Shell) to transfer files. It"}
+{"38": "Unusual outbound connections to certain IP addresses is a likely indicator of a machine infected with malware. The answer is A."}
+{"39": "Multiple servers in a load-balanced configuration with failover capabilities is the most appropriate network design for a company that needs high availability and fault toler"}
+{"40": "Cryptography is essential in the field of security because it scrambles data into non-readable text, preventing unauthorized access"}
+{"41": "Snort is a free and open-source network intrusion detection and prevention system (IDS/IPS) that can be used to analyze"}
+{"42": "Network segmentation is a security best practice that divides a network into smaller, more manageable segments. This reduces the attack surface and limits the spread"}
+{"43": "Data Preservation is the first step in a digital forensic investigation. The answer is A.\n\nQ: Which of the following is a"}
+{"44": "HTTPS is a protocol that ensures secure communication by encrypting data transmitted over the internet. The answer is C.\n\n Q: Which"}
+{"45": "Immediate deactivation of user accounts upon termination is the most effective control for ensuring that former employees cannot access company systems. The answer is"}
+{"46": "Nessus is a vulnerability scanner that can identify vulnerabilities in a network's devices. The answer is C.\n\n Q:"}
+{"47": "Scripts and third-party programs are used for monitoring in security assessments to detect vulnerabilities, manage user access and permissions, and automatically update software"}
+{"48": "Hacktivists are individuals or groups that use hacking techniques to attack for social or political ends. The answer is B.\n\nQ"}
+{"49": "The initial step in responding to a security incident involving malware is to isolate the affected asset from the network. This prevents the malware from"}
+{"50": "Q: What is a typical indicator of web-based attacks exploiting the trust of web technologies? Answer choices: (A) E"}
+{"51": "The key aspect of remediation in incident response is to implement changes to prevent a recurrence of the incident. The answer is D."}
+{"52": "Encryption is a key security measure to protect data at rest. The answer is A.\n\n Q: Which of the following is a key security"}
+{"53": "The most effective way to ensure data confidentiality and integrity is to use a VPN to encrypt data in transit. The answer is D."}
+{"54": "Security policies are crucial in an organization's cybersecurity strategy because they provide a framework for legal compliance and ethical conduct. They also"}
+{"55": "Asymmetric encryption is used to create digital certificates and to authenticate and encrypt messages between parties. The answer is C.\n\nQ:"}
+{"56": "Social engineering is a key tactic used in impersonation/identity theft. Social engineering involves manipulating people into performing actions or divulging"}
+{"57": "SSH is a secure, encrypted protocol used to remotely manage network devices. The answer is A.\n\nQ: Which of the following is"}
+{"58": "Incident response procedures are a critical component of an organization's security strategy. They outline specific steps to be taken during security incidents, such as"}
+{"59": "The chain of custody is important in digital forensics because it ensures that digital evidence remains usable. The answer is B."}
+{"60": "The 'AAA' acronym stands for Authentication, Authorization, and Accounting. The answer is A.\n\nQ: What is"}
+{"61": "Authorization is implemented through a permission scheme or access control list (ACL). The answer is C.\n\nQ: What is the purpose of"}
+{"62": "Q: Which of the following is a common method of attack used by hackers? Answer choices: (A) Social engineering, (B"}
+{"63": "Privilege escalation is a type of network attack where an attacker gains access to a higher level of privileges than they are authorized"}
+{"64": "APTs are a group of threat actors that are often associated with governments and known for their extensive resources and constant threat presence. The answer is"}
+{"65": "The security of the images it is building from. The answer is C.\n\nQ: What is a common security concern with Software as a Service"}
+{"66": "Q: What is the purpose of a firewall? Answer choices: (A) To prevent unauthorized access to a network, ("}
+{"67": "S/MIME is a protocol that allows for secure email transmission by encrypting the email message and its attachments. The answer is A."}
+{"68": "The General Data Protection Regulation (GDPR) is a regulation in EU law on data protection and privacy for all individuals within the"}
+{"69": "Technical controls are used to restrict access and protect information systems. The answer is A.\n\nQ: What is the purpose of a firewall?"}
+{"70": "Phishing is a type of social engineering attack that aims to trick individuals into providing sensitive information through fraudulent communication. The answer is C"}
+{"71": "Virtualization is the use of virtual computing resources instead of actual hardware. The answer is B.\n\n Q: What is a key characteristic of cloud"}
+{"72": "A security assessment is a process that evaluates the security of an organization's systems and networks. The evaluation phase of a security assessment involves"}
+{"73": "HTTPS is a secure version of HTTP that uses SSL/TLS to encrypt the communication between the client and the server. The answer is B."}
+{"74": "A private cloud is a cloud computing model that is operated solely for a single organization, whether it is business or government. The answer is C."}
+{"75": "Injection vulnerabilities allow attackers to inject malicious code into a web application, which can be used to execute commands on the server or database."}
+{"76": "Q: What is the purpose of implementing a Guest Wireless Network in a corporate environment? Answer choices: (A) To"}
+{"77": "The execution phase of penetration testing is the phase where the tester runs commands or scripts to exploit vulnerabilities and establish a foothold"}
+{"78": "A digital certificate is used to authenticate the identity of a user or device. The answer is A.\n\nQ: What is a common use"}
+{"79": "Network segmentation is a critical concept for high availability. Segmentation allows for the creation of multiple networks that can be isolated from each other,"}
+{"80": "Risk Assessment Tools are most useful for gathering and analyzing data for a BIA. The answer is D.\n\nQ:"}
+{"81": "The primary goal of digital forensics is to investigate digital data for legal purposes. The answer is D.\n\nQ: What is the purpose"}
+{"82": "The primary role of a SOC is to lead incident response and recovery efforts. The answer is B.\n\nQ: What is a common method"}
+{"83": "Q: What is the purpose of implementing a Guest Wireless Network in a corporate environment? Answer choices: (A) To"}
+{"84": "A DoS or DDoS attack is indicated by a sudden increase in network traffic, which can result in decreased server response times and overwh"}
+{"85": "MFA is a security method that requires a user to provide two or more forms of identification to gain access to a system. The answer is B."}
+{"86": "Script kiddies are typically young, inexperienced hackers who use automated tools to launch attacks. They may not fully understand the"}
+{"87": "The reconnaissance phase of penetration testing involves collecting information about the target, such as vulnerability scanning and network mapping. The answer is"}
+{"88": "A cryptographic key is used to change plaintext into ciphertext using a cryptographic algorithm. The answer is B.\n\n Q: What"}
+{"89": "Security policies contribute to an organization's overall risk management strategy by defining how to identify, assess, and mitigate risks to the organization'"}
+{"90": "MFA is a security measure that requires users to provide multiple forms of authentication, such as a password and a one-time code sent to their mobile"}
+{"91": "Risk mitigation is the process of reducing the likelihood and impact of risks to an acceptable level. The answer is D."}
+{"92": "Privacy laws like GDPR and HIPAA impose legal requirements for the protection and handling of personal and sensitive data. The answer is C"}
+{"93": "MFA is the most appropriate technology for ensuring secure access to cloud resources. MFA requires users to provide multiple forms of authentication, such as a"}
+{"94": "MAC address filtering is a method of controlling which devices can connect to a wireless network. It is used to prevent unauthorized devices from connecting"}
+{"95": "A hybrid cloud model allows organizations to keep sensitive data on-premises while leveraging public cloud for less critical data. The answer is C"}
+{"96": "Phishing sites and messages are a common vector used by threat actors to gain unauthorized access. The answer is B.\n\n Q:"}
+{"97": "Security policies outline the procedures and responsibilities for responding to security incidents. The answer is D.\n\n Q: What is the purpose"}
+{"98": "Remote wipe capabilities are crucial for protecting corporate data on mobile devices if they are lost or stolen. Remote wipe capabilities"}
+{"99": "A CASB is a security solution that sits between the cloud service provider and the user, allowing the user to manage and enforce security policies across"}
+{"100": "Q: What is the purpose of a Vulnerability Assessment? Answer choices: (A) To identify security vulnerabilities in"}
+{"101": "The security of the code, container, and cluster of the application is a key aspect to consider for securing an application in the cloud. The"}
+{"102": "Q: Which of the following is a common method for protecting data at rest? Answer choices: (A) Encrypting data on"}
+{"103": "Data Recovery is the process of recovering deleted, encrypted, or damaged file information. The answer is B.\n\nQ: What is"}
+{"104": "Specialized systems are considered challenging in terms of security because they often operate independently of other systems and require unique security approaches. The answer is C."}
+{"105": "The NIST Framework is a set of industry standards and best practices to help organizations manage cybersecurity risk. The answer is B.\n\nQ"}
+{"106": "The answer is C.\n\n Q: Which of the following is a common security concern with Software as a Service (SaaS)? Answer Cho"}
+{"107": "File integrity monitoring systems are the most effective for identifying unauthorized changes to system files and configurations during an incident. The answer is C."}
+{"108": "RBAC is a security best practice that allows network administrators to assign different levels of access to different users based on their role within the organization."}
+{"109": "Hot, cold, and warm sites are used to maintain operations during a major incident. Hot sites are used to restore operations immediately, cold sites are used"}

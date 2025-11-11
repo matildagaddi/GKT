@@ -165,7 +165,6 @@ if __name__ == "__main__":
     while os.path.isfile(out_path):
         out_path = os.path.join(folder_name, f"{base_name}_{counter}.jsonlines")
         counter += 1
-    
     print(f"Output will be saved to: {out_path}")
 
 
@@ -216,17 +215,19 @@ if __name__ == "__main__":
         # end time
         end_time = time.time()
         execution_time = end_time - start_time
-        print("!!!execution_time",execution_time)
+        print("-------------")
+        print("!!! execution_time",execution_time)
+        print("-------------")
 
         if args.dataset in ["GSM8K","CSQA","AQuA","SecQA"]: #check if SecQA needs something different
-            qid=0
+            #qid=0
             for qid, ans in enumerate(answers):
                 item={}
                 item[qid]=ans
                 writer.write(item)
                 if str(ans["ans"])==str(dataset.data[qid]["answer"]):
                     right+=1
-                qid+=1
+              #  qid+=1
         elif args.dataset in ["CNNDM"]:
             qid=0
             answer_list=[]
@@ -247,9 +248,9 @@ if __name__ == "__main__":
     args_dict["timestamp"] = datetime.now(ZoneInfo("America/Los_Angeles")).strftime("%Y-%m-%d_%H-%M-%S")
     args_dict["text path"] = out_path
     
-    if args.dataset in ["GSM8K","CSQA","AQuA","SecQA"]:
-        args_dict["acc"]=right/total
-        print("!!! right: ",right, "   total: ", total, "   accuracy: ", right/total)
+    #if args.dataset in ["GSM8K","CSQA","AQuA","SecQA"]:
+    args_dict["acc"]=right/total
+    print("!!! right: ",right, "   total: ", total, "   accuracy: ", right/total)
 
     args_dict["FLOPs:(G)"]=flops / 1e9
     args_dict["Number of parameters:(M)"]=params / 1e6
@@ -265,7 +266,8 @@ if __name__ == "__main__":
         json_path = os.path.join(folder_name, f"{basej_name}_{counter}.json")
         counter += 1
     
-    print(f"Args will be saved to: {json_path}")
+    print(f"Args stage 2 will be saved to: {json_path}")
     
     with open(json_path, "w") as json_file:
         json.dump(args_dict, json_file, indent=4)
+    print("------------------------------ END ------------------------------")

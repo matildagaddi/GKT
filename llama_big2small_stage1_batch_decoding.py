@@ -25,7 +25,8 @@ def generate(
     top_p= 0.9
     max_gen_len = args.max_gen_len
     for i in input_data:
-        input_data[i]=input_data[i].squeeze(1)
+        input_data[i]=input_data[i].squeeze(1) 
+       
     output_sequences = model.generate(**input_data, max_new_tokens=max_gen_len, temperature = 0.2,top_p = top_p) # temp was 0.8, changed to handle "Assertion `probability tensor contains either `inf`, `nan` or element < 0` failed."
     results=tokenizer.batch_decode(output_sequences, skip_special_tokens=True)
     return results
@@ -34,6 +35,7 @@ def generation_loop(dataloader, model,args):
     results=[]
     for batch_data in tqdm(dataloader):
         batch_data = batch_data.to(model.device)
+        
         with torch.no_grad():
             generated_tokens = generate(model,
                                         batch_data,args
@@ -83,8 +85,10 @@ if __name__ == "__main__":
     while os.path.isfile(out_path):
         out_path = os.path.join(folder_name, f"{base_name}_{counter}.jsonlines")
         counter += 1
-    
+    print("-------------")
     print(f"Output will be saved to: {out_path}")
+    print("Use this path for stage 2 big_output_path ^")
+    print("-------------")
 
 
     
@@ -130,7 +134,9 @@ if __name__ == "__main__":
         # end time
         end_time = time.time()
         execution_time = end_time - start_time
+        print("-------------")
         print("!!!execution_time",execution_time)
+        print("-------------")
         qid=0
         for qid, ans in enumerate(answers):
             item={}
@@ -157,7 +163,7 @@ if __name__ == "__main__":
         json_path = os.path.join(folder_name, f"{basej_name}_{counter}.json")
         counter += 1
     
-    print(f"Args will be saved to: {json_path}")
+    print(f"Args stage 1 will be saved to: {json_path}")
     
     with open(json_path, "w") as json_file:
         json.dump(args_dict, json_file, indent=4)

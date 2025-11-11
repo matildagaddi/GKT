@@ -1,0 +1,110 @@
+{"0": "A sudden uptick in SQL queries, far beyond the usual baseline for the application, is a common indicator of an SQL injection attack. The"}
+{"1": "Plaintext is unencrypted information, data that is in clear form. The answer is A.\n\n Q: What is the purpose of"}
+{"2": "Encryption converts sensitive data into a format that is unreadable without a decryption key, providing a layer of security. The answer is D."}
+{"3": "Insecure Design is a key security concern because it makes the system susceptible to a wide range of attacks. The answer is B."}
+{"4": "Authentication is the process of confirming an individual's identity. The answer is C.\n\n Q: What is the primary purpose of authorization in"}
+{"5": "Incident response plans outline a sequence of actions for addressing various types of incidents, including natural disasters, cyberattacks, and"}
+{"6": "To secure data transmission from mobile devices, VPN connections should be implemented for secure data transmission. The answer is D.\n\n Q: Which of"}
+{"7": "Physical controls, such as door locks and surveillance cameras, play a crucial role in an organization's security by impacting"}
+{"8": "A MitM attack occurs when an attacker intercepts and alters communication between two parties, such as a user and a website. This can result"}
+{"9": "Enforcing strong password policies on devices is an essential security measure when implementing a secure mobile solution for a corporate environment. This helps to prevent una"}
+{"10": "An IDS/IPS system can detect known exploits, such as SQL injection patterns, which can indicate an intrusion attempt on a network application"}
+{"11": "A well-defined incident response policy provides a step-by-step technical recovery plan, ensuring that the organization can respond quickly and effectively to security"}
+{"12": "The most effective strategy for securing API keys used in cloud environments is to use a secure vault service for storing and managing API keys."}
+{"13": "A 'chain of trust' is established in PKI by intermediate CAs signing certificates issued by root CAs. This allows for the verification"}
+{"14": "The primary focus of BCP during an incident response is to prioritize and recover critical business processes, which can help minimize the impact of the"}
+{"15": "Tailgating is a social engineering technique where an unauthorized individual follows someone into a secure area without proper credentials. The answer is D"}
+{"16": "In the initial phase of a cybersecurity incident investigation, network traffic logs are most crucial for identifying the scope and impact of the incident."}
+{"17": "User training is essential for ensuring that users understand the importance of security measures and their responsibilities. It helps to educate users on the ris"}
+{"18": "Cryptographic Failures can lead to data being readable and modifiable due to weak encryption, which can result in a major security concern. The answer"}
+{"19": "Tokenization is the process of replacing sensitive information, such as credit card numbers or social security numbers, with a non-sensitive equivalent, such as"}
+{"20": "Redundancy in network design provides backup in case of system failure, ensuring that critical systems remain operational and that data is not lost. The"}
+{"21": "Data Loss Prevention (DLP) software is crucial for protecting data and ensuring privacy, as it helps to identify and prevent"}
+{"22": "WPA2 is the recommended encryption method for the highest level of security in a wireless network. The answer is A.\n\nQ: Which of"}
+{"23": "A Certificate Signing Request (CSR) is a file that contains information about an entity, such as a website or a user, and is"}
+{"24": "The high rate of false positives can be a challenge in detecting network attacks using security solutions. False positives are when a security solution incorrectly ident"}
+{"25": "During penetration testing, active reconnaissance involves interacting with the target, such as port scanning and vulnerability scanning, to gather information"}
+{"26": "Data classification is used to categorize data based on its importance to the organization and its sensitivity and the need for privacy. The answer is B"}
+{"27": "Unusual ARP packet transmission patterns could indicate a potential MitM attack, as the attacker may be spoofing the MAC address of a"}
+{"28": "Establishing a baseline of attack volume is important in a SOC to understand the average volume of attacks for resource allocation and to determine the"}
+{"29": "The primary goal of MDM is to monitor and manage security policies on mobile devices, such as enforcing password requirements and encryption. The answer is A"}
+{"30": "The first step in vulnerability management during a security assessment is gathering information on hardware, network, and domain details. This information is necessary to"}
+{"31": "A strong and complex Wi-Fi password is a critical security measure to prevent unauthorized access to a wireless network. The answer is C."}
+{"32": "The primary goal of risk management in cybersecurity is to identify, assess, and prioritize risks to minimize their impact on the organization"}
+{"33": "To secure a corporate network from internal threats, it is important to segment the network and apply internal firewalls to restrict access within the network"}
+{"34": "Embedded systems are often limited in terms of resources and computing power, which can make it difficult to implement robust security measures. The answer is D"}
+{"35": "A multi-layered security approach provides robust protection by using multiple overlapping solutions, which can help prevent a single point of failure and increase the"}
+{"36": "Patterns of recon in web server logs or transient port scans are likely indicators of reconnaissance activity in a cyber attack. The answer"}
+{"37": "SFTP (Secure File Transfer Protocol) is a secure version of FTP that encrypts data in transit and provides authentication and integrity checks"}
+{"38": "Unusual outbound connections to certain IP addresses could be a sign of a machine infected with malware. The answer is A."}
+{"39": "For a company that needs high availability and fault tolerance, a multiple server in a load-balanced configuration with failover capabilities is the most"}
+{"40": "Cryptography is essential in the field of security as it allows for the scrambling of data into non-readable text, preventing una"}
+{"41": "Q: What is the purpose of a security policy? Answer choices: (A) To define the security requirements of a system, (B"}
+{"42": "Network segmentation is a security measure that involves dividing a network into smaller, isolated segments to limit the spread of network-based attacks within the system"}
+{"43": "Data Preservation is the first step in a digital forensic investigation, as it involves collecting and preserving evidence in a way that ensures"}
+{"44": "HTTPS is a secure version of HTTP that uses encryption to protect data in transit. It is the preferred protocol for transmitting sensitive data over the"}
+{"45": "Immediate deactivation of user accounts upon termination is the most effective control for ensuring that former employees cannot access company systems. The answer is"}
+{"46": "Nmap is a popular tool used to identify vulnerabilities in network devices by scanning for open ports and services, detecting operating systems and versions,"}
+{"47": "Scripts or third-party programs are used to monitor specific endpoints and detect vulnerabilities in security assessments. The answer is B."}
+{"48": "Hacktivists are groups or individuals who use hacking techniques for social or political ends, such as protesting against government policies or corporate"}
+{"49": "The initial step in responding to a security incident involving malware is to isolate the affected asset from the network to prevent further spread of the mal"}
+{"50": "Web-based attacks exploit the trust of web technologies by taking advantage of implicit trust in scripts, commands, and cookies received by web pages."}
+{"51": "Remediation in incident response involves implementing changes to prevent a recurrence of the incident, rather than solely focusing on financial compensation or prior"}
+{"52": "In a cloud computing environment, a key security measure to protect data at rest is to implement strong encryption for stored data. This ensures that even if"}
+{"53": "A VPN encrypts data in transit, ensuring confidentiality and integrity. The answer is D.\n\n Q: Which of the"}
+{"54": "Security policies provide a framework for legal compliance and ethical conduct, which is crucial for organizations to maintain a good reputation and avoid legal issues."}
+{"55": "Asymmetric encryption is used to create digital certificates, which are used to authenticate and encrypt messages between parties in a PKI system. The"}
+{"56": "Q: What is a key tactic used in impersonation/identity theft in social engineering? Answer Choices: (A)"}
+{"57": "To establish a secure, encrypted connection for remote management of a network device, the Secure Shell (SSH) protocol should be used. The"}
+{"58": "Incident response procedures outline specific steps to be taken during security incidents, which can help ensure the effectiveness of security measures in an organization. The"}
+{"59": "The chain of custody is a critical aspect of digital forensics that ensures the integrity and authenticity of digital evidence. It involves documenting"}
+{"60": "Authentication, Authorization, and Accounting (AAA) is a security design concept that refers to the three core functions of authentication, authorization, and"}
+{"61": "Authorization is typically implemented through a permission scheme or access control list (ACL) that defines which users or groups have access to which resources. The"}
+{"62": "Q: What is the purpose of a firewall? Answer choices: (A) To provide aesthetic enhancements to the security"}
+{"63": "Regular user accounts performing administrative actions is a sign of privilege escalation, which is a common tactic used in network attacks. The answer"}
+{"64": "Advanced Persistent Threats (APTs) are a group of threat actors often associated with governments and known for their extensive resources and constant"}
+{"65": "The Docker build system relies on the security of the images it is building from. The answer is C.\n\n Q: What is the purpose"}
+{"66": "An attacker attempting defense evasion may disable malware scanners and clear logs to hide their presence and activities. The answer is D."}
+{"67": "S/MIME is a secure email transmission protocol that uses encryption and digital signatures to ensure the confidentiality and integrity of email messages. The"}
+{"68": "The General Data Protection Regulation (GDPR) is a regulation in EU law on data protection and privacy for all individuals within the"}
+{"69": "Technical controls are used to restrict access and protect information systems. The answer is A.\n\n Q: What is the primary purpose of administrative controls"}
+{"70": "Phishing is a social engineering attack that aims to trick individuals into providing sensitive information through fraudulent communication, such as emails or websites."}
+{"71": "Virtualization in Information Technology involves using virtual computing resources instead of actual hardware. The answer is B.\n\n Q: What is a key characteristic of"}
+{"72": "An inventory of all company-owned devices is an important tool used in the evaluation phase of a security assessment. The inventory provides a compreh"}
+{"73": "HTTPS is a secure protocol that encrypts data transmitted between a web browser and a web server, preventing eavesdropping and ensuring"}
+{"74": "A private cloud is a cloud computing model that is exclusively managed by the organization that owns it. It involves hosting virtualization and automation techn"}
+{"75": "Injection vulnerabilities allow attackers to execute commands on a server or database, potentially leading to unauthorized access to sensitive information or even complete"}
+{"76": "A key security feature to implement in a BYOD policy is requiring devices to comply with corporate security standards. This ensures that devices meet the"}
+{"77": "The execution phase of penetration testing involves running commands or scripts to exploit vulnerabilities and establish a foothold. The answer is D."}
+{"78": "A digital certificate is used to authenticate the identity of a user or device in a PKI. The answer is A.\n\n Q: What"}
+{"79": "Network Segmentation is a critical concept when designing a network for a company with high availability requirements. Network segmentation involves dividing a network"}
+{"80": "Risk Assessment Tools are most useful for gathering and analyzing data during a BIA. The answer is D.\n\n Q:"}
+{"81": "The primary goal of digital forensics is to investigate digital data for legal purposes, such as in criminal or civil cases. The answer is D."}
+{"82": "A SOC is responsible for leading incident response and recovery efforts, including identifying and responding to security incidents, investigating and analyzing security"}
+{"83": "The main purpose of implementing redundant services is to ensure that there is always an uncompromised service available in the event of an incident. This can"}
+{"84": "A DoS or DDoS attack overwhelms a system with requests, rendering it non-functional. The answer is B."}
+{"85": "MFA is a security measure that requires users to provide multiple forms of authentication, such as a password and a biometric measure, to gain access to"}
+{"86": "Q: What is the purpose of a security policy? Answer choices: (A) To provide a framework for security decisions, (B"}
+{"87": "During the reconnaissance phase of penetration testing, the tester collects information about the target, such as vulnerability scanning and network mapping"}
+{"88": "A cryptographic key is a piece of information that is used to change plaintext into ciphertext using a cryptographic algorithm. The answer is B"}
+{"89": "Security policies define how to identify, assess, and mitigate risks to the organization's assets and data, which is a crucial component"}
+{"90": "MFA provides an additional layer of security beyond just passwords, making it more difficult for unauthorized individuals to gain access to accounts. The answer"}
+{"91": "Risk mitigation is the process of reducing the likelihood and impact of risks to an acceptable level. The answer is D."}
+{"92": "Privacy laws like GDPR and HIPAA impose legal requirements for the protection and handling of personal and sensitive data. The answer is C"}
+{"93": "B. Employing multi-factor authentication (MFA) is the most appropriate technology for ensuring secure access to cloud resources. MFA requires"}
+{"94": "MAC address filtering is a security measure that allows an administrator to control which devices can connect to a wireless network. The administrator can create a list of author"}
+{"95": "A hybrid cloud model allows organizations to keep sensitive data on-premises while leveraging public cloud for less critical data, providing a balance between"}
+{"96": "Phishing sites and messages are a common vector used by threat actors to gain unauthorized access. The answer is B.\n\n Q:"}
+{"97": "Security policies provide the framework for incident response within an organization, outlining the procedures and responsibilities for responding to security incidents. The"}
+{"98": "Remote wipe capabilities allow the IT department to remotely wipe the device if it is lost or stolen, protecting corporate data"}
+{"99": "A CASB is a cloud-based security solution that helps organizations manage and enforce security policies across multiple cloud services. The answer is C."}
+{"100": "'Security Misconfiguration' is a significant vulnerability because it can lead to unauthorized access and data breaches. It is important to ensure"}
+{"101": "The security of the code, container, and cluster of the application is a key aspect to consider for securing an application in the cloud. The"}
+{"102": "Implementing unique user accounts for each individual is the most effective method to ensure user accountability. This ensures that each user is responsible for their"}
+{"103": "Data Recovery focuses on recovering deleted, encrypted, or damaged file information. The answer is B.\n\n Q: Which of the"}
+{"104": "Specialized systems are considered challenging in terms of security because their specialized nature can require unique security approaches. The answer is C.\n\n Q"}
+{"105": "The NIST Framework provides a set of industry standards and best practices to help organizations manage cybersecurity risk. The answer is B.\n\n Q"}
+{"106": "Secure application deployment requires implementing secure protocols and secure network architecture concepts, such as encryption and authentication, to ensure the security of sensitive data and protect"}
+{"107": "File integrity monitoring systems are most effective for identifying unauthorized changes to system files and configurations during an incident. The answer is D."}
+{"108": "Implementing role-based access control (RBAC) on the network is a key consideration for enhancing security in a large organization with"}
+{"109": "Q: Which of the following is a common method used to prevent unauthorized access to a network? Answer Choices: (A"}
