@@ -40,6 +40,36 @@ logging.basicConfig(level=logging.INFO)
 
 # stage 1 will only parse through new JSON with "Masked_Question" column, stage 2 will use raw "Question" column
 
+def answer_cleansing_mask(pred):
+    """Extract masked question from model response."""
+    
+    # Split by "Masked Question:" and take the second occurrence (the actual answer, not the example)
+    parts = pred.split("Masked Question:")
+    
+    if len(parts) > 1:
+        # Get the "Masked Question:" section (skip the example)
+        masked_section = parts[2].strip()
+        
+        # Find the first question mark and cut there
+        question_mark_idx = masked_section.find('?')
+        if question_mark_idx != -1:
+            masked_q = masked_section[:question_mark_idx + 1].strip()
+        else:
+            # No question mark found, take first line or sentence
+            masked_q = masked_section.split('\n')[0].strip()
+            # Remove common trailing artifacts
+            masked_q = re.sub(r'\s*(Answer|Question|Example).*$', '', masked_q, flags=re.IGNORECASE).strip()
+        
+        return masked_q
+    
+    # Fallback: no "Masked Question:" found
+    # Look for the last sentence ending with '?'
+    sentences = re.split(r'(?<=[.!?])\s+', pred)
+    for sent in reversed(sentences):
+        if '?' in sent:
+            return sent.strip()
+    
+    return pred.strip()  # Last resort
 
 
 def generate(
@@ -80,7 +110,7 @@ if __name__ == "__main__":
     # removed --if_concise_prompt
     parser.add_argument('--data_path', type=str, default="./data/")
     parser.add_argument('--out_path', type=str, default="data/CyberNERQA_masked/")
-    parser.add_argument('--max_gen_len', type=int, default=40) # might need to be larger, refine best option
+    parser.add_argument('--max_gen_len', type=int, default=50) # might need to be larger, refine best option
     parser.add_argument('--batch_size', type=int, default=24)
     #parser.add_argument('--few_shot', type=int,help="GSM8K:8 CSQA:7 CNNDM:0") #maybe add fewshot later if accuracy is bad
     args = parser.parse_args()
@@ -151,23 +181,40 @@ if __name__ == "__main__":
     for qid, maskq in enumerate(masked_qs):
         raw_data_row = dataset.data[qid] #original row of data, then add later the "Masked_Question" column.
         
-        # ensure it's a dict
         if isinstance(raw_data_row, str):
             raw_data_row = json.loads(raw_data_row)
         elif not isinstance(raw_data_row, dict):
             raise TypeError(f"Unexpected row type for index {qid}: {type(raw_data_row)}")
 
         item = dict(raw_data_row)
-        item["Masked_Question"] = maskq
+        final_masked_q = answer_cleansing_mask(maskq)
+        item["Masked_Question"] = final_masked_q
 
         masked_data.append(item)
         
         # accuracy checks
-        if str(maskq).strip().lower() == str(raw_data_row.get("PII-free Question", "")).strip().lower():
+        ### Check for exact match
+        if str(final_masked_q).strip().lower() == str(raw_data_row.get("PII-free Question", "")).strip().lower():
             right_match += 1
-        if not any(str(entity) in str(maskq) for entity in raw_data_row.get("Entities", [])):
-            right_clean += 1
-        if len(str(maskq).strip()) <= 2:
+
+        ### Check for at least entities being masked/removed
+        # Get all entity values from all entity types
+        all_entity_values = []
+        for values in raw_data_row.get("Entities", {}).values():
+            if isinstance(values, list):
+                all_entity_values.extend(values)
+
+        if not any(str(entity_val) in str(final_masked_q) for entity_val in all_entity_values):
+            right_clean += 1        
+        # if not any(str(entity) in str(final_masked_q) for entity in raw_data_row.get("Entities", [])):
+        #     right_clean += 1
+
+        ####################################
+        ### TODO: collect metrics like a classifier (precision, recall, f1) tokenized PII vs non-PII
+        ####################################
+        
+        
+        if len(str(final_masked_q).strip()) <= 2:
             empty_masked_q += 1
     
     with open(masked_data_path, "w") as f:

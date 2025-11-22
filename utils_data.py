@@ -32,7 +32,15 @@ class Stage0_CyberNERQA_dataset(Dataset):
         #data_path=os.path.join(self.args.data_path,self.args.dataset)[split_name] 
         data_path = 'data/CyberNERQA_raw/CyberNERQA.json' #hardcode for now
         self.data = self.load_json(data_path)[split] #probably just test for now
-        self.MASK_SYSTEM_PROMPT = ("Question contains masked entities: [CREDENTIALS]=keys/passwords, [IDENTITY]=names/IDs, [CONTACT]=email/phone, [DEVICE]=device IDs, [LOCATION]=IPs/addresses, [FINANCIAL]=account numbers, [DATE]=dates. Output only the masked text. \n\n")
+        self.MASK_SYSTEM_PROMPT = (
+            """Question contains masked entities: [CREDENTIALS]=keys/passwords, [IDENTITY]=names/IDs, [CONTACT]=email/phone, [DEVICE]=device IDs, [LOCATION]=IPs/addresses, [FINANCIAL]=account numbers, [DATE]=dates.
+
+Mask all personal and identifying entities in the text below, using the appropriate tags. Return ONLY the masked question.
+
+Example:
+Question: User lisa.chen called from +1-555-0198 reporting her device IMEI-358273054098321 was stolen. What immediate actions should I take?
+Masked Question: User [IDENTITY] called from [CONTACT] reporting her device [DEVICE] was stolen. What immediate actions should I take?"""
+                                  )
 
     def __len__(self):
         return len(self.data)
@@ -88,6 +96,10 @@ class Stage0_CyberNERQA_dataset(Dataset):
 class CyberNERQA_dataset(Dataset): 
     # load from json file saved from stage 0 masking
     ### Stage 1 should use "Masked_Question" column, and stage 2 should use raw "Question" column! ###
+    
+    def load_json(self, path):
+        with open(path, 'r') as f:
+            return json.load(f)
         
     def __init__(self, tokenizer, args, stage2=False, split="test", sample_idx=-1):
         self.args = args
@@ -106,8 +118,9 @@ class CyberNERQA_dataset(Dataset):
 
         #load most recently generated masked dataset
         #data_path=os.path.join(self.args.data_path,self.args.dataset)[split_name] 
-        data_path= 'data/CyberNERQA_masked/CyberNERQA_masked1' # hardcode for now  # will still work for stage 2 as well since it also has "Question" column
-        self.data = self.load_json(data_path)
+        data_path= '/home/jovyan/GKT/data/CyberNERQA_masked/CyberNERQA_masked_6.json' # hardcode for now  # will still work for stage 2 as well since it also has "Question" column
+        dataset = self.load_json(data_path)
+        self.data = self.format_data(dataset)
     
         # # Optionally truncate for debugging
         # if hasattr(args, "debug_subset") and args.debug_subset:
@@ -139,20 +152,58 @@ class CyberNERQA_dataset(Dataset):
             tokenized_full_data = self.tokenize(ins, None, self.tokenizer)
         return tokenized_full_data
 
+    # def format_data(self, dataset):
+    #     """
+    #     Convert CyberNERQA entries into a common schema used by other datasets.
+    #     """
+    #     formatted = []
+    #     for item in dataset:
+    #         # Build a multiple-choice question string
+    #         choices = f"Answer Choices: (A) {item['A']} (B) {item['B']} (C) {item['C']} (D) {item['D']}"
+    #         if stage2 == False:
+    #             Question = "Masked_Question"
+    #         else:
+    #             Question = "Question"
+    #         formatted.append({
+    #             "question": item[Question].strip() + " " + choices, # if stage 1: "Masked_Question", if stage 2: "Question"
+    #             "answer": item["Answer"]
+    #         })
+    #     return formatted
+
+    # def tokenize(self, test_dict, big_output_pre, tokenizer):
+    #     examplar = self.create_demo_text()
+
+    #     if "if_concise_prompt" in self.args and self.args.if_concise_prompt:
+    #         system_prompt=self.args.if_concise_prompt
+    #     else:
+    #         system_prompt=""
+
+    #     if self.stage2:
+    #         instruction = system_prompt + examplar + " Q: " + test_dict["question"] + "\nA: " + big_output_pre # raw vs masked question already handled above
+    #     else:
+    #         instruction = system_prompt + examplar + " Q: " + test_dict["question"] + "\nA: "
+
+    #     inputs = tokenizer(
+    #         instruction,
+    #         return_tensors="pt",
+    #         padding='max_length',
+    #         max_length=1024
+    #     )
+    #     return inputs
+
+
+
+
     def format_data(self, dataset):
         """
-        Convert CyberNERQA entries into a common schema used by other datasets.
+        Convert HF SecQA entries into a common schema used by other datasets.
         """
         formatted = []
         for item in dataset:
             # Build a multiple-choice question string
             choices = f"Answer Choices: (A) {item['A']} (B) {item['B']} (C) {item['C']} (D) {item['D']}"
-            if stage2 == False:
-                Question = "Masked_Question"
-            else:
-                Question = "Question"
             formatted.append({
-                "question": item[Question].strip() + " " + choices, # if stage 1: "Masked_Question", if stage 2: "Question"
+                "question": item["Question"].strip() + " " + choices,
                 "answer": item["Answer"]
             })
         return formatted
@@ -166,7 +217,7 @@ class CyberNERQA_dataset(Dataset):
             system_prompt=""
 
         if self.stage2:
-            instruction = system_prompt + examplar + " Q: " + test_dict["question"] + "\nA: " + big_output_pre # raw vs masked question already handled above
+            instruction = system_prompt + examplar + " Q: " + test_dict["question"] + "\nA: " + big_output_pre
         else:
             instruction = system_prompt + examplar + " Q: " + test_dict["question"] + "\nA: "
 
@@ -178,6 +229,10 @@ class CyberNERQA_dataset(Dataset):
         )
         return inputs
 
+
+
+
+    
     def create_demo_text(self): #from SecQA loader
         direct_answer_trigger_for_fewshot = "The answer is"
         x, z, y = [], [], []

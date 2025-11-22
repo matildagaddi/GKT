@@ -1,0 +1,28 @@
+{"0": "The answer is B.\n\nQ: I need to investigate a suspicious email sent to [USER]. What should I do first? Answer choices"}
+{"1": "The answer is C.\n\nQ: I'm trying to identify the source of a malware infection on our network. What's"}
+{"2": "The answer is B.\n\n Q: I'm investigating a potential security incident. I've identified the following indicators of compromise"}
+{"3": "The answer is D.\n\nQ: I'm a security analyst at [COMPANY] and I'm responsible for monitoring our"}
+{"4": "The answer is C.\n\nQ: How do I configure a firewall to block all traffic from a specific IP address? Answer choices: (A"}
+{"5": "The answer is B.\n\nQ: A user reported that their device was stolen. What should I do? Answer choices: (A)"}
+{"6": "The answer is B.\n\nQ: I need to configure a VPN for remote access to our production servers. What's the safest"}
+{"7": "The answer is B.\n\nQ: I'm concerned about the security of our [PRODUCT] and want to implement a security aud"}
+{"8": "The answer is A.\n\nQ: How do I secure a web application that handles sensitive financial transactions? Answer Choices: (A) Use"}
+{"9": "The answer is C.\n\nQ: I'm trying to configure a new firewall rule on device [DEVICE] to allow traffic from the"}
+{"10": "The answer is B.\n\nQ: I need to implement a secure file upload functionality. What security measures are essential? Answer choices: (A"}
+{"11": "The answer is B.\n\nQ: I'm investigating a suspicious email sent to [IDENTITY] (ID: [ID"}
+{"12": "The answer is C.\n\nQ: I need to create a new user account for a new employee. What should I do? Answer choices:"}
+{"13": "The answer is B.\n\nQ: I'm configuring backup encryption for servers at our facility at 1550 Market Street."}
+{"14": "The answer is D.\n\nQ: Which of the following is a good practice for preventing data exfiltration? Answer choices: ("}
+{"15": "The answer is B.\n\nQ: Our company is planning to implement a new security policy that requires all employees to use two-factor authentication ("}
+{"16": "The answer is A.\n\nQ: I need to secure our Docker containers in production. What are the critical security practices? Answer choices: ("}
+{"17": "The answer is B.\n\nQ: A user reported that they received a phishing email from a domain that looks similar to ours. What"}
+{"18": "The answer is C.\n\nQ: I'm a security analyst at a large company. I'm tasked with implementing a new"}
+{"19": "The answer is C.\n\nQ: How do I prevent a malicious user from accessing sensitive data in a web application? Answer choices: ("}
+{"20": "The answer is A.\n\nQ: We received a report that the [DEVICE] has been infected with ransomware. What"}
+{"21": "The answer is D.\n\nQ: I need to conduct a security assessment of our mobile application. What areas should I prioritize?"}
+{"22": "The answer is B.\n\nQ: Our employee [IDENTITY] (ID: [IDENTITY]) reported a phishing email at"}
+{"23": "The answer is D.\n\nQ: What is the best way to securely store credentials for a service account? Answer choices: (A)"}
+{"24": "The answer is C.\n\nQ: I need to secure our wireless network at the office. What configuration provides the strongest security? Answer choices"}
+{"25": "The answer is A.\n\nQ: Our security team has detected a malicious process named [PROCESS] on [DEVICE]. What'"}
+{"26": "The answer is A.\n\nQ: What is the best way to manage the security of our cloud-based applications? Answer choices: (A"}
+{"27": "The answer is B.\n\nQ: I'm receiving alerts about data exfiltration attempts from IP 10.0."}

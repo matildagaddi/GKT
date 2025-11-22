@@ -6,7 +6,7 @@ import jsonlines
 import json
 import re
 import random
-from utils_data import Gsm8k_dataset,CSQA_dataset,AQuA_dataset,SecQA_dataset
+from utils_data import Gsm8k_dataset,CSQA_dataset,AQuA_dataset,SecQA_dataset,CyberNERQA_dataset
 from torch.utils.data import DataLoader
 from transformers import AutoModelForCausalLM, AutoTokenizer,AutoModelForSeq2SeqLM
 import time
@@ -76,6 +76,15 @@ def answer_cleansing_secqa(pred,few_shot):
         option=["A","B","C","D"]
         return option[random.randint(0,3)]
 
+def answer_cleansing_cybernerqa(pred,few_shot):
+    pattern = re.compile(r'The answer is ([A-Z])')
+    res = pattern.findall(pred)
+    if len(res) >= few_shot+1:
+        return res[few_shot].upper()  # 'A', 'B', ...
+    else:
+        option=["A","B","C","D"]
+        return option[random.randint(0,3)]
+
 def generate(
     model,
     input_data,args
@@ -106,7 +115,7 @@ def generation_loop(dataloader, model,args):
                 if "t5" in args.model_name:
                     decoded_output=i
                 else:
-                    if args.dataset in ["GSM8K","CSQA","AQuA","SecQA"]:
+                    if args.dataset in ["GSM8K","CSQA","AQuA","SecQA","CyberNERQA"]:
                         decoded_output=i.split("A:")[few_shot+1].strip()
                         if args.dataset =="GSM8K":
                             answer=answer_cleansing_gsm8k(i,few_shot)
@@ -116,6 +125,8 @@ def generation_loop(dataloader, model,args):
                             answer=answer_cleansing_aqua(i,few_shot)
                         elif args.dataset =="SecQA":
                             answer=answer_cleansing_secqa(i,few_shot)
+                        elif args.dataset =="CyberNERQA":
+                            answer=answer_cleansing_cybernerqa(i,few_shot)
                         item={"output":i,"cot":decoded_output,"ans":answer}
                 results.append(item)
     return results
@@ -125,7 +136,7 @@ if __name__ == "__main__":
     parser.add_argument('--model_name', type=str, choices=["meta-llama/Llama-2-7b-hf","meta-llama/Llama-2-70b-hf","google/flan-t5-large","bigscience/bloom-3b","bigscience/bloom-7b1","meta-llama/Llama-2-13b-hf"], default="meta-llama/Llama-2-7b-hf")
     parser.add_argument('--max_seq_len', type=int, default=1024)
     parser.add_argument('--data_path', type=str, default="./data/")
-    parser.add_argument('--dataset', choices=['GSM8K', 'CSQA',"AQuA","SecQA"])
+    parser.add_argument('--dataset', choices=['GSM8K', 'CSQA',"AQuA","SecQA","CyberNERQA"])
     parser.add_argument('--out_path', type=str, default="output/big2small/")
     parser.add_argument('--max_gen_len', type=int, default=180)
     parser.add_argument('--batch_size', type=int, default=2) #1
@@ -194,6 +205,8 @@ if __name__ == "__main__":
         dataset=AQuA_dataset(tokenizer,args,stage2=True)
     elif args.dataset =="SecQA":
         dataset=SecQA_dataset(tokenizer,args,stage2=True)
+    elif args.dataset =="CyberNERQA":
+        dataset=CyberNERQA_dataset(tokenizer,args,stage2=True)
 
     total=len(dataset)
     right=0
@@ -219,7 +232,7 @@ if __name__ == "__main__":
         print("!!! execution_time",execution_time)
         print("-------------")
 
-        if args.dataset in ["GSM8K","CSQA","AQuA","SecQA"]: #check if SecQA needs something different
+        if args.dataset in ["GSM8K","CSQA","AQuA","SecQA","CyberNERQA"]: #check if SecQA needs something different
             #qid=0
             for qid, ans in enumerate(answers):
                 item={}

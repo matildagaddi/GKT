@@ -1,0 +1,28 @@
+{"0": "The answer is B.\n\nQ: I'm investigating a security incident where a user [IDENTITY] (ID: [ID"}
+{"1": "The answer is C.\n\nQ: I'm seeing a lot of failed login attempts from IP [LOCATION] to account number [F"}
+{"2": "The answer is B.\n\nQ: I'm seeing a lot of failed login attempts from IP [LOCATION] to account number [F"}
+{"3": "The answer is C.\n\nQ: I'm seeing a lot of failed login attempts from IP [LOCATION] to account number [F"}
+{"4": "The answer is C.\n\nQ: How can I prevent a malicious user from accessing a database? Answer choices: (A) Use a"}
+{"5": "The answer is B.\n\nQ: I'm seeing a lot of failed login attempts to our web application. What should I do? Answer"}
+{"6": "The answer is B.\n\nQ: I'm getting a lot of spam emails. What's the best way to block them?"}
+{"7": "The answer is B.\n\nQ: I'm seeing a lot of failed logins from IP [LOCATION] to account number [F"}
+{"8": "The answer is B.\n\nQ: I'm seeing a lot of failed login attempts from IP [LOCATION] to account number [F"}
+{"9": "The answer is C.\n\nQ: I'm seeing a lot of failed login attempts from IP [LOCATION] to account number [F"}
+{"10": "The answer is B.\n\nQ: I'm trying to implement a new security policy for our company. What should I do first? Answer"}
+{"11": "The answer is B.\n\nQ: I'm seeing a lot of failed login attempts to our [SERVICE] service. What's"}
+{"12": "The answer is C.\n\nQ: I'm seeing a lot of failed SSH login attempts from IP [LOCATION] to account number ["}
+{"13": "The answer is B.\n\nQ: I'm configuring a new VPN server for our remote workers. What should I do to secure"}
+{"14": "The answer is C.\n\nQ: I'm seeing suspicious login attempts from IP [LOCATION] to account number [FINAN"}
+{"15": "The answer is B.\n\nQ: I'm investigating a suspicious email sent to [IDENTITY] (ID: [ID"}
+{"16": "The answer is C.\n\nQ: I'm looking to implement a new security tool. What are the key considerations? Answer choices:"}
+{"17": "The answer is B.\n\nQ: I'm trying to access a file on device [DEVICE] from my laptop. How do I"}
+{"18": "The answer is C.\n\nQ: I'm seeing a lot of failed login attempts to our [SERVICE] from IP [LOCATION"}
+{"19": "The answer is C.\n\nQ: I'm seeing a lot of failed login attempts from IP [LOCATION] to account number [F"}
+{"20": "The answer is A.\n\nQ: I'm seeing a lot of failed login attempts from IP [LOCATION] to account number [F"}
+{"21": "The answer is D.\n\nQ: I'm seeing a lot of suspicious activity on our network. What should I do? Answer choices"}
+{"22": "The answer is B.\n\nQ: I'm seeing a lot of failed login attempts from IP [LOCATION] to account number [F"}
+{"23": "The answer is D.\n\nQ: I'm getting a lot of alerts from our SIEM tool. How do I priorit"}
+{"24": "The answer is C.\n\nQ: I'm seeing a lot of failed logins to our web server. What should I do? Answer"}
+{"25": "The answer is D.\n\nQ: I'm seeing a lot of failed login attempts from IP [LOCATION] to account number [F"}
+{"26": "The answer is A.\n\nQ: I'm looking for a tool to help me manage our security policies. What should I consider? Answer"}
+{"27": "The answer is B.\n\nQ: I'm receiving alerts about data exfiltration attempts from IP 10.0."}

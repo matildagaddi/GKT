@@ -8,7 +8,7 @@ import re
 import random
 import time
 from tqdm import tqdm
-from utils_data import Gsm8k_dataset,CSQA_dataset,AQuA_dataset,SecQA_dataset
+from utils_data import Gsm8k_dataset,CSQA_dataset,AQuA_dataset,SecQA_dataset,CyberNERQA_dataset
 from torch.utils.data import DataLoader
 from transformers import AutoModelForCausalLM, AutoTokenizer,AutoModelForSeq2SeqLM
 from thop import profile
@@ -52,7 +52,7 @@ if __name__ == "__main__":
     parser.add_argument('--model_name', type=str, choices=["meta-llama/Llama-2-7b-hf","meta-llama/Llama-2-70b-hf","meta-llama/Llama-2-13b-hf","google/flan-t5-xl","bigscience/bloom-7b1"], default="meta-llama/Llama-2-13b-hf")#default="meta-llama/Llama-2-13b-hf")
     parser.add_argument('--max_seq_len', type=int, default=1024)
     parser.add_argument('--max_batch_size', type=int, default=12) #4
-    parser.add_argument('--dataset', choices=['GSM8K', 'CSQA',"CNNDM","AQuA","SecQA"])
+    parser.add_argument('--dataset', choices=['GSM8K', 'CSQA',"CNNDM","AQuA","SecQA","CyberNERQA"])
     parser.add_argument('--if_concise_prompt', choices=[False,"Provide the answer in a brief manner: ","Provide a brief hint for the question: "],default=False)
     parser.add_argument('--data_path', type=str, default="./data/")
     parser.add_argument('--out_path', type=str, default="output/big2small/")
@@ -114,7 +114,9 @@ if __name__ == "__main__":
     elif args.dataset =="AQuA":
         dataset=AQuA_dataset(tokenizer,args,stage2=False)
     elif args.dataset =="SecQA":
-        dataset=SecQA_dataset(tokenizer,args,stage2=False)    
+        dataset=SecQA_dataset(tokenizer,args,stage2=False)
+    elif args.dataset =="CyberNERQA":
+        dataset=CyberNERQA_dataset(tokenizer,args,stage2=False)
 
     with jsonlines.open(out_path, mode='w') as writer:
         dataloader = DataLoader(dataset, batch_size=args.batch_size)

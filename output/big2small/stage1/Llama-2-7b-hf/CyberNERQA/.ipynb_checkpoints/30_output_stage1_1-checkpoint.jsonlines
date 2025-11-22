@@ -1,0 +1,28 @@
+{"0": "The answer is B.\n\n Q: I need to investigate unauthorized access to account AC-8829-447"}
+{"1": "The answer is C.\n\n Q: I'm trying to determine if a system has been compromised. What's the best way to"}
+{"2": "The answer is A.\n\n Q: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"3": "The answer is A.\n\n Q: I discovered hardcoded AWS secret key aBcDeFgH1234567"}
+{"4": "The answer is C.\n\n Q: Which of the following is a common cause of security incidents? Answer choices: (A) Inade"}
+{"5": "The answer is B.\n\n Q: What is the best practice for securing a device that is no longer in use? Answer choices:"}
+{"6": "The answer is B.\n\n Q: I need to configure network segmentation for our infrastructure. What's the key principle? Answer Cho"}
+{"7": "The answer is B.\n\n Q: I'm working on a new project that will be deployed on a public cloud. What security controls should"}
+{"8": "The answer is B.\n\n Q: Which of the following is a common way to secure a web application? Answer Choices: (A)"}
+{"9": "The answer is C.\n\n Q: Which of the following is the most secure way to store a password? Answer choices: (A) Enc"}
+{"10": "The answer is B.\n\n Q: I need to implement secure file upload functionality. What security measures are essential? Answer Choices: (A"}
+{"11": "The answer is B.\n\n Q: I'm investigating a security incident. What's the best way to document my findings?"}
+{"12": "The answer is C.\n\n Q: I'm looking for a way to block a specific IP address from accessing a web application. What'"}
+{"13": "The answer is B.\n\n Q: I'm configuring backup encryption for servers at our facility at 1550 Market Street."}
+{"14": "The answer is A.\n\n Q: Which of the following is a type of malware? Answer Choices: (A) Adware ("}
+{"15": "The answer is B.\n\n Q: Which of the following is the best way to ensure that the data is not compromised? Answer choices:"}
+{"16": "The answer is A.\n\n Q: I need to secure our Docker containers in production. What are the critical security practices? Answer Choices:"}
+{"17": "The answer is B.\n\n Q: User kevin.martinez contacted support at +1-555-016"}
+{"18": "The answer is C.\n\n Q: What is the purpose of a firewall? Answer choices: (A) To provide a secure connection between two"}
+{"19": "The answer is C.\n\n Q: What is the difference between a web application and a web service? Answer Choices: (A) A"}
+{"20": "The answer is A.\n\n Q: A security audit of the company's network revealed that the company's network is vulnerable to"}
+{"21": "The answer is"}
+{"22": "The answer is A.\n\n Q: I'm a security analyst at a large organization. I'm tasked with creating a security"}
+{"23": "The answer is D.\n\n Q: What is the best way to securely store and transmit sensitive data? Answer Choices: (A)"}
+{"24": "The answer is C.\n\n Q: Which of the following is a type of malware? Answer choices: (A) Virus (B"}
+{"25": "The answer is A.\n\n Q: Which of the following is a common cause of data loss? Answer choices: (A) Human error ("}
+{"26": "The answer is A.\n\n Q: What is the best way to secure a web application? Answer Choices: (A) Use a web"}
+{"27": "The answer is B.\n\n Q: I'm receiving alerts about data exfiltration attempts from IP 10.0."}
