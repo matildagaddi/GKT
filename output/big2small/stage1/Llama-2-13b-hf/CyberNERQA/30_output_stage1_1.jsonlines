@@ -1,0 +1,28 @@
+{"0": "The answer is B.\n\nQ: I need to investigate unauthorized access to account AC-8829-447"}
+{"1": "The answer is C.\n\nQ: I need to implement a security solution for our production servers. What's the best approach? Answer choices"}
+{"2": "The answer is B.\n\nQ: I'm investigating a potential phishing attack on our network. What should I do first? Answer"}
+{"3": "The answer is B.\n\nQ: I need to implement a security solution for our company's [DEVICE] (ID: [DE"}
+{"4": "The answer is C.\n\nQ: How do I prevent a malicious user from accessing a web application that uses a session ID? Answer Cho"}
+{"5": "The answer is B.\n\nQ: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"6": "The answer is B.\n\nQ: I need to configure network segmentation for our infrastructure. What's the key principle? Answer Cho"}
+{"7": "The answer is B.\n\nQ: I'm a security analyst at [COMPANY]. I've been asked to investigate a"}
+{"8": "The answer is B.\n\nQ: I need to secure our production servers against a potential DDoS attack. What should I do? Answer"}
+{"9": "The answer is C.\n\nQ: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"10": "The answer is B.\n\nQ: I need to implement secure file upload functionality. What security measures are essential? Answer Choices: (A"}
+{"11": "The answer is B.\n\nQ: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"12": "The answer is C.\n\nQ: I need to implement a security solution for our company's [DEVICE] (ID: [ID"}
+{"13": "The answer is B.\n\nQ: I need to configure a new firewall for our office at 1550 Market Street. What should"}
+{"14": "The answer is B.\n\nQ: How do I prevent a malicious insider from accessing sensitive data? Answer choices: (A) Im"}
+{"15": "The answer is B.\n\n Q: I'm a security engineer for a large enterprise. I've been asked to implement a security"}
+{"16": "The answer is A.\n\nQ: I need to secure our Docker containers in production. What are the critical security practices? Answer Choices:"}
+{"17": "The answer is B.\n\n Q: Our employee [IDENTITY] (ID: [IDENTITY]) reported a phishing email at"}
+{"18": "The answer is C.\n\n Q: I need to secure our web server from SQL injection attacks. What's the best approach? Answer Cho"}
+{"19": "The answer is C.\n\n Q: How do I prevent a user from accessing a web application with a stolen session cookie? Answer Choices"}
+{"20": "The answer is B.\n\nQ: I need to configure a new firewall rule to allow access to the [SERVICE] service on port ["}
+{"21": "The answer is D.\n\nQ: I need to conduct a security assessment of our mobile application. What areas should I prioritize?"}
+{"22": "The answer is B.\n\n Q: I'm a security analyst at [COMPANY]. I'm investigating a suspicious"}
+{"23": "The answer is D.\n\nQ: I need to implement a secure password policy for our company. What should I consider? Answer choices: ("}
+{"24": "The answer is C.\n\n Q: I need to secure our wireless network at the office. What configuration provides the strongest security? Answer Cho"}
+{"25": "The answer is A.\n\n Q: A user reported that they received a suspicious email from [EMAIL] with the subject \"Re:"}
+{"26": "The answer is A.\n\nQ: How do I secure our production servers? Answer choices: (A) Use a VPN to access the"}
+{"27": "The answer is B.\n\nQ: I'm receiving alerts about data exfiltration attempts from IP 10.0."}

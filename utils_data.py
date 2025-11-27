@@ -96,16 +96,20 @@ Masked Question: User [IDENTITY] called from [CONTACT] reporting her device [DEV
 class CyberNERQA_dataset(Dataset): 
     # load from json file saved from stage 0 masking
     ### Stage 1 should use "Masked_Question" column, and stage 2 should use raw "Question" column! ###
+
+    ## Classify whether questions are sent to cloud or edge based on similarity to qs in train set that failed masking ##
+    ## consider unseen / new type of question. Maybe if too different from what's been seen, keep on edge. In this case we may want to get similarity to qs that succeeded masking, and if not similar enough, then stay edge.
     
     def load_json(self, path):
         with open(path, 'r') as f:
             return json.load(f)
         
-    def __init__(self, tokenizer, args, stage2=False, split="test", sample_idx=-1):
+    def __init__(self, tokenizer, args, data_path='/home/jovyan/GKT/data/CyberNERQA_masked/CyberNERQA_masked.json', stage2=False, split="test", sample_idx=-1):
         self.args = args
         self.tokenizer = tokenizer
         self.stage2 = stage2 # can stage 2 be set to 0 for masking?
         self.sample_idx = sample_idx
+        self.data_path = data_path
 
         # if split == "train":
         #     split_name = "dev"  # the dataset only has dev/val/test
@@ -117,9 +121,8 @@ class CyberNERQA_dataset(Dataset):
         print(f"Loading CyberNERQA")
 
         #load most recently generated masked dataset
-        #data_path=os.path.join(self.args.data_path,self.args.dataset)[split_name] 
-        data_path= '/home/jovyan/GKT/data/CyberNERQA_masked/CyberNERQA_masked_6.json' # hardcode for now  # will still work for stage 2 as well since it also has "Question" column
-        dataset = self.load_json(data_path)
+        #data_path= '/home/jovyan/GKT/data/CyberNERQA_masked/CyberNERQA_masked_6.json' # hardcode for now  # will still work for stage 2 as well since it also has "Question" column
+        dataset = self.load_json(self.data_path)
         self.data = self.format_data(dataset)
     
         # # Optionally truncate for debugging
@@ -152,58 +155,25 @@ class CyberNERQA_dataset(Dataset):
             tokenized_full_data = self.tokenize(ins, None, self.tokenizer)
         return tokenized_full_data
 
-    # def format_data(self, dataset):
-    #     """
-    #     Convert CyberNERQA entries into a common schema used by other datasets.
-    #     """
-    #     formatted = []
-    #     for item in dataset:
-    #         # Build a multiple-choice question string
-    #         choices = f"Answer Choices: (A) {item['A']} (B) {item['B']} (C) {item['C']} (D) {item['D']}"
-    #         if stage2 == False:
-    #             Question = "Masked_Question"
-    #         else:
-    #             Question = "Question"
-    #         formatted.append({
-    #             "question": item[Question].strip() + " " + choices, # if stage 1: "Masked_Question", if stage 2: "Question"
-    #             "answer": item["Answer"]
-    #         })
-    #     return formatted
-
-    # def tokenize(self, test_dict, big_output_pre, tokenizer):
-    #     examplar = self.create_demo_text()
-
-    #     if "if_concise_prompt" in self.args and self.args.if_concise_prompt:
-    #         system_prompt=self.args.if_concise_prompt
-    #     else:
-    #         system_prompt=""
-
-    #     if self.stage2:
-    #         instruction = system_prompt + examplar + " Q: " + test_dict["question"] + "\nA: " + big_output_pre # raw vs masked question already handled above
-    #     else:
-    #         instruction = system_prompt + examplar + " Q: " + test_dict["question"] + "\nA: "
-
-    #     inputs = tokenizer(
-    #         instruction,
-    #         return_tensors="pt",
-    #         padding='max_length',
-    #         max_length=1024
-    #     )
-    #     return inputs
-
-
 
 
     def format_data(self, dataset):
         """
-        Convert HF SecQA entries into a common schema used by other datasets.
+        Convert HF CyberNERQA entries into a common schema used by other datasets.
         """
         formatted = []
         for item in dataset:
             # Build a multiple-choice question string
             choices = f"Answer Choices: (A) {item['A']} (B) {item['B']} (C) {item['C']} (D) {item['D']}"
+            if not self.stage2: 
+                if self.args.masking: #only provide masked questions to stage 1 when set
+                    question = item["Masked_Question"]
+                else:
+                    question = item["Question"]
+            else:
+                question = item["Question"]
             formatted.append({
-                "question": item["Question"].strip() + " " + choices,
+                "question": question.strip() + " " + choices,
                 "answer": item["Answer"]
             })
         return formatted

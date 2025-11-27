@@ -18,10 +18,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 logging.basicConfig(level=logging.INFO)
 
-def generate(
-    model,
-    input_data,args
-):
+def generate(model, input_data, args):
     top_p= 0.9
     max_gen_len = args.max_gen_len
     for i in input_data:
@@ -31,7 +28,7 @@ def generate(
     results=tokenizer.batch_decode(output_sequences, skip_special_tokens=True)
     return results
 
-def generation_loop(dataloader, model,args):
+def generation_loop(dataloader, model, args):
     results=[]
     for batch_data in tqdm(dataloader):
         batch_data = batch_data.to(model.device)
@@ -58,6 +55,7 @@ if __name__ == "__main__":
     parser.add_argument('--out_path', type=str, default="output/big2small/")
     parser.add_argument('--max_gen_len', type=int, default=30)
     parser.add_argument('--batch_size', type=int, default=24)
+    parser.add_argument('--masking', type=bool)
     parser.add_argument('--few_shot', type=int,help="GSM8K:8 CSQA:7 CNNDM:0")
     args = parser.parse_args()
 
@@ -132,6 +130,15 @@ if __name__ == "__main__":
             params=0
         # recode start time
         start_time = time.time()
+
+
+        ## add classification in dataloader, split train and test closer to 50/50
+        # add cloud-edge classification (check semantic similarity to questions that failed to be masked, if similar enough, don’t send question to cloud, stay on the edge)
+        ## need to keep track of those questions and their masking success, maybe indexes
+        # figure out batching, maybe separate into two new dataloading sets (one for edge and one for cloud) to batch from there?
+        # append empty string "" if classified as staying on edge to keep compatible with rest of pipeline
+        # collect runtime of classification
+        
         answers=generation_loop(dataloader, model,args)
         # end time
         end_time = time.time()

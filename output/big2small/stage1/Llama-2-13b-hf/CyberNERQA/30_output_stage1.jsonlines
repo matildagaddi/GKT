@@ -1,0 +1,28 @@
+{"0": "The answer is B.\n\n Q: I need to investigate unauthorized access to account AC-8829-447"}
+{"1": "The answer is C.\n\n Q: I'm concerned about the security of my system. What's the best way to protect it?"}
+{"2": "The answer is B.\n\n Q: I'm concerned that the security of my organization's network is at risk. What should I do"}
+{"3": "The answer is B.\n\n Q: I discovered a hardcoded password in our source code. What's the remediation process? Answer"}
+{"4": "The answer is C.\n\n Q: What is the best way to prevent SQL injection attacks? Answer Choices: (A) Use prepared statements"}
+{"5": "The answer is B.\n\n Q: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"6": "The answer is B.\n\n Q: I need to configure network segmentation for our infrastructure. What's the key principle? Answer Cho"}
+{"7": "The answer is B.\n\n Q: I'm a developer and I'm working on a new web application. What's the best"}
+{"8": "The answer is B.\n\n Q: How do I secure API endpoints that handle sensitive financial transactions? Answer Choices: (A) Use"}
+{"9": "The answer is D.\n\n Q: I'm a security analyst for a large company. I've been asked to review the security"}
+{"10": "The answer is B.\n\n Q: I need to implement secure file upload functionality. What security measures are essential? Answer Choices: (A"}
+{"11": "The answer is B.\n\n Q: I'm a security engineer at a large company. I've been asked to create a security policy"}
+{"12": "The answer is C.\n\n Q: I need to secure the SSH service on device [DEVICE]. What's the safest approach?"}
+{"13": "The answer is B.\n\n Q: I'm configuring a new server at our facility at 1550 Market Street. What"}
+{"14": "The answer is B.\n\n Q: What is the best way to prevent a DDoS attack? Answer Choices: (A) Use"}
+{"15": "The answer is B.\n\n Q: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"16": "The answer is A.\n\n Q: I need to secure our Docker containers in production. What are the critical security practices? Answer Choices:"}
+{"17": "The answer is B.\n\n Q: Which of the following is a best practice for securing a network? Answer Choices: (A"}
+{"18": "The answer is C.\n\n Q: I need to implement a security policy for my organization. What should I consider? Answer Choices: ("}
+{"19": "The answer is C.\n\n Q: What is the best way to securely store sensitive data in a database? Answer Choices: (A"}
+{"20": "The answer is B.\n\n Q: A developer has been using a personal SSH key to access the company's production environment. What's"}
+{"21": "The answer is D.\n\n Q: I need to conduct a security assessment of our mobile application. What areas should I prioritize?"}
+{"22": "The answer is B.\n\n Q: I'm a security analyst at a large company. I'm reviewing the security logs for"}
+{"23": "The answer is D.\n\n Q: I need to implement a secure password policy for my organization. What's the best approach? Answer Cho"}
+{"24": "The answer is C.\n\n Q: I need to secure our wireless network at the office. What configuration provides the strongest security? Answer Cho"}
+{"25": "The answer is B.\n\n Q: A user reports that they are unable to access a website. What's the first step to troublesho"}
+{"26": "The answer is A.\n\n Q: How do I ensure that my organization's software is secure? Answer Choices: (A) Use"}
+{"27": "The answer is B.\n\n Q: I'm receiving alerts about data exfiltration attempts from IP 10.0."}

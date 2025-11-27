@@ -1,0 +1,17 @@
+{
+    "model_name": "meta-llama/Llama-2-13b-hf",
+    "max_seq_len": 1024,
+    "max_batch_size": 12,
+    "dataset": "CyberNERQA",
+    "if_concise_prompt": false,
+    "data_path": "./data/",
+    "out_path": "output/big2small/",
+    "max_gen_len": 30,
+    "batch_size": 50,
+    "few_shot": 1,
+    "Execution time": 17.15747356414795,
+    "FLOPs:(G)": 4697.62048,
+    "Number of parameters:(M)": 163.84,
+    "timestamp": "2025-11-22_12-22-12",
+    "text path": "output/big2small/stage1/Llama-2-13b-hf/CyberNERQA/30_output_stage1.jsonlines"
+}

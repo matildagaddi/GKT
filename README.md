@@ -1,3 +1,5 @@
+## ADAPTATION OF
+
 # GKT: A Novel Guidance-Based Knowledge Transfer Framework For Efficient Cloud-edge Collaboration LLM Deployment
 
 We introduce the GKT framework which excels in both efficiency and affordability. GKT uses larger models to batch generate guidance and then pass the guidance to smaller models, while ensuring user customization.

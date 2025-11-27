@@ -19,6 +19,8 @@ import logging
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from transformers import DataCollatorWithPadding
+from sklearn.metrics import precision_recall_fscore_support, confusion_matrix
+import numpy as np
 logging.basicConfig(level=logging.INFO)
 
 # generate new "Masked_Question" column using "Question" column from CyberNERQA data
@@ -43,41 +45,71 @@ logging.basicConfig(level=logging.INFO)
 def answer_cleansing_mask(pred):
     """Extract masked question from model response."""
     
-    # Split by "Masked Question:" and take the second occurrence (the actual answer, not the example)
+    # # Split by "Masked Question:" and take the second occurrence (the actual answer, not the example)
+    # parts = pred.split("Masked Question:")
+    
+    # if len(parts) > 1:
+    #     # Get the "Masked Question:" section (skip the example)
+    #     masked_section = parts[2].strip()
+        
+    #     # Find the first question mark and cut there
+    #     question_mark_idx = masked_section.find('?')
+    #     if question_mark_idx != -1:
+    #         masked_q = masked_section[:question_mark_idx + 1].strip()
+    #     else:
+    #         # No question mark found, take first line or sentence
+    #         masked_q = masked_section.split('\n')[0].strip()
+    #         # Remove common trailing artifacts
+    #         masked_q = re.sub(r'\s*(Answer|Question|Example).*$', '', masked_q, flags=re.IGNORECASE).strip()
+        
+    #     return masked_q
+    
+    # # Fallback: no "Masked Question:" found
+    # # Look for the last sentence ending with '?'
+    # sentences = re.split(r'(?<=[.!?])\s+', pred)
+    # for sent in reversed(sentences):
+    #     if '?' in sent:
+    #         return sent.strip()
+
+    # print(f"Questions that might not be complete (missing question mark): {not_complete}")
+    
+    # return pred.strip()
+
+    
+    incomplete = False
+
+    # Split by "Masked Question:"
     parts = pred.split("Masked Question:")
-    
+
     if len(parts) > 1:
-        # Get the "Masked Question:" section (skip the example)
-        masked_section = parts[2].strip()
-        
-        # Find the first question mark and cut there
+        masked_section = parts[2].strip() # take the second occurrence (the actual answer, not the example)
         question_mark_idx = masked_section.find('?')
+
         if question_mark_idx != -1:
-            masked_q = masked_section[:question_mark_idx + 1].strip()
-        else:
-            # No question mark found, take first line or sentence
-            masked_q = masked_section.split('\n')[0].strip()
-            # Remove common trailing artifacts
-            masked_q = re.sub(r'\s*(Answer|Question|Example).*$', '', masked_q, flags=re.IGNORECASE).strip()
+            return masked_section[:question_mark_idx + 1].strip(), False
         
-        return masked_q
-    
+        # No '?'
+        incomplete = True
+        masked_q = masked_section.split('\n')[0].strip()
+        masked_q = re.sub(r'\s*(Answer|Question|Example).*$', '', masked_q, flags=re.IGNORECASE).strip()
+        return masked_q, incomplete
+
     # Fallback: no "Masked Question:" found
-    # Look for the last sentence ending with '?'
     sentences = re.split(r'(?<=[.!?])\s+', pred)
     for sent in reversed(sentences):
         if '?' in sent:
-            return sent.strip()
-    
-    return pred.strip()  # Last resort
+            return sent.strip(), False
+
+    # Really no '?'
+    return pred.strip(), True
 
 
 def generate(
     model,
     input_data,args
 ):
-    top_p= 0.3 #was 0.9 # want masking to be accurate, not creative
-    temp=0.2 # temp was 0.8, changed to handle "Assertion `probability tensor contains either `inf`, `nan` or element < 0` failed."
+    top_p= 0.1 #was 0.9 # want masking to be accurate, not creative
+    temp=0.1 # temp was 0.8, changed to handle "Assertion `probability tensor contains either `inf`, `nan` or element < 0` failed."
     max_gen_len = args.max_gen_len
     for i in input_data:
         input_data[i]=input_data[i].squeeze(1) 
@@ -152,6 +184,7 @@ if __name__ == "__main__":
     right_match=0
     right_clean=0
     empty_masked_q=0
+    tp, fp, fn, tn = 0, 0, 0, 0 
 
     #with jsonlines.open(masked_data_path, mode='w') as writer:
     
@@ -174,10 +207,13 @@ if __name__ == "__main__":
     end_time = time.time()
     execution_time = end_time - start_time
     print("-------------")
-    print("!!! execution_time",execution_time)
+    print("!!! execution_time ",execution_time)
     print("-------------")
 
     masked_data = []
+    failed_mask_qs = {}
+    qs_not_complete = {}
+    qs_not_complete_count = 0
     for qid, maskq in enumerate(masked_qs):
         raw_data_row = dataset.data[qid] #original row of data, then add later the "Masked_Question" column.
         
@@ -187,7 +223,11 @@ if __name__ == "__main__":
             raise TypeError(f"Unexpected row type for index {qid}: {type(raw_data_row)}")
 
         item = dict(raw_data_row)
-        final_masked_q = answer_cleansing_mask(maskq)
+        #final_masked_q = answer_cleansing_mask(maskq)
+        final_masked_q, incomplete = answer_cleansing_mask(maskq)
+        if incomplete:
+            qs_not_complete_count += 1
+            qs_not_complete[qid] = final_masked_q
         item["Masked_Question"] = final_masked_q
 
         masked_data.append(item)
@@ -205,17 +245,58 @@ if __name__ == "__main__":
                 all_entity_values.extend(values)
 
         if not any(str(entity_val) in str(final_masked_q) for entity_val in all_entity_values):
-            right_clean += 1        
-        # if not any(str(entity) in str(final_masked_q) for entity in raw_data_row.get("Entities", [])):
-        #     right_clean += 1
+            right_clean += 1 
 
-        ####################################
-        ### TODO: collect metrics like a classifier (precision, recall, f1) tokenized PII vs non-PII
-        ####################################
-        
+        else:
+            #add question to list of failed masks
+            failed_mask_qs[qid] = final_masked_q
+            
         
         if len(str(final_masked_q).strip()) <= 2:
             empty_masked_q += 1
+
+
+        
+        ##### collect metrics like a classifier (precision, recall, f1) for tokenized PII vs non-PII
+        original_q = str(raw_data_row.get("Question", "")) #*
+        original_tokens = original_q.split()
+        masked_tokens = str(final_masked_q).split()
+
+        #labels for each token (1=PII, 0=non-PII)
+        ground_truth = []
+        for token in original_tokens:
+            is_pii = any(str(entity_val) in token for entity_val in all_entity_values)
+            ground_truth.append(1 if is_pii else 0)
+
+
+        predictions = []
+        original_lower = [t.lower() for t in original_tokens]
+        masked_lower = [t.lower() for t in masked_tokens]
+        
+        for i, token in enumerate(original_tokens):
+            token_lower = token.lower()
+            # Token is "masked" (predicted as PII) if it's not in the output
+            if token_lower not in masked_lower:
+                predictions.append(1)  # Predicted as PII
+            else:
+                predictions.append(0)  # Predicted as non-PII
+        
+        # Update confusion matrix
+            for gt, pred in zip(ground_truth, predictions):
+                if gt == 1 and pred == 1:
+                    tp += 1  # True Positive: correctly identified PII
+                elif gt == 0 and pred == 1:
+                    fp += 1  # False Positive: incorrectly masked non-PII
+                elif gt == 1 and pred == 0:
+                    fn += 1  # False Negative: missed PII
+                elif gt == 0 and pred == 0:
+                    tn += 1  # True Negative: correctly kept non-PII
+
+    precision = round(tp / (tp + fp) if (tp + fp) > 0 else 0.0, 4)
+    recall = round(tp / (tp + fn) if (tp + fn) > 0 else 0.0, 4)
+    f1 = round(2 * (precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0, 4)
+    accuracy_token = round((tp + tn) / (tp + tn + fp + fn) if (tp + tn + fp + fn) > 0 else 0.0, 4)
+
     
     with open(masked_data_path, "w") as f:
         json.dump(masked_data, f, indent=2)
@@ -225,19 +306,28 @@ if __name__ == "__main__":
     ####save args
     args_dict = vars(args)
     args_dict["Execution time"]=execution_time
-    args_dict["right exact match"]=right_match
-    args_dict["right clean, no PII"]=right_clean
-    args_dict["empty masked questions"]=empty_masked_q
-    args_dict["total"]=total
     args_dict["FLOPs:(G)"]=flops / 1e9
     args_dict["Number of parameters:(M)"]=params / 1e6
     args_dict["timestamp"] = datetime.now(ZoneInfo("America/Los_Angeles")).strftime("%Y-%m-%d_%H-%M-%S")
     args_dict["masked data path"] = masked_data_path
     args_dict["acc_match"]=right_match/total
     args_dict["acc_clean"]=right_clean/total
+    args_dict["empty masked questions"]=empty_masked_q
+    args_dict["questions not complete"]=qs_not_complete   
+    args_dict["failed masked questions"] = failed_mask_qs
+    args_dict["token_metrics"]= {
+        "precision": precision,
+        "recall": recall,
+        "f1_score": f1,
+        "accuracy": accuracy_token
+    },
+    args_dict["confusion_matrix"]= {
+        "tp": tp, "fp": fp, "fn": fn, "tn": tn
+    },
+    args_dict["total"]=total
     print("-------------")
     print("!!! right match: ",right_match, "    right clean: ",right_clean, "   total: ", total, "    empty masked questions:", empty_masked_q)
-    print("!!! accuracy match: ", right_match/total, "!!! accuracy clean: ", right_clean/total)
+    print("!!! accuracy match: ", right_match/total, "!!! accuracy clean: ", right_clean/total, "!!! Qs not complete: ", qs_not_complete_count)
     print("-------------")
     
     
