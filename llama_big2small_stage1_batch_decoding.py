@@ -55,7 +55,7 @@ if __name__ == "__main__":
     parser.add_argument('--out_path', type=str, default="output/big2small/")
     parser.add_argument('--max_gen_len', type=int, default=30)
     parser.add_argument('--batch_size', type=int, default=24)
-    parser.add_argument('--masking', type=bool)
+    parser.add_argument('--masking', type=int, choices=[0,1])
     parser.add_argument('--few_shot', type=int,help="GSM8K:8 CSQA:7 CNNDM:0")
     args = parser.parse_args()
 
@@ -136,7 +136,7 @@ if __name__ == "__main__":
         # add cloud-edge classification (check semantic similarity to questions that failed to be masked, if similar enough, don’t send question to cloud, stay on the edge)
         ## need to keep track of those questions and their masking success, maybe indexes
         # figure out batching, maybe separate into two new dataloading sets (one for edge and one for cloud) to batch from there?
-        # append empty string "" if classified as staying on edge to keep compatible with rest of pipeline
+        # append empty string "" as cloud guidance if classified as staying on edge to keep compatible with rest of pipeline
         # collect runtime of classification
         
         answers=generation_loop(dataloader, model,args)

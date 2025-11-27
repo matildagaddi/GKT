@@ -232,15 +232,18 @@ if __name__ == "__main__":
         print("!!! execution_time",execution_time)
         print("-------------")
 
+        wrong_qs = {}
         if args.dataset in ["GSM8K","CSQA","AQuA","SecQA","CyberNERQA"]: #check if SecQA needs something different
-            #qid=0
+
             for qid, ans in enumerate(answers):
                 item={}
                 item[qid]=ans
                 writer.write(item)
                 if str(ans["ans"])==str(dataset.data[qid]["answer"]):
                     right+=1
-              #  qid+=1
+                else:
+                    wrong_qs[qid]=[dataset.data[qid], ans["ans"]]
+
         elif args.dataset in ["CNNDM"]:
             qid=0
             answer_list=[]
@@ -263,6 +266,7 @@ if __name__ == "__main__":
     
     #if args.dataset in ["GSM8K","CSQA","AQuA","SecQA"]:
     args_dict["acc"]=right/total
+    args_dict["wrong"]=wrong_qs
     print("!!! right: ",right, "   total: ", total, "   accuracy: ", right/total)
 
     args_dict["FLOPs:(G)"]=flops / 1e9

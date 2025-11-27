@@ -1,0 +1,28 @@
+{"0": "The answer is B.\n\nQ: I need to investigate unauthorized access to account AC-8829-447"}
+{"1": "The answer is C.\n\nQ: I'm trying to configure a new firewall rule on device [DEVICE]. What's the best"}
+{"2": "The answer is B.\n\n Q: I received a suspicious email from an unknown sender. How do I verify the sender's identity?"}
+{"3": "The answer is B.\n\nQ: I found a suspicious file named [FILENAME] in the [FILEPATH] directory. What should"}
+{"4": "The answer is C.\n\nQ: I need to implement a secure password policy for our company. What are the best practices? Answer Choices"}
+{"5": "The answer is B.\n\nQ: What is the best way to secure our company's data from unauthorized access? Answer choices"}
+{"6": "The answer is B.\n\nQ: I need to configure network segmentation for our infrastructure. What's the key principle? Answer Cho"}
+{"7": "The answer is B.\n\nQ: I'm a security analyst at [COMPANY]. I've been tasked to investigate"}
+{"8": "The answer is B.\n\nQ: What is the best way to secure our production servers from unauthorized access? Answer choices: ("}
+{"9": "The answer is C.\n\n Q: I need to implement a security policy for our organization. What should I include? Answer Choices: ("}
+{"10": "The answer is B.\n\nQ: I need to implement secure file upload functionality. What security measures are essential? Answer Choices: (A"}
+{"11": "The answer is B.\n\nQ: I need to implement a new security policy for our organization. What's the best approach? Answer choices"}
+{"12": "The answer is C.\n\nQ: I need to implement a new security policy for our organization. What should be my first step? Answer choices"}
+{"13": "The answer is B.\n\nQ: I need to configure a new firewall rule for our production servers. What's the best approach? Answer"}
+{"14": "The answer is B.\n\nQ: What is the best way to prevent a malicious insider from deleting critical data? Answer choices: ("}
+{"15": "The answer is B.\n\nQ: I need to configure a new firewall rule for the [DEVICE] to allow access to the [SER"}
+{"16": "The answer is A.\n\nQ: I need to secure our Docker containers in production. What are the critical security practices? Answer Choices:"}
+{"17": "The answer is B.\n\nQ: We're planning to implement a new security policy for our organization. Which of the following should be our"}
+{"18": "The answer is C.\n\nQ: I need to implement a secure remote access solution for our employees. What's the best approach? Answer"}
+{"19": "The answer is C.\n\nQ: How do I prevent a brute force attack on my SSH server? Answer choices: (A) Use"}
+{"20": "The answer is B.\n\n Q: A user [USER] (ID: [USER]) reported a suspicious email from [SENDER"}
+{"21": "The answer is D.\n\nQ: I need to conduct a security assessment of our mobile application. What areas should I prioritize?"}
+{"22": "The answer is B.\n\nQ: I'm investigating a potential security incident. What's the first step? Answer choices: ("}
+{"23": "The answer is D.\n\nQ: How do I securely configure a new server? Answer choices: (A) Use a default password,"}
+{"24": "The answer is C.\n\nQ: I need to secure our wireless network at the office. What configuration provides the strongest security? Answer Cho"}
+{"25": "The answer is A.\n\n Q: We have a new employee [IDENTITY] (ID: [IDENTITY]) starting today."}
+{"26": "The answer is A.\n\nQ: How do I secure my organization's cloud infrastructure? Answer choices: (A) Use a cloud"}
+{"27": "The answer is B.\n\nQ: I'm receiving alerts about data exfiltration attempts from IP 10.0."}

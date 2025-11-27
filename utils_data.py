@@ -4,6 +4,9 @@ import json
 import os
 import random
 from datasets import load_dataset
+from sentence_transformers import SentenceTransformer, util
+import torch
+
 
 class Stage0_CyberNERQA_dataset(Dataset):
     # load dataset for stage 0 edge LLM to mask the "Question" column, 
@@ -97,19 +100,16 @@ class CyberNERQA_dataset(Dataset):
     # load from json file saved from stage 0 masking
     ### Stage 1 should use "Masked_Question" column, and stage 2 should use raw "Question" column! ###
 
-    ## Classify whether questions are sent to cloud or edge based on similarity to qs in train set that failed masking ##
-    ## consider unseen / new type of question. Maybe if too different from what's been seen, keep on edge. In this case we may want to get similarity to qs that succeeded masking, and if not similar enough, then stay edge.
-    
     def load_json(self, path):
         with open(path, 'r') as f:
             return json.load(f)
         
-    def __init__(self, tokenizer, args, data_path='/home/jovyan/GKT/data/CyberNERQA_masked/CyberNERQA_masked.json', stage2=False, split="test", sample_idx=-1):
+    def __init__(self, tokenizer, args, stage2=False, split="test", sample_idx=-1):
         self.args = args
         self.tokenizer = tokenizer
         self.stage2 = stage2 # can stage 2 be set to 0 for masking?
         self.sample_idx = sample_idx
-        self.data_path = data_path
+        #self.data_path = args.data_path
 
         # if split == "train":
         #     split_name = "dev"  # the dataset only has dev/val/test
@@ -120,15 +120,35 @@ class CyberNERQA_dataset(Dataset):
 
         print(f"Loading CyberNERQA")
 
-        #load most recently generated masked dataset
-        #data_path= '/home/jovyan/GKT/data/CyberNERQA_masked/CyberNERQA_masked_6.json' # hardcode for now  # will still work for stage 2 as well since it also has "Question" column
-        dataset = self.load_json(self.data_path)
+        dataset = self.load_json(self.args.data_args['masked data path']) #self.args.data_args is a path to a json file. probably need to fix this
         self.data = self.format_data(dataset)
-    
-        # # Optionally truncate for debugging
-        # if hasattr(args, "debug_subset") and args.debug_subset:
-        #     self.data = self.data[:len(self.data) // 10]
 
+        failed_qs = self.args.data_args['failed masked questions'] #keys are index in whole dataset: 3, 9, 20
+
+        ## Classify whether questions are sent to cloud or edge based on similarity to qs in train set that failed masking ##
+        ## consider unseen / new type of question. Maybe if too different from what's been seen, keep on edge. In this case we may want to get similarity to qs that succeeded masking, and if not similar enough, then stay edge.
+        
+        # ys = [0 if i in failed_qs.keys() else 1 for i in len(self.data)] #if Q in failed, then edge=0, else cloud=1
+        # y_train = ys[:len(self.data)//2]
+        # X_train = self.data[:len(self.data)//2] #this data gets masked and we collect the failures
+        # y_test = ys[len(self.data)//2:]
+        # X_test = self.data[len(self.data)//2:] #this data un unseen and we need to check
+
+        questions = [x["Question"] for x in dataset]
+        failed_idxs = set(failed_qs.keys())
+        
+        emb = semantic_model.encode(questions, convert_to_tensor=True)
+        
+        # split embeddings
+        failed_embs = emb[list(failed_idxs)]
+        success_embs = emb[[i for i in range(len(questions)) if i not in failed_idxs]]
+
+        semantic_model = SentenceTransformer("all-MiniLM-L6-v2")
+        
+        self.cloud_or_edge = [self.classify(q["Question"]) for q in self.data]
+        
+
+        
         # Handle precomputed big model outputs if stage2
         self.big_output_pre = []
         if sample_idx >= 0:
@@ -155,7 +175,13 @@ class CyberNERQA_dataset(Dataset):
             tokenized_full_data = self.tokenize(ins, None, self.tokenizer)
         return tokenized_full_data
 
+    def classify(question_text):
+        q_emb = semantic_model.encode(question_text, convert_to_tensor=True)
+    
+        sim_fail = util.cos_sim(q_emb, failed_embs).max()
+        sim_success = util.cos_sim(q_emb, success_embs).max()
 
+        return 0 if sim_fail > sim_success else 1
 
     def format_data(self, dataset):
         """
@@ -166,7 +192,7 @@ class CyberNERQA_dataset(Dataset):
             # Build a multiple-choice question string
             choices = f"Answer Choices: (A) {item['A']} (B) {item['B']} (C) {item['C']} (D) {item['D']}"
             if not self.stage2: 
-                if self.args.masking: #only provide masked questions to stage 1 when set
+                if self.args.masking == 1: #only provide masked questions to stage 1 when set
                     question = item["Masked_Question"]
                 else:
                     question = item["Question"]
@@ -176,6 +202,7 @@ class CyberNERQA_dataset(Dataset):
                 "question": question.strip() + " " + choices,
                 "answer": item["Answer"]
             })
+        print("stage2: ", self.stage2, "    Check if actually masked when stage2 is False: ", question)
         return formatted
 
     def tokenize(self, test_dict, big_output_pre, tokenizer):

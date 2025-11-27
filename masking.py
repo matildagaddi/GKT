@@ -45,37 +45,6 @@ logging.basicConfig(level=logging.INFO)
 def answer_cleansing_mask(pred):
     """Extract masked question from model response."""
     
-    # # Split by "Masked Question:" and take the second occurrence (the actual answer, not the example)
-    # parts = pred.split("Masked Question:")
-    
-    # if len(parts) > 1:
-    #     # Get the "Masked Question:" section (skip the example)
-    #     masked_section = parts[2].strip()
-        
-    #     # Find the first question mark and cut there
-    #     question_mark_idx = masked_section.find('?')
-    #     if question_mark_idx != -1:
-    #         masked_q = masked_section[:question_mark_idx + 1].strip()
-    #     else:
-    #         # No question mark found, take first line or sentence
-    #         masked_q = masked_section.split('\n')[0].strip()
-    #         # Remove common trailing artifacts
-    #         masked_q = re.sub(r'\s*(Answer|Question|Example).*$', '', masked_q, flags=re.IGNORECASE).strip()
-        
-    #     return masked_q
-    
-    # # Fallback: no "Masked Question:" found
-    # # Look for the last sentence ending with '?'
-    # sentences = re.split(r'(?<=[.!?])\s+', pred)
-    # for sent in reversed(sentences):
-    #     if '?' in sent:
-    #         return sent.strip()
-
-    # print(f"Questions that might not be complete (missing question mark): {not_complete}")
-    
-    # return pred.strip()
-
-    
     incomplete = False
 
     # Split by "Masked Question:"

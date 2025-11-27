@@ -1,0 +1,28 @@
+{"0": "The answer is B.\n\n Q: I need to investigate unauthorized access to account [FINANCIAL]-[ID"}
+{"1": "The answer is C.\n\n Q: I'm trying to secure a [SERVICE] that is exposed to the Internet. What's"}
+{"2": "The answer is B.\n\n Q: I received a suspicious email from [EMAIL] with a malicious attachment. What should I do"}
+{"3": "The answer is B.\n\n Q: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"4": "The answer is C.\n\n Q: What is the best way to secure a web application from SQL injection attacks? Answer Choices: (A"}
+{"5": "The answer is B.\n\n Q: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"6": "The answer is B.\n\n Q: I need to configure network segmentation for our infrastructure. What's the [CONTACT]"}
+{"7": "The answer is B.\n\n Q: I need to implement a new security policy for my organization. What's the best approach? Answer Cho"}
+{"8": "The answer is B.\n\n Q: How do I secure [FINANCIAL] endpoints that handle sensitive financial transactions? Answer Cho"}
+{"9": "The answer is D.\n\n Q: A user [IDENTITY] with token xyzABC123-4567-"}
+{"10": "The answer is B.\n\n Q: I need to implement secure file upload functionality. What security measures are essential? Answer Choices: (A"}
+{"11": "The answer is B.\n\n Q: I'm investigating a security incident. What's the first thing I should do? Answer Cho"}
+{"12": "The answer is C.\n\n Q: I need to implement a new security policy for my organization. What should I do first? Answer Choices"}
+{"13": "The answer is B.\n\n Q: I'm configuring a new server at [LOCATION]. What's the best way to secure"}
+{"14": "The answer is B.\n\n Q: Which of the following is a best practice for securing a Linux system? Answer Choices: ("}
+{"15": "The answer is B.\n\n Q: A user [IDENTITY] with employee ID [IDENTITY] needs to access customer data born"}
+{"16": "The answer is A.\n\n Q: I need to secure our [CONTAINER] in production. What are the critical security practices?"}
+{"17": "The answer is B.\n\n Q: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"18": "The answer is C.\n\n Q: I need to secure my network against [DOS] attacks. What's the best approach? Answer"}
+{"19": "The answer is C.\n\n Q: What is the best way to prevent SQL injection attacks? Answer Choices: (A) Use prepared statements"}
+{"20": "The answer is B.\n\n Q: What is the best way to securely store a private key? Answer choices: (A) Store it"}
+{"21": "The answer is D.\n\n Q: I need to conduct a security assessment of our mobile application. What areas should I prioritize?"}
+{"22": "The answer is B.\n\n Q: I'm investigating a security incident. What's the best way to preserve evidence? Answer Cho"}
+{"23": "The answer is D.\n\n Q: What is the best way to protect against a DDoS attack? Answer Choices: (A)"}
+{"24": "The answer is C.\n\n Q: I need to secure our wireless network at the office. What configuration provides the strongest security? Answer Cho"}
+{"25": "The answer is A.\n\n Q: A security audit has revealed that the company's network is vulnerable to a known exploit."}
+{"26": "The answer is A.\n\n Q: What is the best way to securely manage secrets in a cloud environment? Answer Choices: ("}
+{"27": "The answer is B.\n\n Q: I'm receiving alerts about data exfiltration attempts from IP [LOCATION] to external"}

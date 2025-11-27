@@ -1,0 +1,28 @@
+{"0": "The answer is B.\n\n Q: I need to investigate unauthorized access to account [FINANCIAL]-[ID"}
+{"1": "The answer is C.\n\n Q: I'm trying to configure a new [DEVICE] and I'm having trouble. What'"}
+{"2": "The answer is B.\n\n Q: I need to reset the password for user [IDENTITY] on [DATE]. What's the"}
+{"3": "The answer is B.\n\n Q: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"4": "The answer is C.\n\n Q: Which of the following is a good practice for securing a web application? Answer Choices: ("}
+{"5": "The answer is B.\n\n Q: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"6": "The answer is B.\n\n Q: I need to configure network segmentation for our infrastructure. What's the [CONTACT]"}
+{"7": "The answer is B.\n\n Q: I've been asked to review the security of a web application. What's the first thing I"}
+{"8": "The answer is B.\n\n Q: What is the best way to secure [FINANCIAL] endpoints that handle sensitive financial transactions"}
+{"9": "The answer is C.\n\n Q: A user [IDENTITY] with token xyzABC123-4567-"}
+{"10": "The answer is B.\n\n Q: I need to implement secure file upload functionality. What security measures are essential? Answer Choices: (A"}
+{"11": "The answer is B.\n\n Q: I'm a security engineer for a large company. I've been asked to review the security of"}
+{"12": "The answer is C.\n\n Q: I need to deploy a new web application. What are the best practices for securing it? Answer"}
+{"13": "The answer is B.\n\n Q: I'm configuring a new server at our facility at [LOCATION]. What is the best approach"}
+{"14": "The answer is B.\n\n Q: What is the best way to prevent a user from accessing a file that they are not authorized to access"}
+{"15": "The answer is B.\n\n Q: A user [IDENTITY] with employee ID [IDENTITY] needs to access a database with"}
+{"16": "The answer is A.\n\n Q: I need to secure our [CONTAINER] in production. What are the critical security practices?"}
+{"17": "The answer is B.\n\n Q: I need to reset the password for user [IDENTITY] on device [DEVICE]. What'"}
+{"18": "The answer is C.\n\n Q: I need to implement a [SECURITY] strategy to protect my network. What should I do?"}
+{"19": "The answer is C.\n\n Q: What is the best way to prevent SQL injection attacks? Answer Choices: (A) Use prepared statements"}
+{"20": "The answer is B.\n\n Q: A security audit found that the company's network is vulnerable to a man-in-the"}
+{"21": "The answer is D.\n\n Q: I need to conduct a security assessment of our mobile application. What areas should I prioritize?"}
+{"22": "The answer is B.\n\n Q: I'm a security analyst at [COMPANY]. I've been asked to investigate a"}
+{"23": "The answer is D.\n\n Q: What is the best way to securely store sensitive data? Answer Choices: (A) Encrypt"}
+{"24": "The answer is C.\n\n Q: I need to secure our wireless network at the office. What configuration provides the strongest security? Answer Cho"}
+{"25": "The answer is B.\n\n Q: Which of the following is the best way to protect against a man-in-the-middle attack?"}
+{"26": "The answer is A.\n\n Q: What is the best way to secure [FINANCIAL] data in transit? Answer Cho"}
+{"27": "The answer is B.\n\n Q: I'm receiving alerts about data exfiltration attempts from IP [LOCATION] to external"}

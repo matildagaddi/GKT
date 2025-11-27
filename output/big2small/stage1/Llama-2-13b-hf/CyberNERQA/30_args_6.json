@@ -1,0 +1,18 @@
+{
+    "model_name": "meta-llama/Llama-2-13b-hf",
+    "max_seq_len": 1024,
+    "max_batch_size": 12,
+    "dataset": "CyberNERQA",
+    "if_concise_prompt": false,
+    "data_path": "/home/jovyan/GKT/data/CyberNERQA_masked/CyberNERQA_masked_1.json",
+    "out_path": "output/big2small/",
+    "max_gen_len": 30,
+    "batch_size": 10,
+    "masking": true,
+    "few_shot": 3,
+    "Execution time": 22.65406584739685,
+    "FLOPs:(G)": 1677.7216,
+    "Number of parameters:(M)": 163.84,
+    "timestamp": "2025-11-26_19-37-30",
+    "text path": "output/big2small/stage1/Llama-2-13b-hf/CyberNERQA/30_output_stage1_5.jsonlines"
+}
