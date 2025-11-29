@@ -1,0 +1,37 @@
+{
+    "model_name": "meta-llama/Llama-2-7b-hf",
+    "max_gen_len": 50,
+    "batch_size": 50,
+    "dataset": "Stage0_CyberNERQA",
+    "data_path": "./data/",
+    "out_path": "data/CyberNERQA_masked/",
+    "Execution time": 7.957488059997559,
+    "FLOPs:(G)": 939.524096,
+    "Number of parameters:(M)": 131.072,
+    "timestamp": "2025-11-27_00-06-10",
+    "masked data path": "data/CyberNERQA_masked/CyberNERQA_masked_train_1.json",
+    "acc_match": 0.42857142857142855,
+    "acc_clean": 0.8571428571428571,
+    "empty masked questions": 0,
+    "questions not complete": {
+        "3": "I discovered hardcoded [CREDENTIALS] aBcDeFgH1234567890abcdefghij0987654321 in our source code. What's",
+        "9": "Admin user [IDENTITY] with token xyzABC123-4567-8910-defGHI-JKL890mno logged in from a new location on 2024"
+    },
+    "failed masked questions": {
+        "3": "I discovered hardcoded [CREDENTIALS] aBcDeFgH1234567890abcdefghij0987654321 in our source code. What's",
+        "9": "Admin user [IDENTITY] with token xyzABC123-4567-8910-defGHI-JKL890mno logged in from a new location on 2024"
+    },
+    "token_metrics": {
+        "precision": 0.3793,
+        "recall": 0.8462,
+        "f1_score": 0.5238,
+        "accuracy": 0.907
+    },
+    "confusion_matrix": {
+        "tp": 11,
+        "fp": 18,
+        "fn": 2,
+        "tn": 184
+    },
+    "total": 14
+}

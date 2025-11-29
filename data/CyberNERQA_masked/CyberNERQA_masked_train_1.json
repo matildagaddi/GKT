@@ -1,0 +1,206 @@
+[
+  {
+    "Question": "I need to investigate unauthorized access to account AC-8829-4471. What logs should I examine first?",
+    "A": "Application error logs only",
+    "B": "Authentication logs, access logs, and security event logs for timeline and source of access",
+    "C": "Network bandwidth usage logs",
+    "D": "System update logs",
+    "Answer": "B",
+    "Entities": {
+      "FINANCIAL": [
+        "AC-8829-4471"
+      ]
+    },
+    "PII-free Question": "I need to investigate unauthorized access to account [FINANCIAL]. What logs should I examine first?",
+    "Masked_Question": "I need to investigate unauthorized access to account [FINANCIAL]-[IDENTITY]. What logs should I examine first?"
+  },
+  {
+    "Question": "My system is showing signs of a possible rootkit infection. What's the most effective detection approach?",
+    "A": "Run a standard antivirus scan",
+    "B": "Reinstall the operating system immediately",
+    "C": "Use specialized rootkit detection tools, analyze system calls, check for hidden processes, and compare against known-good baseline",
+    "D": "Update all software and restart",
+    "Answer": "C",
+    "Entities": {},
+    "PII-free Question": "My system is showing signs of a possible rootkit infection. What's the most effective detection approach?",
+    "Masked_Question": "My system is showing signs of a possible [FINANCIAL] infection. What's the most effective detection approach?"
+  },
+  {
+    "Question": "Employee robert.jackson@company.net contacted me about unusual activity on 2024-09-22. How do I verify this communication is legitimate?",
+    "A": "Reply to the email and ask for verification",
+    "B": "Contact Robert through a known verified channel, verify employee ID through HR, check email headers for spoofing",
+    "C": "Call the phone number provided in the email",
+    "D": "Check if the email address matches the one on file",
+    "Answer": "B",
+    "Entities": {
+      "CONTACT": [
+        "robert.jackson@company.net"
+      ],
+      "DATE": [
+        "2024-09-22"
+      ]
+    },
+    "PII-free Question": "Employee [CONTACT] contacted me about unusual activity on [DATE]. How do I verify this communication is legitimate?",
+    "Masked_Question": "Employee [IDENTITY] contacted me about unusual activity on [DATE]. How do I verify this communication is legitimate?"
+  },
+  {
+    "Question": "I discovered hardcoded AWS secret key aBcDeFgH1234567890abcdefghij0987654321 in our source code. What's the remediation process?",
+    "A": "Remove the key from the current version only",
+    "B": "Immediately revoke the key, audit all AWS resources for unauthorized changes, rotate all credentials, scan codebase history, implement secrets management solution",
+    "C": "Move the key to a configuration file",
+    "D": "Encrypt the key in the source code",
+    "Answer": "B",
+    "Entities": {
+      "CREDENTIALS": [
+        "aBcDeFgH1234567890abcdefghij0987654321"
+      ]
+    },
+    "PII-free Question": "I discovered hardcoded AWS secret key [CREDENTIALS] in our source code. What's the remediation process?",
+    "Masked_Question": "I discovered hardcoded [CREDENTIALS] aBcDeFgH1234567890abcdefghij0987654321 in our source code. What's"
+  },
+  {
+    "Question": "How do I properly implement session management in a web application to prevent hijacking?",
+    "A": "Use long session timeouts for user convenience",
+    "B": "Store session IDs in the URL parameters",
+    "C": "Generate cryptographically random session IDs, use HTTPS only, implement short timeouts, regenerate IDs after authentication, and set secure cookie flags",
+    "D": "Use the user's IP address as the session identifier",
+    "Answer": "C",
+    "Entities": {},
+    "PII-free Question": "How do I properly implement session management in a web application to prevent hijacking?",
+    "Masked_Question": "How do I properly implement session management in a web application to prevent hijacking?"
+  },
+  {
+    "Question": "User lisa.chen called from +1-555-0198 reporting her device IMEI-358273054098321 was stolen. What immediate actions should I take?",
+    "A": "Wait 24 hours to see if the device is recovered",
+    "B": "Immediately disable device access, revoke associated credentials, remotely wipe if possible, log incident, and monitor for unauthorized access attempts",
+    "C": "Change the user's email password",
+    "D": "File a police report only",
+    "Answer": "B",
+    "Entities": {
+      "IDENTITY": [
+        "lisa.chen"
+      ],
+      "CONTACT": [
+        "+1-555-0198"
+      ],
+      "DEVICE": [
+        "IMEI-358273054098321"
+      ]
+    },
+    "PII-free Question": "User [IDENTITY] called from [CONTACT] reporting her device [DEVICE] was stolen. What immediate actions should I take?",
+    "Masked_Question": "User [IDENTITY] called from [CONTACT] reporting her device [DEVICE] was stolen. What immediate actions should I take?"
+  },
+  {
+    "Question": "I need to configure network segmentation for our infrastructure. What's the key principle?",
+    "A": "Place all servers in a single VLAN for easier management",
+    "B": "Isolate systems by trust level and data sensitivity, implement firewalls between segments, apply least privilege, and monitor inter-segment traffic",
+    "C": "Separate only the database servers",
+    "D": "Use physical separation for all segments",
+    "Answer": "B",
+    "Entities": {},
+    "PII-free Question": "I need to configure network segmentation for our infrastructure. What's the key principle?",
+    "Masked_Question": "I need to configure network segmentation for our infrastructure. What's the [CONTACT] principle?"
+  },
+  {
+    "Question": "My application logs show SQL injection attempts from IP 192.0.2.156. What defensive measures should I implement?",
+    "A": "Block the IP address and continue monitoring",
+    "B": "Use parameterized queries, implement input validation, enable WAF rules, apply least privilege DB permissions, and audit existing queries for vulnerabilities",
+    "C": "Switch to a different database system",
+    "D": "Add CAPTCHA to all forms",
+    "Answer": "B",
+    "Entities": {
+      "LOCATION": [
+        "192.0.2.156"
+      ]
+    },
+    "PII-free Question": "My application logs show SQL injection attempts from IP [LOCATION]. What defensive measures should I implement?",
+    "Masked_Question": "My application logs show SQL injection attempts from IP [LOCATION]. What defensive measures should I implement?"
+  },
+  {
+    "Question": "How do I secure API endpoints that handle sensitive financial transactions?",
+    "A": "Use API keys only for authentication",
+    "B": "Implement OAuth 2.0 or JWT, use HTTPS exclusively, apply rate limiting, validate all inputs, implement proper error handling without exposing details, and log all transactions",
+    "C": "Restrict access by IP whitelist only",
+    "D": "Use basic authentication over HTTPS",
+    "Answer": "B",
+    "Entities": {},
+    "PII-free Question": "How do I secure API endpoints that handle sensitive financial transactions?",
+    "Masked_Question": "How do I secure [FINANCIAL] endpoints that handle sensitive financial transactions?"
+  },
+  {
+    "Question": "Admin user thomas.anderson with token xyzABC123-4567-8910-defGHI-JKL890mno logged in from a new location on 2024-11-01. What verification steps should I take?",
+    "A": "Allow access since it's an admin user",
+    "B": "Force password reset immediately",
+    "C": "Trigger MFA challenge, verify through out-of-band communication, review recent admin actions, check for concurrent sessions, and temporarily elevate monitoring",
+    "D": "Lock the account for 24 hours",
+    "Answer": "C",
+    "Entities": {
+      "IDENTITY": [
+        "thomas.anderson"
+      ],
+      "CREDENTIALS": [
+        "xyzABC123-4567-8910-defGHI-JKL890mno"
+      ],
+      "DATE": [
+        "2024-11-01"
+      ]
+    },
+    "PII-free Question": "Admin user [IDENTITY] with token [CREDENTIALS] logged in from a new location on [DATE]. What verification steps should I take?",
+    "Masked_Question": "Admin user [IDENTITY] with token xyzABC123-4567-8910-defGHI-JKL890mno logged in from a new location on 2024"
+  },
+  {
+    "Question": "I need to implement secure file upload functionality. What security measures are essential?",
+    "A": "Check file extensions only",
+    "B": "Validate file types, scan for malware, restrict file sizes, store outside webroot, randomize filenames, implement access controls, and sanitize metadata",
+    "C": "Allow only image files",
+    "D": "Store files in a public directory for easy access",
+    "Answer": "B",
+    "Entities": {},
+    "PII-free Question": "I need to implement secure file upload functionality. What security measures are essential?",
+    "Masked_Question": "I need to implement secure file upload functionality. What security measures are essential?"
+  },
+  {
+    "Question": "Customer maria.garcia@email.com with account 7621-9384-2057 is reporting suspicious charges. What's my investigation process?",
+    "A": "Immediately refund all charges",
+    "B": "Review transaction logs, verify user identity through secondary authentication, check for account compromise indicators, analyze transaction patterns, and document findings",
+    "C": "Tell the customer to contact their bank",
+    "D": "Disable the account permanently",
+    "Answer": "B",
+    "Entities": {
+      "CONTACT": [
+        "maria.garcia@email.com"
+      ],
+      "FINANCIAL": [
+        "7621-9384-2057"
+      ]
+    },
+    "PII-free Question": "Customer [CONTACT] with account [FINANCIAL] is reporting suspicious charges. What's my investigation process?",
+    "Masked_Question": "Customer [IDENTITY] with account [FINANCIAL] is reporting suspicious charges. What's my investigation process?"
+  },
+  {
+    "Question": "My system detected a brute force attack against our VPN endpoint. What countermeasures should I deploy?",
+    "A": "Increase password complexity requirements only",
+    "B": "Disable the VPN service temporarily",
+    "C": "Implement account lockout policies, deploy fail2ban or similar, require MFA, use CAPTCHA after failed attempts, monitor for distributed attacks, and consider geo-blocking",
+    "D": "Change the VPN server address",
+    "Answer": "C",
+    "Entities": {},
+    "PII-free Question": "My system detected a brute force attack against our VPN endpoint. What countermeasures should I deploy?",
+    "Masked_Question": "My system detected a brute force attack against our VPN endpoint. What countermeasures should I deploy?"
+  },
+  {
+    "Question": "I'm configuring backup encryption for servers at our facility at 1550 Market Street. What encryption approach should I use?",
+    "A": "Use the same key for all backups",
+    "B": "Implement AES-256 encryption with unique keys per backup, secure key management system, regular key rotation, and test restoration procedures",
+    "C": "Rely on physical security of backup storage",
+    "D": "Use password-protected zip files",
+    "Answer": "B",
+    "Entities": {
+      "LOCATION": [
+        "1550 Market Street"
+      ]
+    },
+    "PII-free Question": "I'm configuring backup encryption for servers at our facility at [LOCATION]. What encryption approach should I use?",
+    "Masked_Question": "I'm configuring backup encryption for servers at our facility at [LOCATION]. What encryption approach should I use?"
+  }
+]

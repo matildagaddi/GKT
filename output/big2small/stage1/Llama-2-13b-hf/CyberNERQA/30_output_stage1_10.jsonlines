@@ -1,0 +1,28 @@
+{"0": "The answer is B.\n\n Q: I need to investigate unauthorized access to account [FINANCIAL]-[ID"}
+{"1": "The answer is C.\n\n Q: I need to create a new [FINANCIAL] account. What's the best approach"}
+{"2": "The answer is B.\n\n Q: I'm concerned about a potential phishing attack. What should I do? Answer Choices: ("}
+{"3": "The answer is B.\n\n Q: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"4": "The answer is C.\n\n Q: I need to implement a secure password reset mechanism in a web application. What's the safest approach"}
+{"5": "The answer is B.\n\n Q: Which of the following is a best practice for password management? Answer choices: (A) Use a password"}
+{"6": "The answer is B.\n\n Q: I need to configure network segmentation for our infrastructure. What's the [CONTACT]"}
+{"7": "The answer is B.\n\n Q: I'm concerned about the security of my application. What should I do? Answer Choices: ("}
+{"8": "The answer is A.\n\n Q: I need to secure [FINANCIAL] endpoints that handle sensitive financial transactions. What'"}
+{"9": "The answer is C.\n\n Q: Which of the following is a best practice for securing a network? Answer Choices: (A"}
+{"10": "The answer is B.\n\n Q: I need to implement secure file upload functionality. What security measures are essential? Answer Choices: (A"}
+{"11": "The answer is B.\n\n Q: I need to reset the password for user [USER] on device [DEVICE]. What's the"}
+{"12": "The answer is C.\n\n Q: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"13": "The answer is B.\n\n Q: I'm configuring a new firewall for a client. What's the best approach to ensure that"}
+{"14": "The answer is B.\n\n Q: Which of the following is a best practice for securing a Linux system? Answer Choices: ("}
+{"15": "The answer is B.\n\n Q: I need to reset the password for user [IDENTITY] on device [DEVICE]. What'"}
+{"16": "The answer is A.\n\n Q: I need to secure our [CONTAINER] in production. What are the critical security practices?"}
+{"17": "The answer is B.\n\n Q: A user [IDENTITY] contacted support at [CONTACT] about accessing files from device"}
+{"18": "The answer is C.\n\n Q: I'm a [CLOUD] administrator and I need to configure a firewall rule to allow traffic"}
+{"19": "The answer is C.\n\n Q: What is the best way to securely store passwords in a database? Answer Choices: (A)"}
+{"20": "The answer is B.\n\n Q: A security engineer is reviewing the following code:\n\n```\n#include <stdio.h>"}
+{"21": "The answer is D.\n\n Q: I need to conduct a security assessment of our mobile application. What areas should I prioritize?"}
+{"22": "The answer is B.\n\n Q: I'm a security engineer at [COMPANY]. I'm reviewing the security controls for"}
+{"23": "The answer is D.\n\n Q: I need to implement a secure logging solution. What's the safest approach? Answer Choices:"}
+{"24": "The answer is C.\n\n Q: I need to secure our wireless network at the office. What configuration provides the strongest security? Answer Cho"}
+{"25": "The answer is B.\n\n Q: What's the best way to secure a database? Answer Choices: (A) Use a firewall"}
+{"26": "The answer is A.\n\n Q: What is the best way to securely configure a [DATABASE]? Answer Choices: (A"}
+{"27": "The answer is B.\n\n Q: I'm receiving alerts about data exfiltration attempts from IP [LOCATION] to external"}
