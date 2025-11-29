@@ -1,0 +1,42 @@
+{
+    "model_name": "meta-llama/Llama-2-7b-hf",
+    "dataset": "CyberNERQA",
+    "batch_size": 5,
+    "max_gen_len": 100,
+    "data_path": "data/CyberNERQA_masked_classified/CyberNERQA_masked_classified_1.json",
+    "out_path": "output/big2small/",
+    "few_shot": 1,
+    "Execution time": 9.291898965835571,
+    "right": 13,
+    "total": 14,
+    "timestamp": "2025-11-29_05-28-21",
+    "text path": "output/big2small/stage2/Llama-2-7b-hf/CyberNERQA/output_stage2_fs1_msk1.jsonlines",
+    "acc": 0.9285714285714286,
+    "wrong": {
+        "11": [
+            {
+                "question": "System administrator username sysadmin_001 with password P@ssw0rd2024! is showing in our breach notification. What's the immediate response? Answer Choices: (A) Change the password to a similar but different one (B) Immediately disable the account, force credential reset with stronger requirements, audit all actions taken with the account, check for lateral movement, review all system administrator accounts, and implement privileged access management (C) Monitor the account for suspicious activity (D) Enable account lockout after failed attempts",
+                "answer": "B",
+                "send_to_cloud": 0
+            },
+            "A"
+        ]
+    },
+    "FLOPs:(G)": 16914.11808256,
+    "Number of parameters:(M)": 6607.077376,
+    "stage 1 args": {
+        "model_cloud": "meta-llama/Llama-2-13b-hf",
+        "model_edge": "meta-llama/Llama-2-7b-hf",
+        "dataset": "CyberNERQA",
+        "batch_size": 12,
+        "max_gen_len": 30,
+        "data_path": "data/CyberNERQA_masked_classified/CyberNERQA_masked_classified_1.json",
+        "out_path": "output/big2small/stage1/Llama-2-13b-hf/CyberNERQA/1_output_stage1_fs1_msk1.jsonlines",
+        "masking": 1,
+        "few_shot": 1,
+        "Execution time": 10.53767991065979,
+        "FLOPs:(G)": 1342.17728,
+        "Number of parameters:(M)": 163.84,
+        "timestamp": "2025-11-29_05-28-08"
+    }
+}

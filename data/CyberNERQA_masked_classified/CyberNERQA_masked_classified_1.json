@@ -1,0 +1,244 @@
+[
+  {
+    "Question": "How do I detect and prevent privilege escalation attacks in a Linux environment?",
+    "A": "Disable the root account entirely",
+    "B": "Monitor for unusual sudo usage, implement SELinux or AppArmor, audit SUID binaries, review user permissions regularly, enable process accounting, and use intrusion detection systems",
+    "C": "Remove all user accounts except necessary ones",
+    "D": "Disable all system services",
+    "Answer": "B",
+    "Entities": {},
+    "PII-free Question": "How do I detect and prevent privilege escalation attacks in a Linux environment?",
+    "Masked_Question": "How do I detect and prevent privilege escalation attacks in a Linux environment?",
+    "masked_clean": true,
+    "masked_match": true,
+    "send_to_cloud": 1
+  },
+  {
+    "Question": "Database admin alex.rodriguez with employee ID EMP-9234 needs to export customer data born on 1985-06-14. What compliance steps must I follow?",
+    "A": "Export the data without any additional steps",
+    "B": "Verify authorization and legitimate business need, ensure data minimization, implement access logging, apply encryption, require approval workflow, and document purpose and retention",
+    "C": "Anonymize all data before export",
+    "D": "Only allow viewing, not exporting",
+    "Answer": "B",
+    "Entities": {
+      "IDENTITY": [
+        "alex.rodriguez",
+        "EMP-9234"
+      ],
+      "DATE": [
+        "1985-06-14"
+      ]
+    },
+    "PII-free Question": "Database admin [IDENTITY] with employee ID [IDENTITY] needs to export customer data born on [DATE]. What compliance steps must I follow?",
+    "Masked_Question": "Database admin [IDENTITY] with employee ID [IDENTITY] needs to export customer data born on [DATE]. What compliance steps must I follow?",
+    "masked_clean": true,
+    "masked_match": true,
+    "send_to_cloud": 0
+  },
+  {
+    "Question": "I need to secure our Docker containers in production. What are the critical security practices?",
+    "A": "Use official base images, run as non-root, scan for vulnerabilities, limit container capabilities, implement network segmentation, enable read-only filesystems where possible, and use secrets management",
+    "B": "Run all containers as root for simplicity",
+    "C": "Just keep Docker updated",
+    "D": "Disable all container networking",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "I need to secure our Docker containers in production. What are the critical security practices?",
+    "Masked_Question": "I need to secure our [CONTACT] in production. What are the critical security practices?",
+    "masked_clean": true,
+    "masked_match": false,
+    "send_to_cloud": 1
+  },
+  {
+    "Question": "User kevin.martinez contacted support at +1-555-0167 about accessing files from device MAC-A4:5E:60:F8:2B:7C. How do I authenticate this request?",
+    "A": "Provide access if the phone number matches our records",
+    "B": "Verify identity through multiple factors, confirm device ownership, check for recent security alerts on the account, validate through established authentication channels",
+    "C": "Send a password reset link to the registered email",
+    "D": "Ask for the last four digits of their SSN only",
+    "Answer": "B",
+    "Entities": {
+      "IDENTITY": [
+        "kevin.martinez"
+      ],
+      "CONTACT": [
+        "+1-555-0167"
+      ],
+      "DEVICE": [
+        "MAC-A4:5E:60:F8:2B:7C"
+      ]
+    },
+    "PII-free Question": "User [IDENTITY] contacted support at [CONTACT] about accessing files from device [DEVICE]. How do I authenticate this request?",
+    "Masked_Question": "User [IDENTITY] contacted support at [CONTACT] about accessing files from device [DEVICE]. How do I authenticate this request?",
+    "masked_clean": true,
+    "masked_match": true,
+    "send_to_cloud": 0
+  },
+  {
+    "Question": "My web server is experiencing a potential DDoS attack. What mitigation strategy should I implement?",
+    "A": "Increase server resources to handle the load",
+    "B": "Shut down the server until the attack stops",
+    "C": "Deploy rate limiting, enable CDN/DDoS protection service, implement geographic filtering, use challenge-response tests, configure upstream filtering, and maintain communication channels",
+    "D": "Block all international traffic",
+    "Answer": "C",
+    "Entities": {},
+    "PII-free Question": "My web server is experiencing a potential DDoS attack. What mitigation strategy should I implement?",
+    "Masked_Question": "My web server is experiencing a potential [FINANCIAL] attack. What mitigation strategy should I implement?",
+    "masked_clean": true,
+    "masked_match": false,
+    "send_to_cloud": 1
+  },
+  {
+    "Question": "How do I properly sanitize user input to prevent XSS attacks in a web application?",
+    "A": "Strip all HTML tags from input",
+    "B": "Use client-side validation only",
+    "C": "Implement context-aware output encoding, use Content Security Policy, validate input against whitelist, sanitize with trusted libraries, and avoid innerHTML usage",
+    "D": "Convert all special characters to spaces",
+    "Answer": "C",
+    "Entities": {},
+    "PII-free Question": "How do I properly sanitize user input to prevent XSS attacks in a web application?",
+    "Masked_Question": "How do I properly sanitize user input to prevent XSS attacks in a web application?",
+    "masked_clean": true,
+    "masked_match": true,
+    "send_to_cloud": 1
+  },
+  {
+    "Question": "Private key -----BEGIN RSA PRIVATE KEY----- MIIEpAIBAAKCAQEA3s was found in a public repository on 2024-08-17. What's the full remediation plan?",
+    "A": "Delete the repository and create a new one",
+    "B": "Revoke compromised keys immediately, identify all systems using them, deploy new keys, audit for unauthorized access, scan all repositories for credentials, implement pre-commit hooks, and train developers",
+    "C": "Make the repository private",
+    "D": "Rotate keys at the next scheduled maintenance",
+    "Answer": "B",
+    "Entities": {
+      "CREDENTIALS": [
+        "-----BEGIN RSA PRIVATE KEY----- MIIEpAIBAAKCAQEA3s"
+      ],
+      "DATE": [
+        "2024-08-17"
+      ]
+    },
+    "PII-free Question": "Private key [CREDENTIALS] was found in a public repository on [DATE]. What's the full remediation plan?",
+    "Masked_Question": "Private key -----BEGIN RSA PRIVATE KEY----- MIIEpAIBAAKCAQEA3s was found in a public repository on 2024-08-17. What's the",
+    "masked_clean": false,
+    "masked_match": false,
+    "send_to_cloud": 0
+  },
+  {
+    "Question": "I need to conduct a security assessment of our mobile application. What areas should I prioritize?",
+    "A": "Only test the user interface",
+    "B": "Check app store ratings and reviews",
+    "C": "Verify the app size is optimized",
+    "D": "Evaluate data storage security, API security, authentication mechanisms, code obfuscation, certificate pinning, runtime protections, and third-party library vulnerabilities",
+    "Answer": "D",
+    "Entities": {},
+    "PII-free Question": "I need to conduct a security assessment of our mobile application. What areas should I prioritize?",
+    "Masked_Question": "I need to conduct a security assessment of our mobile application. What areas should I prioritize?",
+    "masked_clean": true,
+    "masked_match": true,
+    "send_to_cloud": 1
+  },
+  {
+    "Question": "Customer patricia.wilson@service.com at coordinates 40.7128,-74.0060 reported unauthorized account access on 2024-10-05. What's my incident response workflow?",
+    "A": "Just reset the password and notify the customer",
+    "B": "Lock account immediately, verify customer identity, analyze access logs for IoCs, check for data exfiltration, assess scope of compromise, remediate vulnerabilities, restore legitimate access, and document incident",
+    "C": "Enable two-factor authentication on the account",
+    "D": "Monitor the account for 48 hours",
+    "Answer": "B",
+    "Entities": {
+      "CONTACT": [
+        "patricia.wilson@service.com"
+      ],
+      "LOCATION": [
+        "40.7128,-74.0060"
+      ],
+      "DATE": [
+        "2024-10-05"
+      ]
+    },
+    "PII-free Question": "Customer [CONTACT] at coordinates [LOCATION] reported unauthorized account access on [DATE]. What's my incident response workflow?",
+    "Masked_Question": "Customer [IDENTITY] at coordinates [LOCATION] reported unauthorized account access on [DATE]. What's my incident response workflow?",
+    "masked_clean": true,
+    "masked_match": false,
+    "send_to_cloud": 0
+  },
+  {
+    "Question": "How do I implement secure logging without exposing sensitive information?",
+    "A": "Log everything for maximum visibility",
+    "B": "Disable logging for sensitive operations",
+    "C": "Only log errors and warnings",
+    "D": "Exclude PII and credentials, use log levels appropriately, implement log encryption, control access to logs, redact sensitive data, and ensure tamper-evident logging",
+    "Answer": "D",
+    "Entities": {},
+    "PII-free Question": "How do I implement secure logging without exposing sensitive information?",
+    "Masked_Question": "How do I implement secure logging without exposing sensitive information?",
+    "masked_clean": true,
+    "masked_match": true,
+    "send_to_cloud": 0
+  },
+  {
+    "Question": "I need to secure our wireless network at the office. What configuration provides the strongest security?",
+    "A": "Use WPA2 with a strong password",
+    "B": "Hide the SSID and use MAC address filtering",
+    "C": "Implement WPA3-Enterprise with 802.1X authentication, strong encryption, network segmentation, client isolation, regular security audits, and IDS monitoring",
+    "D": "Use a very long and complex password only",
+    "Answer": "C",
+    "Entities": {},
+    "PII-free Question": "I need to secure our wireless network at the office. What configuration provides the strongest security?",
+    "Masked_Question": "I need to secure our wireless network at the office. What configuration provides the strongest security?",
+    "masked_clean": true,
+    "masked_match": true,
+    "send_to_cloud": 1
+  },
+  {
+    "Question": "System administrator username sysadmin_001 with password P@ssw0rd2024! is showing in our breach notification. What's the immediate response?",
+    "A": "Change the password to a similar but different one",
+    "B": "Immediately disable the account, force credential reset with stronger requirements, audit all actions taken with the account, check for lateral movement, review all system administrator accounts, and implement privileged access management",
+    "C": "Monitor the account for suspicious activity",
+    "D": "Enable account lockout after failed attempts",
+    "Answer": "B",
+    "Entities": {
+      "IDENTITY": [
+        "sysadmin_001"
+      ],
+      "CREDENTIALS": [
+        "P@ssw0rd2024!"
+      ]
+    },
+    "PII-free Question": "System administrator username [IDENTITY] with password [CREDENTIALS] is showing in our breach notification. What's the immediate response?",
+    "Masked_Question": "System administrator username [CREDENTIALS] with password [CREDENTIALS] is showing in our breach notification. What's the immediate response?",
+    "masked_clean": true,
+    "masked_match": false,
+    "send_to_cloud": 0
+  },
+  {
+    "Question": "How do I establish a secure software development lifecycle (SDLC)?",
+    "A": "Integrate security at each phase, conduct threat modeling, implement code reviews, use SAST/DAST tools, manage dependencies, perform security testing, and maintain security requirements",
+    "B": "Focus only on testing in production",
+    "C": "Hire a penetration tester for annual assessments",
+    "D": "Use only open-source tools for development",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "How do I establish a secure software development lifecycle (SDLC)?",
+    "Masked_Question": "How do I establish a secure [FINANCIAL] lifecycle (SDLC)?",
+    "masked_clean": true,
+    "masked_match": false,
+    "send_to_cloud": 1
+  },
+  {
+    "Question": "I'm receiving alerts about data exfiltration attempts from IP 10.0.45.123 to external storage. What's my investigation and response process?",
+    "A": "Block the IP and continue monitoring",
+    "B": "Immediately isolate affected systems, analyze network traffic for data content and destination, identify compromised accounts, preserve evidence, contain the incident, assess data sensitivity, notify stakeholders, and remediate vulnerability",
+    "C": "Reset all user passwords",
+    "D": "Disable internet access for all users",
+    "Answer": "B",
+    "Entities": {
+      "LOCATION": [
+        "10.0.45.123"
+      ]
+    },
+    "PII-free Question": "I'm receiving alerts about data exfiltration attempts from IP [LOCATION] to external storage. What's my investigation and response process?",
+    "Masked_Question": "I'm receiving alerts about data exfiltration attempts from IP [LOCATION] to external storage. What's my investigation and response process?",
+    "masked_clean": true,
+    "masked_match": true,
+    "send_to_cloud": 1
+  }
+]

@@ -1,3 +1,4 @@
+#utils_data
 import jsonlines
 from torch.utils.data import Dataset
 import json
@@ -62,7 +63,6 @@ Masked Question: User [IDENTITY] called from [CONTACT] reporting her device [DEV
         """
         formatted = []
         for item in dataset:
-            #formatted_raw_q = f"Answer Choices: (A) {item['Question'].strip()} (B) {item['B']} (C) {item['C']} (D) {item['D']}"
             formatted.append({
                 # "question": item["Question"].strip() + " " + choices,
                 # "answer": item["Answer"]
@@ -103,11 +103,20 @@ class CyberNERQA_dataset(Dataset):
         with open(path, 'r') as f:
             return json.load(f)
         
-    def __init__(self, tokenizer, args, stage2=False, split="test", sample_idx=-1):
+    def __init__(self, tokenizer, args, step='mask', split="test", sample_idx=-1): #steps = mask, (maybe classify), guide (stage1), answer (stage2)
         self.args = args
         self.tokenizer = tokenizer
-        self.stage2 = stage2 # can stage 2 be set to 0 for masking?
+        self.step = step # can stage 2 be set to 0 for masking?
         self.sample_idx = sample_idx
+        self.MASK_SYSTEM_PROMPT = (
+            """Question contains masked entities: [CREDENTIALS]=keys/passwords, [IDENTITY]=names/IDs, [CONTACT]=email/phone, [DEVICE]=device IDs, [LOCATION]=IPs/addresses, [FINANCIAL]=account numbers, [DATE]=dates.
+
+Mask all personal and identifying entities in the text below, using the appropriate tags. Return ONLY the masked question.
+
+Example:
+Question: User lisa.chen called from +1-555-0198 reporting her device IMEI-358273054098321 was stolen. What immediate actions should I take?
+Masked Question: User [IDENTITY] called from [CONTACT] reporting her device [DEVICE] was stolen. What immediate actions should I take?"""
+                                  )
         #self.data_path = args.data_path
 
         # if split == "train":
@@ -120,19 +129,11 @@ class CyberNERQA_dataset(Dataset):
         print(f"Loading CyberNERQA")
 
         # dataset = self.load_json(self.args.data_args['masked data path']) #self.args.data_args is a path to a json file. probably need to fix this
+        if self.step == 'mask':
+            dataset = self.load_json(self.args.data_args['raw_data_path'])['test']
+        else:
+            dataset = self.load_json(self.args.data_args['masked_classified_data_path'])
         self.data = self.format_data(dataset)
-
-        failed_qs = self.args.data_args['failed masked questions'] #keys are index in whole dataset: 3, 9, 20
-
-        ## Classify whether questions are sent to cloud or edge based on similarity to qs in train set that failed masking ##
-        ## consider unseen / new type of question. Maybe if too different from what's been seen, keep on edge. In this case we may want to get similarity to qs that succeeded masking, and if not similar enough, then stay edge.
-        
-        # ys = [0 if i in failed_qs.keys() else 1 for i in len(self.data)] #if Q in failed, then edge=0, else cloud=1
-        # y_train = ys[:len(self.data)//2]
-        # X_train = self.data[:len(self.data)//2] #this data gets masked and we collect the failures
-        # y_test = ys[len(self.data)//2:]
-        # X_test = self.data[len(self.data)//2:] #this data un unseen and we need to check
-        
 
         
         # Handle precomputed big model outputs if stage2
@@ -144,7 +145,7 @@ class CyberNERQA_dataset(Dataset):
             with jsonlines.open(big_out_path, "r") as big_file:
                 for i in big_file:
                     self.big_output_pre.append(list(i.values())[0][sample_idx])
-        elif self.stage2:
+        elif self.step == 'guide':
             with jsonlines.open(args.big_output_path, "r") as big_file:
                 for i in big_file:
                     self.big_output_pre.append(list(i.values())[0])
@@ -154,20 +155,15 @@ class CyberNERQA_dataset(Dataset):
 
     def __getitem__(self, idx):
         ins = self.data[idx]
-        if self.stage2:
+        if self.step=='guide':
             big_output_pre = self.big_output_pre[idx]
             tokenized_full_data = self.tokenize(ins, big_output_pre, self.tokenizer)
-        else:
+        elif self.step=='answer':
+            tokenized_full_data = self.tokenize(ins, None, self.tokenizer)
+        elif self.step=='mask':
             tokenized_full_data = self.tokenize(ins, None, self.tokenizer)
         return tokenized_full_data
 
-    def classify(question_text):
-        q_emb = semantic_model.encode(question_text, convert_to_tensor=True)
-    
-        sim_fail = util.cos_sim(q_emb, failed_embs).max()
-        sim_success = util.cos_sim(q_emb, success_embs).max()
-
-        return 0 if sim_fail > sim_success else 1
 
     def format_data(self, dataset):
         """
@@ -175,41 +171,69 @@ class CyberNERQA_dataset(Dataset):
         """
         formatted = []
         for item in dataset:
-            # Build a multiple-choice question string
-            choices = f"Answer Choices: (A) {item['A']} (B) {item['B']} (C) {item['C']} (D) {item['D']}"
-            if not self.stage2: 
-                if self.args.masking == 1: #only provide masked questions to stage 1 when set
+            if self.step=='mask':
+                formatted.append({
+                    "Question": item["Question"].strip(),
+                    "PII-free Question": item["PII-free Question"], #correct
+                    "Entities": item["Entities"] #to check if these have at least been removed for "clean" acc
+            
+                })
+            else: #not masking, on guide or answer steps
+                # Build a multiple-choice question string
+                choices = f"Answer Choices: (A) {item['A']} (B) {item['B']} (C) {item['C']} (D) {item['D']}"
+                
+                if ((self.step=='guide') and (self.args.masking == 1) and (item['send_to_cloud']==1)):  #only provide masked questions to cloud when classified and set
                     question = item["Masked_Question"]
-                else:
+                else: #edge can take raw question
                     question = item["Question"]
-            else:
-                question = item["Question"]
-            formatted.append({
-                "question": question.strip() + " " + choices,
-                "answer": item["Answer"]
-            })
-        print("stage2: ", self.stage2, "    Check if actually masked when stage2 is False: ", question)
+                
+                formatted.append({
+                    "question": question.strip() + " " + choices,
+                    "answer": item["Answer"]
+                })
+            
+                print("step: ", self.step, "    Check if actually masked when on guidance stage: ", question)
+                
         return formatted
 
     def tokenize(self, test_dict, big_output_pre, tokenizer):
         examplar = self.create_demo_text()
 
-        # if "if_concise_prompt" in self.args and self.args.if_concise_prompt:
-        #     system_prompt=self.args.if_concise_prompt
-        # else:
-        #     system_prompt=""
-
-        if self.stage2:
+        if self.step=='guide':
             instruction = system_prompt + examplar + " Q: " + test_dict["question"] + "\nA: " + big_output_pre
-        else:
+            instruction = f"{self.MASK_SYSTEM_PROMPT}\nQuestion:\n{test_dict['Question']}\nMasked Question:"
+
+            inputs = tokenizer(
+                instruction,
+                return_tensors="pt",
+                truncation=True,
+                # max_length=1024,
+                # padding="max_length"
+                padding='max_length',
+                max_length=512
+            ) 
+            
+        elif self.step=='answer':
             instruction = system_prompt + examplar + " Q: " + test_dict["question"] + "\nA: "
 
-        inputs = tokenizer(
-            instruction,
-            return_tensors="pt",
-            padding='max_length',
-            max_length=1024
-        )
+            inputs = tokenizer(
+                instruction,
+                return_tensors="pt",
+                padding='max_length',
+                max_length=1024
+            )
+
+        elif self.step=='mask':
+            instruction = f"{self.MASK_SYSTEM_PROMPT}\nQuestion:\n{test_dict['Question']}\nMasked Question:"
+            
+            inputs = tokenizer(
+                instruction,
+                return_tensors="pt",
+                truncation=True,
+                padding='max_length',
+                max_length=512
+            )
+            
         return inputs
 
 

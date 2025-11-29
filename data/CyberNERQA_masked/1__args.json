@@ -1,0 +1,58 @@
+{
+    "model_name": "meta-llama/Llama-2-7b-hf",
+    "dataset": "CyberNERQA",
+    "max_gen_len": 50,
+    "batch_size": 50,
+    "few_shot": 1,
+    "Execution time": 8.873854160308838,
+    "FLOPs:(G)": 1879.048192,
+    "Number of parameters:(M)": 131.072,
+    "timestamp": "2025-11-29_05-27-26",
+    "masked data path": "data/CyberNERQA_masked/CyberNERQA_masked_2.json",
+    "acc_match": 0.5,
+    "acc_clean": 0.8928571428571429,
+    "empty masked questions": 0,
+    "questions not complete": {
+        "3": "I discovered hardcoded [CREDENTIALS] aBcDeFgH1234567890abcdefghij0987654321 in our source code. What's",
+        "9": "Admin user [IDENTITY] with token xyzABC123-4567-8910-defGHI-JKL890mno logged in from a new location on 2024",
+        "20": "Private key -----BEGIN RSA PRIVATE KEY----- MIIEpAIBAAKCAQEA3s was found in a public repository on 2024-08-17. What's the"
+    },
+    "failed match questions": [
+        "I need to investigate unauthorized access to account [FINANCIAL]-[IDENTITY]. What logs should I examine first?",
+        "My system is showing signs of a possible [FINANCIAL] infection. What's the most effective detection approach?",
+        "Employee [IDENTITY] contacted me about unusual activity on [DATE]. How do I verify this communication is legitimate?",
+        "I discovered hardcoded [CREDENTIALS] aBcDeFgH1234567890abcdefghij0987654321 in our source code. What's",
+        "I need to configure network segmentation for our infrastructure. What's the [CONTACT] principle?",
+        "How do I secure [FINANCIAL] endpoints that handle sensitive financial transactions?",
+        "Admin user [IDENTITY] with token xyzABC123-4567-8910-defGHI-JKL890mno logged in from a new location on 2024",
+        "Customer [IDENTITY] with account [FINANCIAL] is reporting suspicious charges. What's my investigation process?",
+        "I need to secure our [CONTACT] in production. What are the critical security practices?",
+        "My web server is experiencing a potential [FINANCIAL] attack. What mitigation strategy should I implement?",
+        "Private key -----BEGIN RSA PRIVATE KEY----- MIIEpAIBAAKCAQEA3s was found in a public repository on 2024-08-17. What's the",
+        "Customer [IDENTITY] at coordinates [LOCATION] reported unauthorized account access on [DATE]. What's my incident response workflow?",
+        "System administrator username [CREDENTIALS] with password [CREDENTIALS] is showing in our breach notification. What's the immediate response?",
+        "How do I establish a secure [FINANCIAL] lifecycle (SDLC)?"
+    ],
+    "failed clean questions": [
+        "I discovered hardcoded [CREDENTIALS] aBcDeFgH1234567890abcdefghij0987654321 in our source code. What's",
+        "Admin user [IDENTITY] with token xyzABC123-4567-8910-defGHI-JKL890mno logged in from a new location on 2024",
+        "Private key -----BEGIN RSA PRIVATE KEY----- MIIEpAIBAAKCAQEA3s was found in a public repository on 2024-08-17. What's the"
+    ],
+    "token_metrics": [
+        {
+            "precision": 0.4694,
+            "recall": 0.8846,
+            "f1_score": 0.6133,
+            "accuracy": 0.9335
+        }
+    ],
+    "confusion_matrix": [
+        {
+            "tp": 23,
+            "fp": 26,
+            "fn": 3,
+            "tn": 384
+        }
+    ],
+    "total": 28
+}
