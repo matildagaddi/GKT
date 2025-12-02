@@ -1,0 +1,32 @@
+{"0": "The answer is A.\n\n Q: I need to configure a firewall to allow access to a specific service on a specific port. What's"}
+{"1": "The answer is C.\n\n Q: I'm analyzing malware that infected device [DEVICE] registered to [IDENTITY"}
+{"2": "The answer is A.\n\n Q: I'm investigating a watering hole attack. Multiple employees visited compromised industry news site from our"}
+{"3": "The answer is A.\n\n Q: I'm trying to deploy a container to a private registry. I'm getting an error message that"}
+{"4": "The answer is A.\n\n Q: What is the best way to securely store sensitive data in a database? Answer Choices: (A"}
+{"5": "The answer is A.\n\n Q: User [IDENTITY] (ID: [IDENTITY], DOB: [DATE]) reported"}
+{"6": "The answer is A.\n\n Q: I'm analyzing suspicious outbound traffic from server [DEVICE] at [LOCATION]"}
+{"7": "The answer is A.\n\n Q: I need to implement a security control to prevent unauthorized access to the network. What's"}
+{"8": "The answer is B.\n\n Q: I need to investigate a potential data breach. Database query logs show user db_admin executed bulk SELECT"}
+{"9": "The answer is A.\n\n Q: I'm investigating a ransomware attack on a Windows 10 laptop. The r"}
+{"10": "The answer is A.\n\n Q: I'm configuring [CREDENTIALS] for our API. What's the correct"}
+{"11": "The answer is B.\n\n Q: A user with the role of 'admin' in the 'admin' group is able to access the production"}
+{"12": "The answer is B.\n\n Q: I'm investigating a Living off the Land (LOtL) attack. User ntaylor"}
+{"13": "The answer is A.\n\n Q: I'm a security analyst and I'm investigating a suspicious file. What's"}
+{"14": "The answer is B.\n\n Q: A user in the finance department is using a mobile device to access the company's financial records."}
+{"15": "The answer is A.\n\n Q: I'm analyzing a DLL hijacking attack on server [IDENTITY] at [LOC"}
+{"16": "The answer is A.\n\n Q: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"17": "The answer is A.\n\n Q: I need to secure our GraphQL API that's vulnerable to introspection-based reconnaissance."}
+{"18": "The answer is B.\n\n Q: A security audit of the network revealed that the firewall rules on device [DEVICE] are not configured"}
+{"19": "The answer is A.\n\n Q: I'm investigating a security incident on our network. I've identified a suspicious IP address"}
+{"20": "The answer is A.\n\n Q: I need to reset the firewall rules on device [DEVICE] after a security audit. What'"}
+{"21": "The answer is A.\n\n Q: I'm responding to ransomware that spread laterally through network. Initial infection was"}
+{"22": "The answer is B.\n\n Q: I'm investigating a time-of-check to time-of-use (TOCTOU"}
+{"23": "The answer is B.\n\n Q: I need to identify the source of a malicious email sent to my company. The email was sent from"}
+{"24": "The answer is A.\n\n Q: I need to implement secure [CREDENTIALS] reset functionality. What's the correct approach"}
+{"25": "The answer is A.\n\n Q: Which of the following is the most likely cause of a network outage? Answer choices: (A)"}
+{"26": "The answer is A.\n\n Q: I'm analyzing a subdomain takeover vulnerability. Our DNS has CNAME record pointing to"}
+{"27": "The answer is A.\n\n Q: I need to configure a firewall to allow only HTTPS traffic to a web server. What's the"}
+{"28": "The answer is D.\n\n Q: A user named \"john.doe@enterprise.net\" (SSN: XXX-XX"}
+{"29": "The answer is A.\n\n Q: I'm investigating a deserialization vulnerability in our Java application. Attacker sent malicious"}
+{"30": "The answer is A.\n\n Q: I'm a security engineer for a large company. I'm concerned about the security of our cloud"}
+{"31": "The answer is A.\n\n Q: I need to implement a secure remote access solution for my users. What's the best approach? Answer"}

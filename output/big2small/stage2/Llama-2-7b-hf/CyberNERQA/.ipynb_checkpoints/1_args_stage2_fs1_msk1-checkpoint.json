@@ -1,0 +1,106 @@
+{
+    "model_name": "meta-llama/Llama-2-7b-hf",
+    "dataset": "CyberNERQA",
+    "batch_size": 5,
+    "max_gen_len": 100,
+    "data_path": "data/CyberNERQA_masked_classified/CyberNERQA_masked_classified_4.json",
+    "out_path": "output/big2small/",
+    "few_shot": 1,
+    "Execution time": 21.757079124450684,
+    "right": 23,
+    "total": 32,
+    "timestamp": "2025-12-02_01-44-29",
+    "text path": "output/big2small/stage2/Llama-2-7b-hf/CyberNERQA/1_output_stage2_fs1_msk1.jsonlines",
+    "acc": 0.71875,
+    "wrong": {
+        "1": [
+            {
+                "question": "I'm analyzing malware that infected device ANDROID-8833-SM registered to Jennifer Wu (SSN: XXX-XX-4729, email: jwu@personal.com). The malware intercepts SMS messages and forwards them to 203.0.113.67. What attack is this enabling? Answer Choices: (A) MFA bypass by intercepting one-time passwords sent via SMS for account takeovers (B) Distributed denial of service attack using SMS flooding (C) SIM swapping attack to take over the phone number (D) Phishing attack by sending malicious links to contacts",
+                "answer": "A",
+                "send_to_cloud": 1
+            },
+            "C"
+        ],
+        "8": [
+            {
+                "question": "I need to investigate a potential data breach. Database query logs show user db_admin executed bulk SELECT statements on customer table containing credit card numbers at 3:47 AM from 10.88.45.203. The query returned 125,000 records. What forensic evidence is most critical? Answer Choices: (A) Network packet captures showing where the data was transmitted, database audit logs, user activity before and after, file system artifacts (B) The SQL query text and execution time (C) Database server CPU and memory usage during the query (D) User's workstation browser history and recent file access",
+                "answer": "A",
+                "send_to_cloud": 0
+            },
+            "B"
+        ],
+        "11": [
+            {
+                "question": "User admin_jenkins accessed production API gateway from 172.31.45.209 using JWT token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.payload on 11/29/2024 and modified rate limiting rules. Token inspection shows 'alg':'none' in header. What vulnerability was exploited? Answer Choices: (A) JWT algorithm confusion attack where signature verification was bypassed by setting algorithm to 'none' (B) Brute force attack that guessed the JWT secret key (C) SQL injection in the token validation process (D) Cross-site scripting attack that stole the JWT token",
+                "answer": "A",
+                "send_to_cloud": 0
+            },
+            "B"
+        ],
+        "12": [
+            {
+                "question": "I'm investigating a Living off the Land (LOtL) attack. User ntaylor with employee ID E-94732 had legitimate Windows tools like certutil.exe and bitsadmin.exe used to download payloads from 203.0.113.145 on device DESKTOP-8847-W11. What makes this detection challenging? Answer Choices: (A) Attackers use trusted system binaries that are normally present, making behavioral analysis and context more important than signature detection (B) These tools are always encrypted and cannot be monitored (C) Windows Defender automatically whitelists all system binaries (D) The tools operate at kernel level beyond monitoring capabilities",
+                "answer": "A",
+                "send_to_cloud": 0
+            },
+            "B"
+        ],
+        "14": [
+            {
+                "question": "User michelle.oconnor@company.net (SSN: XXX-XX-9283, address: 742 Evergreen Terrace, Springfield) accessed patient records from mobile device iOS-7723-SE with IMEI-358835094728192 from IP 198.51.100.167 on 08/25/2024. Access logs show 847 patient records viewed in 12 minutes. What indicates automated scraping versus manual review? Answer Choices: (A) The access rate of 70+ records per minute exceeds human capability and shows systematic sequential access pattern (B) Mobile device access automatically indicates unauthorized activity (C) The number of records accessed proves malicious intent (D) Access from outside the facility always indicates data theft",
+                "answer": "A",
+                "send_to_cloud": 0
+            },
+            "B"
+        ],
+        "18": [
+            {
+                "question": "User jacob.peterson (badge J-55892, phone +1-617-555-0156, email jpeterson@internal.com) triggered security alert for accessing HR database containing salary information from terminal TERM-LNX-3394 at 10.10.88.77 on 12/15/2024. He's a software engineer with no HR access requirements. What's the priority investigation focus? Answer Choices: (A) Determine if credentials were compromised, verify legitimacy of access need, check for privilege escalation, review access control policies (B) Immediately terminate employment and revoke all access (C) Reset the user's password and provide security awareness training (D) Document the access and continue routine monitoring",
+                "answer": "A",
+                "send_to_cloud": 0
+            },
+            "B"
+        ],
+        "22": [
+            {
+                "question": "I'm investigating a time-of-check to time-of-use (TOCTOU) race condition vulnerability in our file processing application. User admin_ops from device SRV-PROC-12 at 172.19.45.203 exploited this to escalate privileges. What's the proper remediation approach? Answer Choices: (A) Implement atomic operations, use file locks, validate permissions at time of use rather than just at check, minimize time window between check and use (B) Increase the delay between permission check and file access (C) Disable concurrent file access for all users (D) Run the application with elevated privileges to avoid permission checks",
+                "answer": "A",
+                "send_to_cloud": 0
+            },
+            "B"
+        ],
+        "23": [
+            {
+                "question": "My endpoint detection found process hollowing technique on laptop owned by Brian Anderson (email: banderson@company.org, badge B-77234). Legitimate process svchost.exe at PID 4892 had its memory replaced with malicious code connecting to 198.18.33.167. What detection method is most effective for this evasion technique? Answer Choices: (A) Monitor for process creation followed by suspicious memory operations, detect memory region permission changes from write to execute, behavioral analysis of process network activity (B) Signature-based antivirus scanning of executable files (C) Block all svchost.exe processes from running (D) Monitor file system for new executable file creation",
+                "answer": "A",
+                "send_to_cloud": 0
+            },
+            "B"
+        ],
+        "28": [
+            {
+                "question": "User daniel.kim@enterprise.net (SSN: XXX-XX-5647, address: 1428 Elm Street, Apt 3B, Seattle WA) logged into trading platform from device ANDROID-PRO-8834 with IMEI-356729084523891 at 192.168.1.105. He executed 247 trades in 8 minutes totaling $4.2M. Account number 4472-8839-2234-7765 shows this unusual activity on 09/19/2024. What indicates compromised account versus legitimate automated trading? Answer Choices: (A) Lack of API key usage for automation, anomalous trade pattern compared to historical behavior, unusual login location or device, absence of pre-configured automated trading setup (B) High trade volume automatically indicates account compromise (C) Mobile device trading always suggests unauthorized access (D) Large transaction amounts prove malicious activity",
+                "answer": "A",
+                "send_to_cloud": 0
+            },
+            "D"
+        ]
+    },
+    "FLOPs:(G)": 16914.11808256,
+    "Number of parameters:(M)": 6607.077376,
+    "stage 1 args": {
+        "model_cloud": "meta-llama/Llama-2-13b-hf",
+        "model_edge": "meta-llama/Llama-2-7b-hf",
+        "dataset": "CyberNERQA",
+        "batch_size": 12,
+        "max_gen_len": 30,
+        "data_path": "data/CyberNERQA_masked_classified/CyberNERQA_masked_classified_4.json",
+        "out_path": "output/big2small/stage1/Llama-2-13b-hf/CyberNERQA/2_output_stage1_fs1_msk1.jsonlines",
+        "masking": 1,
+        "few_shot": 1,
+        "Execution time": 19.348922729492188,
+        "FLOPs:(G)": 2013.26592,
+        "Number of parameters:(M)": 163.84,
+        "timestamp": "2025-12-02_01-44-04"
+    }
+}

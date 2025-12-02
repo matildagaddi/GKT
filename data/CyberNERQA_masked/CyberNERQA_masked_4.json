@@ -1,0 +1,1342 @@
+[
+  {
+    "Question": "My system detected a brute force attack against username admin_portal from MAC address 00:1B:44:11:3A:B7. After 847 failed attempts, access was gained. What indicates this was a credential stuffing attack rather than dictionary attack?",
+    "A": "The attack originated from a single MAC address instead of distributed sources",
+    "B": "The attacker likely used previously breached username-password pairs from other services",
+    "C": "The high number of attempts suggests automated password generation",
+    "D": "Successful access after many failures indicates weak password policy",
+    "Answer": "B",
+    "Entities": {
+      "IDENTITY": [
+        "admin_portal"
+      ],
+      "DEVICE": [
+        "00:1B:44:11:3A:B7"
+      ]
+    },
+    "PII-free Question": "My system detected a brute force attack against username [IDENTITY] from MAC address [DEVICE]. After 847 failed attempts, access was gained. What indicates this was a credential stuffing attack rather than dictionary attack?",
+    "Masked_Question": "My system detected a brute force attack against username [CREDENTIALS] from MAC address 00:1B:44:11:3A:B7. After 847 failed attempts, access was gained",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "How do I properly rotate the private key for our production SSL certificate without causing service disruption?",
+    "A": "Generate a new key pair, obtain a new certificate, configure it alongside the old one with dual-stack support, then remove the old certificate after validation",
+    "B": "Replace the old key immediately during a maintenance window and restart all services",
+    "C": "Keep using the current key but update the certificate authority",
+    "D": "Export the current private key to a secure location before generating a replacement",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "How do I properly rotate the private key for our production SSL certificate without causing service disruption?",
+    "Masked_Question": "How do I properly rotate the private key for our production SSL certificate without causing service disruption?",
+    "masked_clean": true,
+    "masked_match": true
+  },
+  {
+    "Question": "I need to investigate a data exfiltration attempt. User j.thompson@internal.corp accessed customer database from device ID DV-9823-LNX on 10/23/2024 at 2:47 AM and downloaded 45GB to external storage at 198.51.100.247. What forensic artifact should I prioritize?",
+    "A": "Network packet captures showing the full data transfer to identify what was exfiltrated",
+    "B": "System logs from the database server to verify query patterns and accessed tables",
+    "C": "User's browser history and recent application usage",
+    "D": "Email communications from the user during the previous week",
+    "Answer": "B",
+    "Entities": {
+      "CONTACT": [
+        "j.thompson@internal.corp"
+      ],
+      "DEVICE": [
+        "DV-9823-LNX"
+      ],
+      "DATE": [
+        "10/23/2024"
+      ],
+      "LOCATION": [
+        "198.51.100.247"
+      ]
+    },
+    "PII-free Question": "I need to investigate a data exfiltration attempt. User [CONTACT] accessed customer database from device ID [DEVICE] on [DATE] at 2:47 AM and downloaded 45GB to external storage at [LOCATION]. What forensic artifact should I prioritize?",
+    "Masked_Question": "I need to investigate a data exfiltration attempt. User [IDENTITY] accessed customer database from device ID [DEVICE] on 10/23/2024 at 2:47 AM and downloaded",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm responding to a ransomware incident where encrypted files have the extension .locked and a note demands payment to wallet address 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa. What should I prioritize before attempting recovery?",
+    "A": "Isolate affected systems from the network, identify the ransomware variant, and assess backup integrity before restoration",
+    "B": "Pay the ransom immediately to minimize downtime and business impact",
+    "C": "Run antivirus software to remove the ransomware and decrypt the files",
+    "D": "Restore from backups without isolating systems to reduce recovery time",
+    "Answer": "A",
+    "Entities": {
+      "FINANCIAL": [
+        "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa"
+      ]
+    },
+    "PII-free Question": "I'm responding to a ransomware incident where encrypted files have the extension .locked and a note demands payment to wallet address [FINANCIAL]. What should I prioritize before attempting recovery?",
+    "Masked_Question": "I'm responding to a ransomware incident where encrypted files have the extension .locked and a note demands payment to wallet address 1A1zP1eP5QGefi2DMPTfTL",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "User account rchen@company.net with employee ID E-44829 shows login activity from 203.0.113.15 in Singapore and 198.18.0.42 in New York within 15 minutes. Both sessions used valid MFA tokens. What's the most likely explanation?",
+    "A": "The user is traveling and connected through a VPN with exit nodes in different locations",
+    "B": "An attacker has compromised both the password and MFA device",
+    "C": "The user shared credentials with a colleague in a different location",
+    "D": "Session token was stolen and replayed from a different location",
+    "Answer": "D",
+    "Entities": {
+      "CONTACT": [
+        "rchen@company.net"
+      ],
+      "IDENTITY": [
+        "E-44829"
+      ],
+      "LOCATION": [
+        "203.0.113.15",
+        "198.18.0.42"
+      ]
+    },
+    "PII-free Question": "User account [CONTACT] with employee ID [IDENTITY] shows login activity from [LOCATION] in Singapore and [LOCATION] in New York within 15 minutes. Both sessions used valid MFA tokens. What's the most likely explanation?",
+    "Masked_Question": "User [IDENTITY] account [CREDENTIALS] with employee ID [IDENTITY] shows login activity from [LOCATION] within 15 minutes. Both sessions used valid MFA tokens. What's the most likely",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My IDS detected a SYN flood attack targeting our web server. The attack volume is 150,000 packets per second from distributed sources. What mitigation technique would be most effective?",
+    "A": "Implement SYN cookies to handle half-open connections without exhausting server resources",
+    "B": "Block all incoming SYN packets at the firewall level",
+    "C": "Increase server memory to handle additional connection states",
+    "D": "Rate limit all traffic to 1,000 requests per IP address",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "My IDS detected a SYN flood attack targeting our web server. The attack volume is 150,000 packets per second from distributed sources. What mitigation technique would be most effective?",
+    "Masked_Question": "My [IDS] detected a SYN flood attack targeting our web server. The attack volume is 150,000 packets per second from distributed sources. What mitigation technique would be most effective?",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I need to investigate why Marcus Rodriguez (DOB: 03/17/1987) with phone +1-415-555-0198 can't access the VPN from device IMEI-358673048912345. The logs show certificate validation failures. What's the most probable cause?",
+    "A": "The device certificate has expired or been revoked and needs to be reissued",
+    "B": "The user's account has been locked due to failed authentication attempts",
+    "C": "The VPN server is experiencing performance issues and rejecting connections",
+    "D": "The device is infected with malware that's interfering with authentication",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "Marcus Rodriguez"
+      ],
+      "DATE": [
+        "03/17/1987"
+      ],
+      "CONTACT": [
+        "+1-415-555-0198"
+      ],
+      "DEVICE": [
+        "IMEI-358673048912345"
+      ]
+    },
+    "PII-free Question": "I need to investigate why [IDENTITY] (DOB: [DATE]) with phone [CONTACT] can't access the VPN from device [DEVICE]. The logs show certificate validation failures. What's the most probable cause?",
+    "Masked_Question": "I need to investigate why [IDENTITY] with phone [CONTACT] can't access the VPN from device [DEVICE]. The logs show certificate validation failures. What's the most probable cause?",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "How do I properly implement certificate pinning in our mobile app to prevent man-in-the-middle attacks?",
+    "A": "Pin the public key or certificate hash of the server certificate in the app code and validate it during SSL/TLS handshake",
+    "B": "Store the server's private key in the app's secure enclave for validation",
+    "C": "Disable certificate validation and implement custom encryption",
+    "D": "Pin the root CA certificate and validate the entire chain",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "How do I properly implement certificate pinning in our mobile app to prevent man-in-the-middle attacks?",
+    "Masked_Question": "How do I properly implement [CREDENTIALS] in our mobile app to prevent man-in-the-middle attacks?",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "Database admin lisa.park@enterprise.com accessed patient records using API key apk_live_9X4mK2nP8qL5vW7tY on 2024-09-28 from IP 10.50.142.89. The access pattern shows sequential queries across 15,000 records. What indicates potential insider threat versus legitimate administrative activity?",
+    "A": "Administrative tasks typically access records based on specific needs rather than sequential bulk queries",
+    "B": "The use of an API key instead of direct database access indicates malicious intent",
+    "C": "Access during business hours suggests legitimate activity",
+    "D": "The volume of records accessed is within normal administrative parameters",
+    "Answer": "A",
+    "Entities": {
+      "CONTACT": [
+        "lisa.park@enterprise.com"
+      ],
+      "CREDENTIALS": [
+        "apk_live_9X4mK2nP8qL5vW7tY"
+      ],
+      "DATE": [
+        "2024-09-28"
+      ],
+      "LOCATION": [
+        "10.50.142.89"
+      ]
+    },
+    "PII-free Question": "Database admin [CONTACT] accessed patient records using API key [CREDENTIALS] on [DATE] from IP [LOCATION]. The access pattern shows sequential queries across 15,000 records. What indicates potential insider threat versus legitimate administrative activity?",
+    "Masked_Question": "Database admin [IDENTITY] accessed patient records using API key apk_live_9X4mK2nP8qL5vW7tY on 2024-09-28 from IP",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "My system shows anomalous DNS queries from workstation WS-7823-WIN pointing to unusual domains. The device belongs to user tchang with MAC 5C:F9:DD:4A:8B:22. Traffic analysis reveals data being encoded in DNS TXT record queries. What type of attack is this?",
+    "A": "DNS tunneling being used for data exfiltration or command and control communication",
+    "B": "DNS cache poisoning attack to redirect traffic to malicious servers",
+    "C": "Distributed denial of service attack using DNS amplification",
+    "D": "DNS spoofing to intercept and redirect network traffic",
+    "Answer": "A",
+    "Entities": {
+      "DEVICE": [
+        "WS-7823-WIN",
+        "5C:F9:DD:4A:8B:22"
+      ],
+      "IDENTITY": [
+        "tchang"
+      ]
+    },
+    "PII-free Question": "My system shows anomalous DNS queries from workstation [DEVICE] pointing to unusual domains. The device belongs to user [IDENTITY] with MAC [DEVICE]. Traffic analysis reveals data being encoded in DNS TXT record queries. What type of attack is this?",
+    "Masked_Question": "My system shows anomalous DNS queries from workstation [DEVICE] pointing to unusual domains. The device belongs to user [IDENTITY] with MAC [DEVICE]. Traffic analysis reveals data being encoded in DNS TXT record queries.",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm configuring zero trust network access for remote workers. What's the correct implementation order for least privilege access?",
+    "A": "Verify identity, validate device posture, assess context, grant minimal necessary access, continuously monitor",
+    "B": "Grant access first, then verify identity and monitor for suspicious behavior",
+    "C": "Validate device security, grant full network access, then restrict based on behavior",
+    "D": "Implement network segmentation, verify user identity, then provide access to all internal resources",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "I'm configuring zero trust network access for remote workers. What's the correct implementation order for least privilege access?",
+    "Masked_Question": "I'm configuring [CREDENTIALS] for [IDENTITY] access. What's the correct implementation order for least privilege access?",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "User anil.gupta@corp.internal (SSN: XXX-XX-7834) reported receiving emails from his own address andrew.miller@corp.internal requesting password resets. Investigation shows SMTP logs from 192.0.2.178 with forged headers. What vulnerability is being exploited?",
+    "A": "Email spoofing due to missing or improperly configured SPF, DKIM, and DMARC records",
+    "B": "The user's email account has been compromised and is sending emails",
+    "C": "A man-in-the-middle attack is intercepting and modifying email traffic",
+    "D": "The email server has been compromised and is relaying unauthorized messages",
+    "Answer": "A",
+    "Entities": {
+      "CONTACT": [
+        "anil.gupta@corp.internal",
+        "andrew.miller@corp.internal"
+      ],
+      "IDENTITY": [
+        "XXX-XX-7834"
+      ],
+      "LOCATION": [
+        "192.0.2.178"
+      ]
+    },
+    "PII-free Question": "User [CONTACT] (SSN: [IDENTITY]) reported receiving emails from his own address [CONTACT] requesting password resets. Investigation shows SMTP logs from [LOCATION] with forged headers. What vulnerability is being exploited?",
+    "Masked_Question": "User [IDENTITY] (SSN: XXX-XX-7834) reported receiving emails from his own address [CONTACT] requesting password resets. Investigation shows SMTP logs from 192.0.",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm analyzing a compromised server where attacker maintained persistence. Found scheduled task running PowerShell script that beacons to 203.0.113.89 using token Bearer_7xR4nM9kL2pQ5wT8vY every 6 hours from device srv-db-prod-03. What's the best remediation approach?",
+    "A": "Remove the scheduled task, audit all system changes, rebuild the server from known good baseline, and implement EDR monitoring",
+    "B": "Delete the PowerShell script and block the external IP address",
+    "C": "Disable PowerShell on the server and monitor for further activity",
+    "D": "Change the server's IP address and update firewall rules",
+    "Answer": "A",
+    "Entities": {
+      "LOCATION": [
+        "203.0.113.89"
+      ],
+      "CREDENTIALS": [
+        "Bearer_7xR4nM9kL2pQ5wT8vY"
+      ],
+      "DEVICE": [
+        "srv-db-prod-03"
+      ]
+    },
+    "PII-free Question": "I'm analyzing a compromised server where attacker maintained persistence. Found scheduled task running PowerShell script that beacons to [LOCATION] using token [CREDENTIALS] every 6 hours from device [DEVICE]. What's the best remediation approach?",
+    "Masked_Question": "I'm analyzing a compromised server where attacker maintained persistence. Found scheduled task running PowerShell script that beacons to 203.0.113.89 using token Bearer_7xR",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm investigating lateral movement in our network. User jdavis with employee badge B-92847 authenticated to fileserver01 from 10.20.35.142, then within 2 minutes accessed domain controller from same IP using different credentials. What technique is being used?",
+    "A": "Pass-the-hash attack using stolen NTLM hashes to authenticate without knowing plaintext passwords",
+    "B": "Credential stuffing using previously breached password databases",
+    "C": "Brute force attack cycling through common password combinations",
+    "D": "Social engineering attack where user was tricked into providing credentials",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "jdavis",
+        "B-92847"
+      ],
+      "LOCATION": [
+        "10.20.35.142"
+      ]
+    },
+    "PII-free Question": "I'm investigating lateral movement in our network. User [IDENTITY] with employee badge [IDENTITY] authenticated to fileserver01 from [LOCATION], then within 2 minutes accessed domain controller from same IP using different credentials. What technique is being used?",
+    "Masked_Question": "I'm investigating lateral movement in our network. User [IDENTITY] with employee badge [CREDENTIALS] authenticated to fileserver01 from 10.20.35.14",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My web application firewall detected SQL injection attempts targeting the login form. The attacker from 198.51.100.55 is using parameter pollution in POST requests. What's the most effective immediate mitigation?",
+    "A": "Implement parameterized queries or prepared statements and input validation on the backend",
+    "B": "Block the attacking IP address at the firewall level",
+    "C": "Disable the login form temporarily until patches are applied",
+    "D": "Add CAPTCHA to the login form to slow down automated attacks",
+    "Answer": "A",
+    "Entities": {
+      "LOCATION": [
+        "198.51.100.55"
+      ]
+    },
+    "PII-free Question": "My web application firewall detected SQL injection attempts targeting the login form. The attacker from [LOCATION] is using parameter pollution in POST requests. What's the most effective immediate mitigation?",
+    "Masked_Question": "My web application firewall detected SQL injection attempts targeting the login form. The attacker from [IP] is using parameter pollution in POST requests. What's the most effective immediate mitigation?",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "Employee Patricia Wong (ID: EMP-55291, phone: +1-206-555-0147) reported her laptop was stolen from her car on 11/08/2024. The device has full disk encryption enabled. What should be the incident response priority?",
+    "A": "Remotely wipe the device, revoke certificates and access tokens, force password reset, and monitor for unauthorized access attempts",
+    "B": "Report the theft to law enforcement and wait for device recovery",
+    "C": "The encryption makes the data safe, so just disable the device's network access",
+    "D": "Track the device using GPS and attempt recovery before taking other actions",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "Patricia Wong",
+        "EMP-55291"
+      ],
+      "CONTACT": [
+        "+1-206-555-0147"
+      ],
+      "DATE": [
+        "11/08/2024"
+      ]
+    },
+    "PII-free Question": "Employee [IDENTITY] (ID: [IDENTITY], phone: [CONTACT]) reported her laptop was stolen from her car on [DATE]. The device has full disk encryption enabled. What should be the incident response priority?",
+    "Masked_Question": "Employee [IDENTITY] (ID: EMP-55291, phone: +1-206-555-0147) reported her laptop was stolen from her car on 11/",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "I need to secure API endpoints that handle payment processing. Account ACT-778392-US is generating errors when connecting with secret key sk_live_4Hm89NpK2xL6vQ3wR9tY from IP 172.31.255.89. What's the proper way to rotate compromised API credentials?",
+    "A": "Generate new credentials, update all services to use new keys with overlapping validity period, revoke old credentials after confirming migration",
+    "B": "Immediately revoke the old credentials and distribute new ones to all services",
+    "C": "Keep both credentials active indefinitely for backwards compatibility",
+    "D": "Change the secret key but maintain the same account identifier",
+    "Answer": "A",
+    "Entities": {
+      "FINANCIAL": [
+        "ACT-778392-US"
+      ],
+      "CREDENTIALS": [
+        "sk_live_4Hm89NpK2xL6vQ3wR9tY"
+      ],
+      "LOCATION": [
+        "172.31.255.89"
+      ]
+    },
+    "PII-free Question": "I need to secure API endpoints that handle payment processing. Account [FINANCIAL] is generating errors when connecting with secret key [CREDENTIALS] from IP [LOCATION]. What's the proper way to rotate compromised API credentials?",
+    "Masked_Question": "I need to secure API endpoints that handle payment processing. Account [IDENTITY] is generating errors when connecting with secret key [CREDENTIALS] from IP [LOCATION]. What's the proper way to rotate compromised",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "How do I properly implement security headers to prevent clickjacking attacks on our web application?",
+    "A": "Set X-Frame-Options to DENY or SAMEORIGIN, and implement Content-Security-Policy with frame-ancestors directive",
+    "B": "Disable all iframe functionality and remove frame support from HTML",
+    "C": "Implement JavaScript frame-busting code as the primary defense",
+    "D": "Configure CORS headers to restrict cross-origin requests",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "How do I properly implement security headers to prevent clickjacking attacks on our web application?",
+    "Masked_Question": "How do I properly implement security headers to prevent clickjacking attacks on our web application?",
+    "masked_clean": true,
+    "masked_match": true
+  },
+  {
+    "Question": "I'm analyzing network traffic where encrypted data is being sent to external IP 203.0.113.201 every 30 seconds from user mthomas@internal.net on device MAC-A4:5E:60:E2:3F:91. The encryption uses XOR with rotating keys. What makes this weak cryptography?",
+    "A": "XOR encryption is symmetric and easily reversible through frequency analysis and known-plaintext attacks",
+    "B": "XOR requires too much computational power for real-time encryption",
+    "C": "XOR encryption cannot be used for network communications",
+    "D": "Rotating keys make XOR encryption vulnerable to timing attacks",
+    "Answer": "A",
+    "Entities": {
+      "LOCATION": [
+        "203.0.113.201"
+      ],
+      "CONTACT": [
+        "mthomas@internal.net"
+      ],
+      "DEVICE": [
+        "MAC-A4:5E:60:E2:3F:91"
+      ]
+    },
+    "PII-free Question": "I'm analyzing network traffic where encrypted data is being sent to external IP [LOCATION] every 30 seconds from user [CONTACT] on device [DEVICE]. The encryption uses XOR with rotating keys. What makes this weak cryptography?",
+    "Masked_Question": "I'm analyzing network traffic where encrypted data is being sent to external IP [CONTACT] every 30 seconds from user [IDENTITY] on device [DEVICE]. The encryption uses XOR with rotating keys.",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My SIEM alerted on privilege escalation attempt. User account svc_backup with password hash $6$rounds=5000$xyz running on server ip-10-45-78-123 attempted to modify /etc/sudoers. The process has parent PID 1 indicating possible rootkit. What's the correct forensic approach?",
+    "A": "Take memory dump and disk image, isolate the system, analyze using trusted external tools, check for kernel-level compromises",
+    "B": "Run rootkit detection software on the live system to identify the malware",
+    "C": "Reboot the system to clear memory and check if the issue persists",
+    "D": "Update all system packages and security patches to remove vulnerabilities",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "svc_backup"
+      ],
+      "CREDENTIALS": [
+        "$6$rounds=5000$xyz"
+      ],
+      "LOCATION": [
+        "ip-10-45-78-123"
+      ]
+    },
+    "PII-free Question": "My SIEM alerted on privilege escalation attempt. User account [IDENTITY] with password hash [CREDENTIALS] running on server [LOCATION] attempted to modify /etc/sudoers. The process has parent PID 1 indicating possible rootkit. What's the correct forensic approach?",
+    "Masked_Question": "My SIEM alerted on privilege escalation attempt. User account [CREDENTIALS] with password hash $6$rounds=5000$xyz running on server [IDENTITY] attempted to modify /",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "I need to investigate suspicious cryptocurrency mining activity. Device DEV-WIN-8492 registered to Kevin Park (DOB 05/22/1991) is using 95% CPU continuously and connecting to pool.minexmr.com. What indicates this is cryptojacking versus legitimate mining?",
+    "A": "The mining activity started without user authorization and runs with elevated privileges or hidden processes",
+    "B": "High CPU usage indicates mining is unauthorized",
+    "C": "Corporate devices cannot perform legitimate cryptocurrency mining",
+    "D": "Connection to mining pools always indicates malicious activity",
+    "Answer": "A",
+    "Entities": {
+      "DEVICE": [
+        "DEV-WIN-8492"
+      ],
+      "IDENTITY": [
+        "Kevin Park"
+      ],
+      "DATE": [
+        "05/22/1991"
+      ]
+    },
+    "PII-free Question": "I need to investigate suspicious cryptocurrency mining activity. Device [DEVICE] registered to [IDENTITY] (DOB [DATE]) is using 95% CPU continuously and connecting to pool.minexmr.com. What indicates this is cryptojacking versus legitimate mining?",
+    "Masked_Question": "I need to investigate suspicious cryptocurrency mining activity. Device [DEVICE] registered to [IDENTITY] is using 95% CPU continuously and connecting to pool.minexmr.com. What indicates this",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My intrusion detection system flagged ARP spoofing on VLAN 50. Device with MAC 00:0C:29:5A:F1:D8 is claiming to be the default gateway 192.168.50.1. What's the proper mitigation strategy?",
+    "A": "Enable dynamic ARP inspection on the switch, configure static ARP entries for critical infrastructure, and implement port security",
+    "B": "Block the malicious MAC address and restart all network devices",
+    "C": "Disable ARP protocol and use static routing tables",
+    "D": "Increase ARP cache timeout values to reduce poisoning impact",
+    "Answer": "A",
+    "Entities": {
+      "DEVICE": [
+        "00:0C:29:5A:F1:D8"
+      ],
+      "LOCATION": [
+        "192.168.50.1"
+      ]
+    },
+    "PII-free Question": "My intrusion detection system flagged ARP spoofing on VLAN 50. Device with MAC [DEVICE] is claiming to be the default gateway [LOCATION]. What's the proper mitigation strategy?",
+    "Masked_Question": "My intrusion detection system flagged ARP spoofing on VLAN 50. Device with MAC 00:0C:29:5A:F1:D8 is claiming to be the default gateway",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "User admin_rachel accessed production database from smartphone IMEI-490154203237518 at jessica.kim@company.org email on 12/01/2024 at 3:15 AM from IP 192.0.2.45. She exported customer credit card data to CSV. What policy violation is most critical here?",
+    "A": "Accessing sensitive payment card data from an unapproved mobile device violates PCI-DSS requirements",
+    "B": "Working outside business hours without approval",
+    "C": "Using personal email for work-related communications",
+    "D": "Exporting data to CSV format instead of encrypted format",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "admin_rachel"
+      ],
+      "DEVICE": [
+        "IMEI-490154203237518"
+      ],
+      "CONTACT": [
+        "jessica.kim@company.org"
+      ],
+      "DATE": [
+        "12/01/2024"
+      ],
+      "LOCATION": [
+        "192.0.2.45"
+      ]
+    },
+    "PII-free Question": "User [IDENTITY] accessed production database from smartphone [DEVICE] at [CONTACT] email on [DATE] at 3:15 AM from IP [LOCATION]. She exported customer credit card data to CSV. What policy violation is most critical here?",
+    "Masked_Question": "User [IDENTITY] accessed production database from smartphone [DEVICE] at [CONTACT] email on [DATE] at [TIME] from IP [LOCATION]. She exported customer credit card data to CSV. What policy viol",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm responding to a business email compromise. CFO David Chen's account dchen@company.com was used to authorize wire transfer of $2.8M to account #9847-2334-8821-7765 on 10/30/2024. Email headers show originating IP 198.18.5.234 in Romania. What indicates account compromise versus insider fraud?",
+    "A": "Anomalous login location, different browser fingerprint, and absence of normal email behavioral patterns suggest external compromise",
+    "B": "The large transaction amount indicates insider fraud rather than external attack",
+    "C": "Wire transfers always indicate account compromise when sent internationally",
+    "D": "The use of the legitimate email account proves this is insider activity",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "David Chen"
+      ],
+      "CONTACT": [
+        "dchen@company.com"
+      ],
+      "FINANCIAL": [
+        "9847-2334-8821-7765"
+      ],
+      "DATE": [
+        "10/30/2024"
+      ],
+      "LOCATION": [
+        "198.18.5.234"
+      ]
+    },
+    "PII-free Question": "I'm responding to a business email compromise. CFO [IDENTITY]'s account [CONTACT] was used to authorize wire transfer of $2.8M to account #[FINANCIAL] on [DATE]. Email headers show originating IP [LOCATION] in Romania. What indicates account compromise versus insider fraud?",
+    "Masked_Question": "I'm responding to a business email compromise. [IDENTITY]'s account [CONTACT] was used to authorize wire transfer of $2.8M to account #9847-233",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My endpoint detection found PowerShell Empire framework on workstation WKS-5647 owned by user rbrown. The agent beacons using token gAAAAABh5x9k_encrypted_payload to C2 server at 203.0.113.178. What's the correct order of containment actions?",
+    "A": "Isolate the endpoint from network, capture memory dump, kill malicious processes, collect forensic artifacts, rebuild from clean image",
+    "B": "Delete the malicious files, run antivirus scan, and restart the computer",
+    "C": "Block the C2 IP address and monitor for additional beaconing activity",
+    "D": "Disconnect network cable, image the hard drive, then reconnect and remove malware",
+    "Answer": "A",
+    "Entities": {
+      "DEVICE": [
+        "WKS-5647"
+      ],
+      "IDENTITY": [
+        "rbrown"
+      ],
+      "CREDENTIALS": [
+        "gAAAAABh5x9k_encrypted_payload"
+      ],
+      "LOCATION": [
+        "203.0.113.178"
+      ]
+    },
+    "PII-free Question": "My endpoint detection found PowerShell Empire framework on workstation [DEVICE] owned by user [IDENTITY]. The agent beacons using token [CREDENTIALS] to C2 server at [LOCATION]. What's the correct order of containment actions?",
+    "Masked_Question": "My endpoint detection found PowerShell Empire framework on workstation WKS-5647 owned by user [IDENTITY]. The agent beacons using token gAAAAABh5x9k_encrypted_payload to C2 server",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "I need to implement secure session management for our web application. What's the proper approach to prevent session fixation attacks?",
+    "A": "Regenerate session ID after successful authentication and set secure, HTTPOnly, and SameSite cookie attributes",
+    "B": "Use long session timeout values to reduce the need for reauthentication",
+    "C": "Store session tokens in localStorage for persistence across browser sessions",
+    "D": "Accept session IDs from URL parameters for better compatibility",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "I need to implement secure session management for our web application. What's the proper approach to prevent session fixation attacks?",
+    "Masked_Question": "I need to implement secure session management for our web application. What's the proper approach to prevent session fixation attacks?",
+    "masked_clean": true,
+    "masked_match": true
+  },
+  {
+    "Question": "User maria.santos@corp.net (employee ID EID-28473) can't access file share from device laptop-MB-441 with MAC D8:9E:F3:33:87:C2. Event logs show Kerberos authentication failures with error code 0x1F. What's the most likely cause?",
+    "A": "Clock skew exceeds 5 minutes between client and domain controller, causing Kerberos ticket validation to fail",
+    "B": "The user's password has expired and needs to be reset",
+    "C": "The file share permissions have been modified to exclude this user",
+    "D": "The network connection is unstable causing authentication timeouts",
+    "Answer": "A",
+    "Entities": {
+      "CONTACT": [
+        "maria.santos@corp.net"
+      ],
+      "IDENTITY": [
+        "EID-28473"
+      ],
+      "DEVICE": [
+        "laptop-MB-441",
+        "D8:9E:F3:33:87:C2"
+      ]
+    },
+    "PII-free Question": "User [CONTACT] (employee ID [IDENTITY]) can't access file share from device [DEVICE] with MAC [DEVICE]. Event logs show Kerberos authentication failures with error code 0x1F. What's the most likely cause?",
+    "Masked_Question": "User [IDENTITY] (employee ID EID-28473) can't access file share from device [DEVICE] with MAC D8:9E:F3:33:87:C2.",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm investigating a supply chain attack. Our build server pulled a compromised NPM package that injected code to exfiltrate environment variables containing API keys to 192.0.2.99. What detection method would have prevented this?",
+    "A": "Software composition analysis with dependency hash verification and monitoring for unexpected network connections during builds",
+    "B": "Regular antivirus scans of the build server",
+    "C": "Firewall rules blocking all outbound traffic from build servers",
+    "D": "Manual code review of every third-party package",
+    "Answer": "A",
+    "Entities": {
+      "LOCATION": [
+        "192.0.2.99"
+      ]
+    },
+    "PII-free Question": "I'm investigating a supply chain attack. Our build server pulled a compromised NPM package that injected code to exfiltrate environment variables containing API keys to [LOCATION]. What detection method would have prevented this?",
+    "Masked_Question": "I'm investigating a supply chain attack. Our build server pulled a compromised NPM package that injected code to exfiltrate environment variables containing API keys to 192.0.2.99. What detection method",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "My cloud security team detected unauthorized IAM role assumption. Service account svc-analytics@project.iam with access key AKIA4X7NM2KL9PQ3VWRT was used from IP 10.128.0.45 to access S3 buckets outside normal schedule on 11/22/2024. What should be the first investigative step?",
+    "A": "Review CloudTrail logs to identify all actions performed with the compromised credentials and scope of access",
+    "B": "Immediately delete the service account to prevent further access",
+    "C": "Reset the access key and notify the security team",
+    "D": "Block the source IP address at the security group level",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "svc-analytics@project.iam"
+      ],
+      "CREDENTIALS": [
+        "AKIA4X7NM2KL9PQ3VWRT"
+      ],
+      "LOCATION": [
+        "10.128.0.45"
+      ],
+      "DATE": [
+        "11/22/2024"
+      ]
+    },
+    "PII-free Question": "My cloud security team detected unauthorized IAM role assumption. Service account [IDENTITY] with access key [CREDENTIALS] was used from IP [LOCATION] to access S3 buckets outside normal schedule on [DATE]. What should be the first investigative step?",
+    "Masked_Question": "My cloud security team detected unauthorized IAM role assumption. Service account [IDENTITY] with access key [CREDENTIALS] was used from IP [LOCATION] to access S3 buckets outside normal schedule on [",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm configuring WAF rules to prevent XML external entity (XXE) attacks. What's the most effective defense mechanism?",
+    "A": "Disable XML external entity processing in the parser and validate input against a strict schema",
+    "B": "Filter requests containing XML declarations in the WAF",
+    "C": "Implement rate limiting on XML parsing endpoints",
+    "D": "Use JSON instead of XML for all data interchange",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "I'm configuring WAF rules to prevent XML external entity (XXE) attacks. What's the most effective defense mechanism?",
+    "Masked_Question": "I'm configuring WAF rules to prevent [FINANCIAL] attacks. What's the most effective defense mechanism?",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "User account thomas.lee with badge T-66492 phone +1-312-555-0183 triggered DLP alert for uploading 2.4GB to personal Dropbox from 172.16.88.203 on 09/15/2024. Investigation shows files contain product designs. What distinguishes malicious exfiltration from policy violation?",
+    "A": "Intent to harm the organization, use of evasion techniques, access to data beyond job responsibilities, and timing relative to employment status",
+    "B": "The volume of data uploaded automatically indicates malicious intent",
+    "C": "Using personal cloud storage for any work files is always malicious",
+    "D": "Uploading during business hours suggests accidental policy violation",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "thomas.lee",
+        "T-66492"
+      ],
+      "CONTACT": [
+        "+1-312-555-0183"
+      ],
+      "LOCATION": [
+        "172.16.88.203"
+      ],
+      "DATE": [
+        "09/15/2024"
+      ]
+    },
+    "PII-free Question": "User account [IDENTITY] with badge [IDENTITY] phone [CONTACT] triggered DLP alert for uploading 2.4GB to personal Dropbox from [LOCATION] on [DATE]. Investigation shows files contain product designs. What distinguishes malicious exfiltration from policy violation?",
+    "Masked_Question": "User [IDENTITY] with badge [IDENTITY] phone [CONTACT] triggered DLP alert for uploading [FINANCIAL] to personal Dropbox from [LOCATION] on [DATE]. Investigation shows",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My network monitoring shows DNS amplification attack. Requests with spoofed source IP 198.51.100.42 are sent to our recursive resolvers generating responses 50x larger. What configuration change prevents this abuse?",
+    "A": "Disable recursion for external queries and implement response rate limiting (RRL)",
+    "B": "Block all DNS queries from external networks",
+    "C": "Increase DNS server bandwidth to handle amplified traffic",
+    "D": "Configure DNS servers to respond with smaller packet sizes",
+    "Answer": "A",
+    "Entities": {
+      "LOCATION": [
+        "198.51.100.42"
+      ]
+    },
+    "PII-free Question": "My network monitoring shows DNS amplification attack. Requests with spoofed source IP [LOCATION] are sent to our recursive resolvers generating responses 50x larger. What configuration change prevents this abuse?",
+    "Masked_Question": "My network monitoring shows DNS amplification attack. Requests with spoofed source IP [LOCATION] are sent to our recursive resolvers generating responses [FINANCIAL] larger. What configuration change prevents this abuse?",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm analyzing malware that infected device ANDROID-8833-SM registered to Jennifer Wu (SSN: XXX-XX-4729, email: jwu@personal.com). The malware intercepts SMS messages and forwards them to 203.0.113.67. What attack is this enabling?",
+    "A": "MFA bypass by intercepting one-time passwords sent via SMS for account takeovers",
+    "B": "Distributed denial of service attack using SMS flooding",
+    "C": "SIM swapping attack to take over the phone number",
+    "D": "Phishing attack by sending malicious links to contacts",
+    "Answer": "A",
+    "Entities": {
+      "DEVICE": [
+        "ANDROID-8833-SM"
+      ],
+      "IDENTITY": [
+        "Jennifer Wu",
+        "XXX-XX-4729"
+      ],
+      "CONTACT": [
+        "jwu@personal.com"
+      ],
+      "LOCATION": [
+        "203.0.113.67"
+      ]
+    },
+    "PII-free Question": "I'm analyzing malware that infected device [DEVICE] registered to [IDENTITY] (SSN: [IDENTITY], email: [CONTACT]). The malware intercepts SMS messages and forwards them to [LOCATION]. What attack is this enabling?",
+    "Masked_Question": "I'm analyzing malware that infected device [DEVICE] registered to [IDENTITY] (SSN: [CREDENTIALS], email: [CONTACT]). The malware intercepts SMS messages and forwards",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm investigating a watering hole attack. Multiple employees visited compromised industry news site from our network, and now three workstations show signs of compromise. User amanda.foster@company.com from device WS-DELL-9284 with IP 10.45.78.92 downloaded malicious JavaScript on 10/18/2024. What's the correct threat hunting approach?",
+    "A": "Identify all users who visited the compromised site, analyze browser artifacts and network logs, hunt for indicators of compromise across the environment",
+    "B": "Block the malicious website and run antivirus on affected workstations",
+    "C": "Reimage the three compromised workstations and consider the incident resolved",
+    "D": "Reset passwords for affected users and enable additional monitoring",
+    "Answer": "A",
+    "Entities": {
+      "CONTACT": [
+        "amanda.foster@company.com"
+      ],
+      "DEVICE": [
+        "WS-DELL-9284"
+      ],
+      "LOCATION": [
+        "10.45.78.92"
+      ],
+      "DATE": [
+        "10/18/2024"
+      ]
+    },
+    "PII-free Question": "I'm investigating a watering hole attack. Multiple employees visited compromised industry news site from our network, and now three workstations show signs of compromise. User [CONTACT] from device [DEVICE] with IP [LOCATION] downloaded malicious JavaScript on [DATE]. What's the correct threat hunting approach?",
+    "Masked_Question": "I'm investigating a watering hole attack. Multiple employees visited compromised industry news site from our network, and now three workstations show signs of compromise. User [IDENTITY] from device [DEVICE] with IP [",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My container security scan found a critical vulnerability in a base image running in production. The image contains hardcoded database password db_P@ssw0rd_2024 and connects to RDS instance at rds-prod.internal:5432. What's the proper remediation sequence?",
+    "A": "Rotate the database credentials immediately, update image to use secrets manager, scan and redeploy containers, audit access logs",
+    "B": "Delete the compromised containers and rebuild from scratch",
+    "C": "Encrypt the hardcoded password and redeploy the containers",
+    "D": "Move the password to an environment variable in the container",
+    "Answer": "A",
+    "Entities": {
+      "CREDENTIALS": [
+        "db_P@ssw0rd_2024"
+      ],
+      "LOCATION": [
+        "rds-prod.internal:5432"
+      ]
+    },
+    "PII-free Question": "My container security scan found a critical vulnerability in a base image running in production. The image contains hardcoded database password [CREDENTIALS] and connects to RDS instance at [LOCATION]. What's the proper remediation sequence?",
+    "Masked_Question": "My container security scan found a critical vulnerability in a base image running in production. The image contains hardcoded database password [CREDENTIALS] and connects to RDS instance at rds-prod.internal:5432",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "How do I properly implement defense against Server-Side Request Forgery (SSRF) attacks in our microservices architecture?",
+    "A": "Validate and sanitize URLs, implement allowlist for permitted destinations, disable unused URL schemas, use network segmentation",
+    "B": "Block all outbound requests from application servers",
+    "C": "Implement rate limiting on all HTTP requests",
+    "D": "Use POST requests instead of GET requests for all operations",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "How do I properly implement defense against Server-Side Request Forgery (SSRF) attacks in our microservices architecture?",
+    "Masked_Question": "How do I properly implement defense against Server-Side Request Forgery (SSRF) attacks in our microservices architecture?",
+    "masked_clean": true,
+    "masked_match": true
+  },
+  {
+    "Question": "User robert.chang (ID: EMP-73829, DOB: 07/14/1989) reported phishing email claiming to be from IT requiring MFA re-enrollment at fake-portal.com. He entered credentials but not MFA code before realizing it was fake. What's the appropriate response urgency level?",
+    "A": "High urgency - immediately reset password, revoke active sessions, monitor for unauthorized access attempts, check for lateral movement",
+    "B": "Low urgency - schedule password change within 24 hours and document the incident",
+    "C": "Medium urgency - user should change password when convenient and complete security training",
+    "D": "No action needed since MFA was not compromised",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "robert.chang",
+        "EMP-73829"
+      ],
+      "DATE": [
+        "07/14/1989"
+      ]
+    },
+    "PII-free Question": "User [IDENTITY] (ID: [IDENTITY], DOB: [DATE]) reported phishing email claiming to be from IT requiring MFA re-enrollment at fake-portal.com. He entered credentials but not MFA code before realizing it was fake. What's the appropriate response urgency level?",
+    "Masked_Question": "User [IDENTITY] (ID: [IDENTITY], DOB: [DATE]) reported phishing email claiming to be from IT requiring MFA re-enrollment at fake-portal.com. He entered credentials but not",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm analyzing suspicious outbound traffic from server prod-web-04 at 172.20.15.88 using SSH tunnel to 198.18.22.156 port 22. The connection transfers 50MB every hour encrypted with private key id_rsa_compromised. Traffic analysis shows data exfiltration pattern. What identifies this as SSH tunneling versus legitimate remote access?",
+    "A": "Regular intervals, large data volumes, connection from production server to external destination, and lack of interactive session characteristics",
+    "B": "The use of port 22 indicates tunneling rather than legitimate SSH",
+    "C": "Any encrypted outbound traffic is suspicious from production servers",
+    "D": "The presence of a private key proves unauthorized access",
+    "Answer": "A",
+    "Entities": {
+      "DEVICE": [
+        "prod-web-04"
+      ],
+      "LOCATION": [
+        "172.20.15.88",
+        "198.18.22.156"
+      ],
+      "CREDENTIALS": [
+        "id_rsa_compromised"
+      ]
+    },
+    "PII-free Question": "I'm analyzing suspicious outbound traffic from server [DEVICE] at [LOCATION] using SSH tunnel to [LOCATION] port 22. The connection transfers 50MB every hour encrypted with private key [CREDENTIALS]. Traffic analysis shows data exfiltration pattern. What identifies this as SSH tunneling versus legitimate remote access?",
+    "Masked_Question": "I'm analyzing suspicious outbound traffic from server [DEVICE] at [LOCATION] using SSH tunnel to [CONTACT] port [IDENTITY]. The connection transfers 50MB every hour encrypted with private key",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My SOC detected credential replay attack. User stephanie.williams@enterprise.com authenticated successfully from device iPad-5592-PRO with IMEI-352078094523167 from IP 192.0.2.78 at 2:30 PM. At 2:35 PM same credentials used from 203.0.113.88 in different country. What mitigation prevents this attack?",
+    "A": "Implement token binding to tie authentication tokens to specific devices and network contexts",
+    "B": "Increase password complexity requirements",
+    "C": "Enable geolocation-based access restrictions",
+    "D": "Require users to change passwords after each login",
+    "Answer": "A",
+    "Entities": {
+      "CONTACT": [
+        "stephanie.williams@enterprise.com"
+      ],
+      "DEVICE": [
+        "iPad-5592-PRO",
+        "IMEI-352078094523167"
+      ],
+      "LOCATION": [
+        "192.0.2.78",
+        "203.0.113.88"
+      ]
+    },
+    "PII-free Question": "My SOC detected credential replay attack. User [CONTACT] authenticated successfully from device [DEVICE] with [DEVICE] from IP [LOCATION] at 2:30 PM. At 2:35 PM same credentials used from [LOCATION] in different country. What mitigation prevents this attack?",
+    "Masked_Question": "My SOC detected credential replay attack. User [CREDENTIALS] authenticated successfully from device [DEVICE] with IMEI-352078094523167 from IP",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "I need to investigate a potential data breach. Database query logs show user db_admin executed bulk SELECT statements on customer table containing credit card numbers at 3:47 AM from 10.88.45.203. The query returned 125,000 records. What forensic evidence is most critical?",
+    "A": "Network packet captures showing where the data was transmitted, database audit logs, user activity before and after, file system artifacts",
+    "B": "The SQL query text and execution time",
+    "C": "Database server CPU and memory usage during the query",
+    "D": "User's workstation browser history and recent file access",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "db_admin"
+      ],
+      "LOCATION": [
+        "10.88.45.203"
+      ]
+    },
+    "PII-free Question": "I need to investigate a potential data breach. Database query logs show user [IDENTITY] executed bulk SELECT statements on customer table containing credit card numbers at 3:47 AM from [LOCATION]. The query returned 125,000 records. What forensic evidence is most critical?",
+    "Masked_Question": "I need to investigate a potential data breach. Database query logs show user [IDENTITY] executed bulk SELECT statements on customer table containing credit card numbers at 3:47 AM from [CONTACT]. The query returned [NUMBER",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My EDR solution detected fileless malware using PowerShell on laptop LT-HP-4472 owned by Carlos Mendez (phone +1-503-555-0192, badge C-88374). The malware loads directly into memory without touching disk. What analysis technique is most effective?",
+    "A": "Memory forensics using tools like Volatility to analyze running processes, injected code, and network connections in RAM",
+    "B": "Full disk forensic imaging to capture malware artifacts",
+    "C": "Antivirus signature-based scanning of system files",
+    "D": "Analysis of Windows Event Logs for suspicious entries",
+    "Answer": "A",
+    "Entities": {
+      "DEVICE": [
+        "LT-HP-4472"
+      ],
+      "IDENTITY": [
+        "Carlos Mendez",
+        "C-88374"
+      ],
+      "CONTACT": [
+        "+1-503-555-0192"
+      ]
+    },
+    "PII-free Question": "My EDR solution detected fileless malware using PowerShell on laptop [DEVICE] owned by [IDENTITY] (phone [CONTACT], badge [IDENTITY]). The malware loads directly into memory without touching disk. What analysis technique is most effective?",
+    "Masked_Question": "My EDR solution detected fileless malware using PowerShell on laptop [DEVICE] owned by [IDENTITY] (phone [CONTACT], badge [IDENTITY]). The malware loads directly into memory without touching disk",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm configuring OAuth 2.0 for our API. What's the correct implementation to prevent authorization code interception attacks?",
+    "A": "Implement PKCE (Proof Key for Code Exchange) with state parameter validation and use short-lived authorization codes",
+    "B": "Use long authorization code expiration times for better user experience",
+    "C": "Store authorization codes in browser localStorage",
+    "D": "Disable HTTPS requirement for development and testing environments",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "I'm configuring OAuth 2.0 for our API. What's the correct implementation to prevent authorization code interception attacks?",
+    "Masked_Question": "I'm configuring [CREDENTIALS] for our API. What's the correct implementation to prevent [IDENTITY] interception attacks?",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "User admin_jenkins accessed production API gateway from 172.31.45.209 using JWT token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.payload on 11/29/2024 and modified rate limiting rules. Token inspection shows 'alg':'none' in header. What vulnerability was exploited?",
+    "A": "JWT algorithm confusion attack where signature verification was bypassed by setting algorithm to 'none'",
+    "B": "Brute force attack that guessed the JWT secret key",
+    "C": "SQL injection in the token validation process",
+    "D": "Cross-site scripting attack that stole the JWT token",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "admin_jenkins"
+      ],
+      "LOCATION": [
+        "172.31.45.209"
+      ],
+      "CREDENTIALS": [
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.payload"
+      ],
+      "DATE": [
+        "11/29/2024"
+      ]
+    },
+    "PII-free Question": "User [IDENTITY] accessed production API gateway from [LOCATION] using JWT token [CREDENTIALS] on [DATE] and modified rate limiting rules. Token inspection shows 'alg':'none' in header. What vulnerability was exploited?",
+    "Masked_Question": "User [IDENTITY] accessed production API gateway from [CONTACT] using JWT token [CREDENTIALS] on [DATE] and modified rate limiting rules. Token inspection shows 'alg':'none' in header.",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm investigating a Living off the Land (LOtL) attack. User ntaylor with employee ID E-94732 had legitimate Windows tools like certutil.exe and bitsadmin.exe used to download payloads from 203.0.113.145 on device DESKTOP-8847-W11. What makes this detection challenging?",
+    "A": "Attackers use trusted system binaries that are normally present, making behavioral analysis and context more important than signature detection",
+    "B": "These tools are always encrypted and cannot be monitored",
+    "C": "Windows Defender automatically whitelists all system binaries",
+    "D": "The tools operate at kernel level beyond monitoring capabilities",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "ntaylor",
+        "E-94732"
+      ],
+      "LOCATION": [
+        "203.0.113.145"
+      ],
+      "DEVICE": [
+        "DESKTOP-8847-W11"
+      ]
+    },
+    "PII-free Question": "I'm investigating a Living off the Land (LOtL) attack. User [IDENTITY] with employee ID [IDENTITY] had legitimate Windows tools like certutil.exe and bitsadmin.exe used to download payloads from [LOCATION] on device [DEVICE]. What makes this detection challenging?",
+    "Masked_Question": "I'm investigating a Living off the Land (LOtL) attack. User [IDENTITY] with employee ID [IDENTITY] had legitimate Windows tools like certutil.exe and bitsadmin.exe used to download",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My web application is vulnerable to LDAP injection. An attacker is manipulating authentication queries to bypass login. What's the most effective remediation approach?",
+    "A": "Use parameterized LDAP queries, implement proper input validation and escaping, apply principle of least privilege for LDAP bind accounts",
+    "B": "Disable LDAP authentication and switch to local authentication",
+    "C": "Implement CAPTCHA on the login form to slow down attacks",
+    "D": "Increase the length requirement for usernames and passwords",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "My web application is vulnerable to LDAP injection. An attacker is manipulating authentication queries to bypass login. What's the most effective remediation approach?",
+    "Masked_Question": "My web application is vulnerable to LDAP injection. An attacker is manipulating authentication queries to bypass login. What's the most effective remediation approach?",
+    "masked_clean": true,
+    "masked_match": true
+  },
+  {
+    "Question": "User michelle.oconnor@company.net (SSN: XXX-XX-9283, address: 742 Evergreen Terrace, Springfield) accessed patient records from mobile device iOS-7723-SE with IMEI-358835094728192 from IP 198.51.100.167 on 08/25/2024. Access logs show 847 patient records viewed in 12 minutes. What indicates automated scraping versus manual review?",
+    "A": "The access rate of 70+ records per minute exceeds human capability and shows systematic sequential access pattern",
+    "B": "Mobile device access automatically indicates unauthorized activity",
+    "C": "The number of records accessed proves malicious intent",
+    "D": "Access from outside the facility always indicates data theft",
+    "Answer": "A",
+    "Entities": {
+      "CONTACT": [
+        "michelle.oconnor@company.net"
+      ],
+      "IDENTITY": [
+        "XXX-XX-9283"
+      ],
+      "LOCATION": [
+        "742 Evergreen Terrace, Springfield",
+        "198.51.100.167"
+      ],
+      "DEVICE": [
+        "iOS-7723-SE",
+        "IMEI-358835094728192"
+      ],
+      "DATE": [
+        "08/25/2024"
+      ]
+    },
+    "PII-free Question": "User [CONTACT] (SSN: [IDENTITY], address: [LOCATION]) accessed patient records from mobile device [DEVICE] with [DEVICE] from IP [LOCATION] on [DATE]. Access logs show 847 patient records viewed in 12 minutes. What indicates automated scraping versus manual review?",
+    "Masked_Question": "User [IDENTITY] accessed patient records from mobile device [DEVICE] with IMEI-358835094728192 from IP 198.51.100.",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm analyzing a DLL hijacking attack on server SRV-APP-05 at 10.72.33.128. Malicious DLL was placed in application directory and loaded before the legitimate system DLL. What Windows security feature would have prevented this?",
+    "A": "Application directory should not be in DLL search path before system directories; SafeDllSearchMode and DLL signature verification prevent this",
+    "B": "Windows Defender automatically blocks all DLL loading",
+    "C": "User Account Control prevents DLL files from executing",
+    "D": "BitLocker encryption prevents unauthorized DLL placement",
+    "Answer": "A",
+    "Entities": {
+      "DEVICE": [
+        "SRV-APP-05"
+      ],
+      "LOCATION": [
+        "10.72.33.128"
+      ]
+    },
+    "PII-free Question": "I'm analyzing a DLL hijacking attack on server [DEVICE] at [LOCATION]. Malicious DLL was placed in application directory and loaded before the legitimate system DLL. What Windows security feature would have prevented this?",
+    "Masked_Question": "I'm analyzing a DLL hijacking attack on server [IDENTITY] at [LOCATION]. Malicious DLL was placed in application directory and loaded before the legitimate system DLL. What Windows security feature would have prevented this?",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My cloud infrastructure shows unauthorized Lambda function execution. Function name data-exfil-func used IAM role arn:aws:iam::123456789012:role/admin with secret key AKIAJX8NP2ML4KQ9VWRS from IP 192.0.2.234. The function accessed DynamoDB and exfiltrated data to external S3 bucket. What's the first containment action?",
+    "A": "Revoke the IAM credentials, delete the malicious Lambda function, block the external S3 bucket, review CloudTrail for full scope",
+    "B": "Delete the Lambda function and consider the incident contained",
+    "C": "Change the IAM role permissions and monitor for further activity",
+    "D": "Block the source IP at the security group level",
+    "Answer": "A",
+    "Entities": {
+      "CREDENTIALS": [
+        "AKIAJX8NP2ML4KQ9VWRS"
+      ],
+      "LOCATION": [
+        "192.0.2.234"
+      ]
+    },
+    "PII-free Question": "My cloud infrastructure shows unauthorized Lambda function execution. Function name data-exfil-func used IAM role arn:aws:iam::123456789012:role/admin with secret key [CREDENTIALS] from IP [LOCATION]. The function accessed DynamoDB and exfiltrated data to external S3 bucket. What's the first containment action?",
+    "Masked_Question": "My cloud infrastructure shows unauthorized Lambda function execution. Function name data-exfil-func used IAM role arn:aws:iam::123456789012:role/admin with",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I need to secure our GraphQL API that's vulnerable to introspection-based reconnaissance. What's the proper hardening approach?",
+    "A": "Disable introspection in production, implement query depth limiting, use query complexity analysis, and apply rate limiting per resolver",
+    "B": "Encrypt all GraphQL queries using TLS",
+    "C": "Convert GraphQL API to REST API for better security",
+    "D": "Require authentication for all queries including public endpoints",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "I need to secure our GraphQL API that's vulnerable to introspection-based reconnaissance. What's the proper hardening approach?",
+    "Masked_Question": "I need to secure our GraphQL API that's vulnerable to introspection-based reconnaissance. What's the proper hardening approach?",
+    "masked_clean": true,
+    "masked_match": true
+  },
+  {
+    "Question": "User jacob.peterson (badge J-55892, phone +1-617-555-0156, email jpeterson@internal.com) triggered security alert for accessing HR database containing salary information from terminal TERM-LNX-3394 at 10.10.88.77 on 12/15/2024. He's a software engineer with no HR access requirements. What's the priority investigation focus?",
+    "A": "Determine if credentials were compromised, verify legitimacy of access need, check for privilege escalation, review access control policies",
+    "B": "Immediately terminate employment and revoke all access",
+    "C": "Reset the user's password and provide security awareness training",
+    "D": "Document the access and continue routine monitoring",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "jacob.peterson",
+        "J-55892"
+      ],
+      "CONTACT": [
+        "+1-617-555-0156",
+        "jpeterson@internal.com"
+      ],
+      "DEVICE": [
+        "TERM-LNX-3394"
+      ],
+      "LOCATION": [
+        "10.10.88.77"
+      ],
+      "DATE": [
+        "12/15/2024"
+      ]
+    },
+    "PII-free Question": "User [IDENTITY] (badge [IDENTITY], phone [CONTACT], email [CONTACT]) triggered security alert for accessing HR database containing salary information from terminal [DEVICE] at [LOCATION] on [DATE]. He's a software engineer with no HR access requirements. What's the priority investigation focus?",
+    "Masked_Question": "User [IDENTITY] (badge [IDENTITY], phone [CONTACT], email [CONTACT]) triggered security alert for accessing [FINANCIAL] database containing [FINANCIAL] information from terminal",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm investigating BGP hijacking attempt. Our autonomous system received route announcements from unauthorized AS claiming ownership of our IP block 198.51.100.0/24. What's the correct mitigation and prevention strategy?",
+    "A": "Implement RPKI (Resource Public Key Infrastructure) validation, configure BGP route filtering, maintain IRR records, coordinate with upstream providers",
+    "B": "Block all BGP announcements from the malicious AS",
+    "C": "Change IP address ranges to avoid conflicts",
+    "D": "Increase BGP advertisement frequency to override malicious routes",
+    "Answer": "A",
+    "Entities": {
+      "LOCATION": [
+        "198.51.100.0/24"
+      ]
+    },
+    "PII-free Question": "I'm investigating BGP hijacking attempt. Our autonomous system received route announcements from unauthorized AS claiming ownership of our IP block [LOCATION]. What's the correct mitigation and prevention strategy?",
+    "Masked_Question": "I'm investigating BGP hijacking attempt. Our autonomous system received route announcements from unauthorized AS claiming ownership of our IP block [CONTACT] What's the correct mitigation and prevention",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My SIEM detected possible token impersonation attack. Service account svc_deploy with API token Bearer_xK9mL4pQ2vW7tY3nR8sH authenticated from container pod-web-7f4c89d6b-9x2kv at 172.18.0.55. The token was used to escalate privileges to cluster-admin role. What Kubernetes security feature prevents this?",
+    "A": "Role-Based Access Control (RBAC) with least privilege, pod security policies, service account token volume projection with audience and expiration",
+    "B": "Network policies that restrict pod-to-pod communication",
+    "C": "Container image scanning for vulnerabilities",
+    "D": "Kubernetes dashboard access restrictions",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "svc_deploy"
+      ],
+      "CREDENTIALS": [
+        "Bearer_xK9mL4pQ2vW7tY3nR8sH"
+      ],
+      "DEVICE": [
+        "pod-web-7f4c89d6b-9x2kv"
+      ],
+      "LOCATION": [
+        "172.18.0.55"
+      ]
+    },
+    "PII-free Question": "My SIEM detected possible token impersonation attack. Service account [IDENTITY] with API token [CREDENTIALS] authenticated from container [DEVICE] at [LOCATION]. The token was used to escalate privileges to cluster-admin role. What Kubernetes security feature prevents this?",
+    "Masked_Question": "My SIEM detected possible token impersonation attack. Service account [CREDENTIALS] with API token [IDENTITY] authenticated from container pod-web-7f4c89d6b-9x",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm responding to ransomware that spread laterally through network. Initial infection was workstation WKS-ACC-5529 owned by Nicole Simmons (ID: EMP-63847, DOB: 02/09/1985) at IP 10.45.23.198. The malware used SMBv1 vulnerability to propagate. What indicates worm-like behavior versus targeted attack?",
+    "A": "Automated self-propagation without human intervention, exploitation of network services, rapid spread across systems, and indiscriminate targeting",
+    "B": "The use of SMBv1 protocol proves worm characteristics",
+    "C": "Ransomware encryption always indicates worm behavior",
+    "D": "Lateral movement through the network defines worm activity",
+    "Answer": "A",
+    "Entities": {
+      "DEVICE": [
+        "WKS-ACC-5529"
+      ],
+      "IDENTITY": [
+        "Nicole Simmons",
+        "EMP-63847"
+      ],
+      "DATE": [
+        "02/09/1985"
+      ],
+      "LOCATION": [
+        "10.45.23.198"
+      ]
+    },
+    "PII-free Question": "I'm responding to ransomware that spread laterally through network. Initial infection was workstation [DEVICE] owned by [IDENTITY] (ID: [IDENTITY], DOB: [DATE]) at IP [LOCATION]. The malware used SMBv1 vulnerability to propagate. What indicates worm-like behavior versus targeted attack?",
+    "Masked_Question": "I'm responding to ransomware that spread laterally through network. Initial infection was workstation [DEVICE] owned by [IDENTITY] at IP [LOCATION]. The malware used SMBv1 vulnerability",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm investigating a time-of-check to time-of-use (TOCTOU) race condition vulnerability in our file processing application. User admin_ops from device SRV-PROC-12 at 172.19.45.203 exploited this to escalate privileges. What's the proper remediation approach?",
+    "A": "Implement atomic operations, use file locks, validate permissions at time of use rather than just at check, minimize time window between check and use",
+    "B": "Increase the delay between permission check and file access",
+    "C": "Disable concurrent file access for all users",
+    "D": "Run the application with elevated privileges to avoid permission checks",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "admin_ops"
+      ],
+      "DEVICE": [
+        "SRV-PROC-12"
+      ],
+      "LOCATION": [
+        "172.19.45.203"
+      ]
+    },
+    "PII-free Question": "I'm investigating a time-of-check to time-of-use (TOCTOU) race condition vulnerability in our file processing application. User [IDENTITY] from device [DEVICE] at [LOCATION] exploited this to escalate privileges. What's the proper remediation approach?",
+    "Masked_Question": "I'm investigating a time-of-check to time-of-use (TOCTOU) race condition vulnerability in our file processing application. User [IDENTITY] from device [DEVICE] exploited this to es",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My endpoint detection found process hollowing technique on laptop owned by Brian Anderson (email: banderson@company.org, badge B-77234). Legitimate process svchost.exe at PID 4892 had its memory replaced with malicious code connecting to 198.18.33.167. What detection method is most effective for this evasion technique?",
+    "A": "Monitor for process creation followed by suspicious memory operations, detect memory region permission changes from write to execute, behavioral analysis of process network activity",
+    "B": "Signature-based antivirus scanning of executable files",
+    "C": "Block all svchost.exe processes from running",
+    "D": "Monitor file system for new executable file creation",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "Brian Anderson",
+        "B-77234"
+      ],
+      "CONTACT": [
+        "banderson@company.org"
+      ],
+      "LOCATION": [
+        "198.18.33.167"
+      ]
+    },
+    "PII-free Question": "My endpoint detection found process hollowing technique on laptop owned by [IDENTITY] (email: [CONTACT], badge [IDENTITY]). Legitimate process svchost.exe at PID 4892 had its memory replaced with malicious code connecting to [LOCATION]. What detection method is most effective for this evasion technique?",
+    "Masked_Question": "My endpoint detection found process hollowing technique on laptop owned by [IDENTITY] (email: [CONTACT], badge [IDENTITY]). Legitimate process [PROCESS] at PID [PID] had its",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "I need to implement secure password reset functionality. What's the correct approach to prevent account takeover through password reset abuse?",
+    "A": "Use multi-factor verification, send reset tokens to verified channels, implement rate limiting, use short-lived tokens, require current password or security questions",
+    "B": "Email password reset links that never expire for user convenience",
+    "C": "Allow password reset using username alone for accessibility",
+    "D": "Automatically reset passwords and email new credentials",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "I need to implement secure password reset functionality. What's the correct approach to prevent account takeover through password reset abuse?",
+    "Masked_Question": "I need to implement secure [CREDENTIALS] reset functionality. What's the correct approach to prevent [CREDENTIALS] takeover through [CREDENTIALS] reset abuse?",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "User ashley.brooks with employee ID E-39284 phone +1-404-555-0189 accessed VPN from IP 203.0.113.92 on 11/03/2024 using certificate serial number 4F:3A:B8:C2:D1:E9:5F:7A. Minutes later, same certificate used from 192.0.2.156 in different continent. Both sessions active simultaneously. What's the most likely attack scenario?",
+    "A": "Certificate was stolen and cloned, allowing concurrent use from multiple locations indicating credential theft",
+    "B": "User is using VPN split tunneling across multiple devices",
+    "C": "Network latency causing duplicate session reporting",
+    "D": "Load balancer routing causing IP address variation",
+    "Answer": "A",
+    "Entities": {
+      "IDENTITY": [
+        "ashley.brooks",
+        "E-39284"
+      ],
+      "CONTACT": [
+        "+1-404-555-0189"
+      ],
+      "LOCATION": [
+        "203.0.113.92",
+        "192.0.2.156"
+      ],
+      "DATE": [
+        "11/03/2024"
+      ],
+      "CREDENTIALS": [
+        "4F:3A:B8:C2:D1:E9:5F:7A"
+      ]
+    },
+    "PII-free Question": "User [IDENTITY] with employee ID [IDENTITY] phone [CONTACT] accessed VPN from IP [LOCATION] on [DATE] using certificate serial number [CREDENTIALS]. Minutes later, same certificate used from [LOCATION] in different continent. Both sessions active simultaneously. What's the most likely attack scenario?",
+    "Masked_Question": "User [IDENTITY] with employee ID [IDENTITY] phone [CONTACT] accessed VPN from IP [CONTACT] on 11/03/2024 using certificate serial number [CREDENT",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm analyzing a subdomain takeover vulnerability. Our DNS has CNAME record pointing to decommissioned Azure resource at defunct-app.azurewebsites.net. An attacker registered this resource and hosts phishing content. What's the proper remediation and prevention?",
+    "A": "Remove dangling DNS records, implement DNS monitoring for orphaned CNAMEs, maintain inventory of external resources, validate target existence before DNS changes",
+    "B": "Change DNS provider to prevent future takeovers",
+    "C": "Convert all CNAME records to A records",
+    "D": "Block access to the subdomain at the firewall level",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "I'm analyzing a subdomain takeover vulnerability. Our DNS has CNAME record pointing to decommissioned Azure resource at defunct-app.azurewebsites.net. An attacker registered this resource and hosts phishing content. What's the proper remediation and prevention?",
+    "Masked_Question": "I'm analyzing a subdomain takeover vulnerability. Our DNS has CNAME record pointing to decommissioned Azure resource at defunct-app.azurewebsites.net. An attacker registered this resource and hosts phishing content",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "My IDS detected HTTP request smuggling attack targeting our reverse proxy. Attacker sends ambiguous Content-Length and Transfer-Encoding headers from 198.51.100.78. What makes this attack effective against proxy-backend architecture?",
+    "A": "Frontend and backend parse HTTP requests differently, allowing attacker to hide requests from frontend that backend processes, enabling cache poisoning or request routing manipulation",
+    "B": "The large request size overwhelms the proxy server",
+    "C": "HTTP headers are not encrypted allowing interception",
+    "D": "Multiple Content-Length headers indicate DDoS attack",
+    "Answer": "A",
+    "Entities": {
+      "LOCATION": [
+        "198.51.100.78"
+      ]
+    },
+    "PII-free Question": "My IDS detected HTTP request smuggling attack targeting our reverse proxy. Attacker sends ambiguous Content-Length and Transfer-Encoding headers from [LOCATION]. What makes this attack effective against proxy-backend architecture?",
+    "Masked_Question": "My IDS detected HTTP request smuggling attack targeting our reverse proxy. Attacker sends ambiguous Content-Length and Transfer-Encoding headers from [IP]. What makes this attack effective against proxy-backend architecture?",
+    "masked_clean": true,
+    "masked_match": false
+  },
+  {
+    "Question": "User daniel.kim@enterprise.net (SSN: XXX-XX-5647, address: 1428 Elm Street, Apt 3B, Seattle WA) logged into trading platform from device ANDROID-PRO-8834 with IMEI-356729084523891 at 192.168.1.105. He executed 247 trades in 8 minutes totaling $4.2M. Account number 4472-8839-2234-7765 shows this unusual activity on 09/19/2024. What indicates compromised account versus legitimate automated trading?",
+    "A": "Lack of API key usage for automation, anomalous trade pattern compared to historical behavior, unusual login location or device, absence of pre-configured automated trading setup",
+    "B": "High trade volume automatically indicates account compromise",
+    "C": "Mobile device trading always suggests unauthorized access",
+    "D": "Large transaction amounts prove malicious activity",
+    "Answer": "A",
+    "Entities": {
+      "CONTACT": [
+        "daniel.kim@enterprise.net"
+      ],
+      "IDENTITY": [
+        "XXX-XX-5647"
+      ],
+      "LOCATION": [
+        "1428 Elm Street, Apt 3B, Seattle WA",
+        "192.168.1.105"
+      ],
+      "DEVICE": [
+        "ANDROID-PRO-8834",
+        "IMEI-356729084523891"
+      ],
+      "FINANCIAL": [
+        "4472-8839-2234-7765"
+      ],
+      "DATE": [
+        "09/19/2024"
+      ]
+    },
+    "PII-free Question": "User [CONTACT] (SSN: [IDENTITY], address: [LOCATION]) logged into trading platform from device [DEVICE] with [DEVICE] at [LOCATION]. He executed 247 trades in 8 minutes totaling $4.2M. Account number [FINANCIAL] shows this unusual activity on [DATE]. What indicates compromised account versus legitimate automated trading?",
+    "Masked_Question": "User [IDENTITY] (SSN: XXX-XX-5647, address: 1428 Elm Street, Apt 3B, Seattle WA) logged into trading platform from device [DEVICE]",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "I'm investigating a deserialization vulnerability in our Java application. Attacker sent malicious serialized object that executed arbitrary code on server APP-JAV-0945 at 10.55.92.134. What's the most effective prevention strategy?",
+    "A": "Avoid deserializing untrusted data, implement allowlist-based deserialization filters, use data formats like JSON instead of native serialization, validate object types",
+    "B": "Encrypt all serialized objects before transmission",
+    "C": "Disable Java serialization completely across all applications",
+    "D": "Implement input length restrictions on serialized data",
+    "Answer": "A",
+    "Entities": {
+      "DEVICE": [
+        "APP-JAV-0945"
+      ],
+      "LOCATION": [
+        "10.55.92.134"
+      ]
+    },
+    "PII-free Question": "I'm investigating a deserialization vulnerability in our Java application. Attacker sent malicious serialized object that executed arbitrary code on server [DEVICE] at [LOCATION]. What's the most effective prevention strategy?",
+    "Masked_Question": "I'm investigating a deserialization vulnerability in our Java application. Attacker sent malicious serialized object that executed arbitrary code on server APP-JAV-0945 at 10.55.92",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "My cloud security detected cryptomining malware in container image. Container c-mining-847abc running on node ip-10-0-45-122 shows process xmrig consuming resources and beaconing to pool.supportxmr.com with wallet address 43XyZ9Abc5De...fGhI from IP 172.17.0.88. What indicates this was introduced through supply chain versus runtime compromise?",
+    "A": "Malware present in base container image layers, included in image manifest, executes immediately at container start rather than being injected after deployment",
+    "B": "High CPU usage indicates supply chain compromise",
+    "C": "Connection to mining pool proves supply chain attack",
+    "D": "Container naming convention indicates the compromise method",
+    "Answer": "A",
+    "Entities": {
+      "DEVICE": [
+        "c-mining-847abc"
+      ],
+      "LOCATION": [
+        "ip-10-0-45-122",
+        "172.17.0.88"
+      ],
+      "FINANCIAL": [
+        "43XyZ9Abc5De...fGhI"
+      ]
+    },
+    "PII-free Question": "My cloud security detected cryptomining malware in container image. Container [DEVICE] running on node [LOCATION] shows process xmrig consuming resources and beaconing to pool.supportxmr.com with wallet address [FINANCIAL] from IP [LOCATION]. What indicates this was introduced through supply chain versus runtime compromise?",
+    "Masked_Question": "My cloud security detected cryptomining malware in container image. Container c-mining-847abc running on node ip-10-0-45-122 shows process xmrig consuming resources and be",
+    "masked_clean": false,
+    "masked_match": false
+  },
+  {
+    "Question": "I need to implement secure logging for compliance. What's the proper approach to ensure log integrity and prevent tampering?",
+    "A": "Use write-once storage, implement cryptographic log signing, centralize logs with restricted access, enable log forwarding in real-time, implement WORM (Write Once Read Many) storage",
+    "B": "Store logs locally on each server with backup copies",
+    "C": "Encrypt all logs with administrator-held keys",
+    "D": "Compress logs daily to save storage space",
+    "Answer": "A",
+    "Entities": {},
+    "PII-free Question": "I need to implement secure logging for compliance. What's the proper approach to ensure log integrity and prevent tampering?",
+    "Masked_Question": "I need to implement secure logging for compliance. What's the proper approach to ensure log integrity and prevent tampering?",
+    "masked_clean": true,
+    "masked_match": true
+  }
+]

@@ -430,6 +430,8 @@ def classify(fail_success_split_qs, dataset="CyberNERQA", masked_data_path='', t
     # keep track for splitting edge cloud later
     test_start_idx = int(len(dataset)*train_split)
 
+    # recode start time
+    start_time = time.time()
     
     for i in range(int(len(dataset)*train_split),len(dataset)):
         item = dict(dataset.data[i])
@@ -457,7 +459,15 @@ def classify(fail_success_split_qs, dataset="CyberNERQA", masked_data_path='', t
             fn += 1  # False Negative: missed PII
         elif gt == 0 and pred == 0:
             tn += 1  # True Negative: correctly kept non-PII
-
+    
+    
+    # end time
+    end_time = time.time()
+    execution_time = end_time - start_time
+    print("-------------")
+    print("!!! execution_time ",execution_time)
+    print("-------------")
+    print("!!! accuracy: ", accuracy, "!!! recall: ", recall, "!!! F1: ", f1)
     
     
     #report performance
@@ -472,10 +482,11 @@ def classify(fail_success_split_qs, dataset="CyberNERQA", masked_data_path='', t
         "recall": recall,
         "f1_score": f1,
         "accuracy": accuracy
-    },
+    }
     args_dict["confusion_matrix"]= {
         "tp": tp, "fp": fp, "fn": fn, "tn": tn
-    },
+    }
+    args_dict["execution_time"] = execution_time
     
     
     #### Save output dataset
@@ -487,8 +498,7 @@ def classify(fail_success_split_qs, dataset="CyberNERQA", masked_data_path='', t
     while os.path.isfile(mc_data_path):
         counter += 1
         mc_data_path = os.path.join(folder_name, f"{base_data_name}_{counter}.json")
-    print(f"Output masked json data will be saved to: {mc_data_path}")
-    print("Set the Dataloader's data_path to this path ^")
+    print(f"Output classified masked json data will be saved to: {mc_data_path}")
     
     with open(mc_data_path, "w") as f:
         json.dump(masked_classified_data, f, indent=2)
@@ -496,6 +506,7 @@ def classify(fail_success_split_qs, dataset="CyberNERQA", masked_data_path='', t
 
     
     ### Save args
+    
     #json_path = os.path.join(folder_name,str(max_gen_len)+"_args.json")
     basej_name = "args"
     json_path=os.path.join(folder_name,f"1_{basej_name}.json")
@@ -508,6 +519,7 @@ def classify(fail_success_split_qs, dataset="CyberNERQA", masked_data_path='', t
         counter += 1
     with open(json_path, "w") as json_file:
         json.dump(args_dict, json_file, indent=4)
+    print(f"Args classified masked json data will be saved to: {json_path}")
 
 
     

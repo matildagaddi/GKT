@@ -5,6 +5,8 @@
 # test split data and indices (check)
 # add explanation column / v2 data
 # potentially fix batching? batches of 1?
+# add "v2" vs "v1" to args
+# maybe try make classification time measurement exclude confusion matrix
 
 
 ###### Outline of framework
@@ -44,22 +46,30 @@ from utils import *
 import argparse
 import json
 
+FEW_SHOT = 1
+
 # # stage 0 mask
-masker_args, masked_data, fail_success_split_qs, masked_data_path = mask(model_name="meta-llama/Llama-2-7b-hf", dataset="CyberNERQA", raw_data_path="data/CyberNERQA_raw/CyberNERQA.json", out_path="data/CyberNERQA_masked/", max_gen_len=50, batch_size=50, few_shot=1)
+masker_args, masked_data, fail_success_split_qs, masked_data_path = mask(model_name="meta-llama/Llama-2-7b-hf", dataset="CyberNERQA", raw_data_path="data/CyberNERQA_raw/CyberNERQA_v2.json", out_path="data/CyberNERQA_masked/", max_gen_len=100, batch_size=50, few_shot=FEW_SHOT)
+
+print('################## Masking Complete, Beginning Classification ##################')
 
 # stage 0.5 classify
 #split and classify new data
-cloud_data, edge_data, edge_indices, cloud_indices, mc_data_path = classify(fail_success_split_qs, dataset="CyberNERQA", masked_data_path=masked_data_path, train_split=0.5, fail_split='match')
+cloud_data, edge_data, edge_indices, cloud_indices, mc_data_path = classify(fail_success_split_qs, dataset="CyberNERQA", masked_data_path=masked_data_path, train_split=0.5, fail_split='clean')
 # go in and add column "send_to_cloud" = 1 or 0
 
+print('################## Classification Complete, Beginning Stage 1 ##################')
+
 # stage 1 guide
-stage1_args, guidances, big_output_path = stage1(edge_indices, cloud_indices, dataset="CyberNERQA", model_cloud="meta-llama/Llama-2-13b-hf", model_edge="meta-llama/Llama-2-7b-hf", mc_data_path=mc_data_path, masking=1)
+stage1_args, guidances, big_output_path = stage1(edge_indices, cloud_indices, dataset="CyberNERQA", model_cloud="meta-llama/Llama-2-13b-hf", model_edge="meta-llama/Llama-2-7b-hf", mc_data_path=mc_data_path, masking=1, few_shot=FEW_SHOT)
 #either new dataloader for _masked_classified OR make CyberNERQA loader know when to return CyberNERQA_masked_classified with new parameter? Which is better?
 
-# stage 2 answer
-stage2_args = stage2(stage1_args=stage1_args, dataset="CyberNERQA", mc_data_path=mc_data_path, model_name="meta-llama/Llama-2-7b-hf", big_output_path=big_output_path) #for later: guidances=guidances, or add to mc_data_path
+print('################## Stage 1 Complete, Beginning Stage 2 ##################')
 
-print(stage2_args)
+# stage 2 answer
+stage2_args = stage2(stage1_args=stage1_args, dataset="CyberNERQA", mc_data_path=mc_data_path, model_name="meta-llama/Llama-2-7b-hf", big_output_path=big_output_path, few_shot=FEW_SHOT) #for later: guidances=guidances, or add to mc_data_path
+
+print('##################  Complete  ##################')
 
 
 

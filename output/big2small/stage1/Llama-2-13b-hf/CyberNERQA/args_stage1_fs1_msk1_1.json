@@ -1,0 +1,15 @@
+{
+    "model_cloud": "meta-llama/Llama-2-13b-hf",
+    "model_edge": "meta-llama/Llama-2-7b-hf",
+    "dataset": "CyberNERQA",
+    "batch_size": 12,
+    "max_gen_len": 30,
+    "data_path": "data/CyberNERQA_masked_classified/CyberNERQA_masked_classified_4.json",
+    "out_path": "output/big2small/stage1/Llama-2-13b-hf/CyberNERQA/2_output_stage1_fs1_msk1.jsonlines",
+    "masking": 1,
+    "few_shot": 1,
+    "Execution time": 19.348922729492188,
+    "FLOPs:(G)": 2013.26592,
+    "Number of parameters:(M)": 163.84,
+    "timestamp": "2025-12-02_01-44-04"
+}

@@ -8,7 +8,7 @@ import re
 import random
 import time
 from tqdm import tqdm
-from utils_data import CyberNERQA_dataset
+from utils import CyberNERQA_dataset
 from torch.utils.data import DataLoader
 from transformers import AutoModelForCausalLM, AutoTokenizer,AutoModelForSeq2SeqLM
 from thop import profile

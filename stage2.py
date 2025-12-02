@@ -6,7 +6,7 @@ import jsonlines
 import json
 import re
 import random
-from utils_data import CyberNERQA_dataset
+from utils import CyberNERQA_dataset
 from torch.utils.data import DataLoader
 from transformers import AutoModelForCausalLM, AutoTokenizer,AutoModelForSeq2SeqLM
 import time
